@@ -8,15 +8,15 @@ function AppFooterCopyright() {
 					target="__blank"
 					className="hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
 				>
-					Next.js & Tailwind CSS Portfolio
+					Portfolio 2024
 				</a>
 				.{' '}
 				<a
-					href="https://stoman.me"
+					href="https://github.com/sheharzad-developer"
 					target="__blank"
 					className="text-secondary-dark dark:text-secondary-light font-medium uppercase hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
 				>
-					Stoman
+					Sheharzad Salahuddin
 				</a>
 			</div>
 		</div>
