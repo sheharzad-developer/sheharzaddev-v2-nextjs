@@ -9,24 +9,28 @@ import five from "../public/images/certifications/five.jpg";
 const Certifications = () => {
   return (
     <div className="container mx-auto">
-      <div className="block sm:flex sm:gap-10 mt-10 sm:mt-20 items-center">
-        <h1 className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase">
-          Certifications
-        </h1>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 sm:mt-20">
-        {[one, two, three, four, five].map((img, index) => (
-          <div className="col-span-1 p-5" key={index}>
-            <a
-              href={img.src}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src={img} alt={`certification-${index}`} className="w-full" />
-            </a>
+      <section class="py-5 sm:py-10 mt-5 sm:mt-10">
+        <div className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
+          <div class="text-center">
+            <h1 className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
+              Certifications
+            </h1>
           </div>
-        ))}
-      </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 sm:mt-20">
+          {[one, two, three, four, five].map((img, index) => (
+            <div className="col-span-1 p-5" key={index}>
+              <a href={img.src} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={img}
+                  alt={`certification-${index}`}
+                  className="w-full"
+                />
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
