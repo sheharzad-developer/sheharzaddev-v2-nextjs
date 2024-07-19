@@ -17,7 +17,7 @@ const Certifications = () => {
             </h1>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 sm:mt-20">
+        <div className="grid grid-cols-2 gap-6 mt-10 sm:mt-20">
           {[one, two, three, four, five].map((img, index) => (
             <div className="col-span-1 p-5" key={index}>
               <a href={img.src} target="_blank" rel="noopener noreferrer">
