@@ -766,12 +766,12 @@ export const projectsData = [
 	},
 	{
 		id: 7,
-		title: 'Project Management UI',
+		title: 'Dental Application',
 		url: 'project-management-ui',
 		category: 'Dental',
 		img: '/images/dental.png',
 		ProjectHeader: {
-			title: 'Project Management UI',
+			title: 'Dental Application',
 			publishDate: 'Jul 26, 2021',
 			tags: 'Dental',
 		},
