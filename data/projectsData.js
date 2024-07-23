@@ -1016,4 +1016,130 @@ export const projectsData = [
 			// ],
 		},
 	},
+	{
+		id: 2,
+		title: 'Spiderman',
+		url: 'project-management-ui',
+		category: 'DC Comics',
+		img: '/images/spiderman.png',
+		ProjectHeader: {
+			title: 'Spiderman',
+			publishDate: 'Jul 26, 2021',
+			tags: 'DC-Comics',
+		},
+		ProjectImages: [
+			{
+				id: uuidv4(),
+				title: 'DC Project Management',
+				img: '/images/spiderman.png',
+			},
+			{
+				id: uuidv4(),
+				title: 'DC Project Management',
+				img: '/images/spiderman.png',
+			},
+			{
+				id: uuidv4(),
+				title: 'DC Project Management',
+				img: '/images/spiderman.png',
+			},
+		],
+		ProjectInfo: {
+			ClientHeading: 'About Client',
+			CompanyInfo: [
+				{
+					id: uuidv4(),
+					title: 'Name',
+					details: 'Company Ltd',
+				},
+				{
+					id: uuidv4(),
+					title: 'Services',
+					details: 'UI Design & Frontend Development',
+				},
+				// {
+				// 	id: uuidv4(),
+				// 	title: 'Website',
+				// 	details: 'https://company.com',
+				// },
+				// {
+				// 	id: uuidv4(),
+				// 	title: 'Phone',
+				// 	details: '555 8888 888',
+				// },
+			],
+			ObjectivesHeading: 'Objective',
+			ObjectivesDetails:
+				'Hello Spiderman',
+			Technologies: [
+				{
+					title: 'Tools & Technologies',
+					techs: [
+						'HTML',
+						'CSS',
+						'JavaScript',
+						'Vue.js',
+						'TailwindCSS',
+						
+					],
+				},
+			],
+			ProjectDetailsHeading: 'Challenge',
+			ProjectDetails: [
+				{
+					id: uuidv4(),
+					details:
+					'Hello Spiderman',
+				},
+				{
+					id: uuidv4(),
+					details:
+					'Hello Spiderman',
+				},
+				{
+					id: uuidv4(),
+					details:
+					'Hello Spiderman',
+				},
+				{
+					id: uuidv4(),
+					details:
+					'Hello Spiderman',
+				},
+			],
+			////SocialSharingHeading: 'Share This',
+			// SocialSharing: [
+			// 	{
+			// 		id: uuidv4(),
+			// 		name: 'Twitter',
+			// 		icon: <FiTwitter />,
+			// 		url: 'https://twitter.com/realstoman',
+			// 	},
+			// 	{
+			// 		id: uuidv4(),
+			// 		name: 'Instagram',
+			// 		icon: <FiInstagram />,
+			// 		url: 'https://instagram.com/realstoman',
+			// 	},
+			// 	{
+			// 		id: uuidv4(),
+			// 		name: 'Facebook',
+			// 		icon: <FiFacebook />,
+			// 		url: 'https://facebook.com/',
+			// 	},
+			// 	{
+			// 		id: uuidv4(),
+			// 		name: 'LinkedIn',
+			// 		icon: <FiLinkedin />,
+			// 		url: 'https://linkedin.com/',
+			// 	},
+			// 	{
+			// 		id: uuidv4(),
+			// 		name: 'Youtube',
+			// 		icon: <FiYoutube />,
+			// 		url: 'https://www.youtube.com/c/StomanStudio',
+			// 	},
+			// ],
+		},
+	},
 ];
