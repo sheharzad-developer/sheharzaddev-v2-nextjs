@@ -1040,16 +1040,6 @@ export const projectsData = [
           title: "Services",
           details: "UI Design & Frontend Development",
         },
-        // {
-        // 	id: uuidv4(),
-        // 	title: 'Website',
-        // 	details: 'https://company.com',
-        // },
-        // {
-        // 	id: uuidv4(),
-        // 	title: 'Phone',
-        // 	details: '555 8888 888',
-        // },
       ],
       ObjectivesHeading: "Objective",
       ObjectivesDetails: "Hello Spiderman",
@@ -1078,39 +1068,6 @@ export const projectsData = [
           details: "Hello Spiderman",
         },
       ],
-      ////SocialSharingHeading: 'Share This',
-      // SocialSharing: [
-      // 	{
-      // 		id: uuidv4(),
-      // 		name: 'Twitter',
-      // 		icon: <FiTwitter />,
-      // 		url: 'https://twitter.com/realstoman',
-      // 	},
-      // 	{
-      // 		id: uuidv4(),
-      // 		name: 'Instagram',
-      // 		icon: <FiInstagram />,
-      // 		url: 'https://instagram.com/realstoman',
-      // 	},
-      // 	{
-      // 		id: uuidv4(),
-      // 		name: 'Facebook',
-      // 		icon: <FiFacebook />,
-      // 		url: 'https://facebook.com/',
-      // 	},
-      // 	{
-      // 		id: uuidv4(),
-      // 		name: 'LinkedIn',
-      // 		icon: <FiLinkedin />,
-      // 		url: 'https://linkedin.com/',
-      // 	},
-      // 	{
-      // 		id: uuidv4(),
-      // 		name: 'Youtube',
-      // 		icon: <FiYoutube />,
-      // 		url: 'https://www.youtube.com/c/StomanStudio',
-      // 	},
-      // ],
     },
   },
   {
@@ -1159,11 +1116,6 @@ export const projectsData = [
           title: "Website",
           details: "https://netsoltech.com",
         },
-        // {
-        // 	id: uuidv4(),
-        // 	title: 'Phone',
-        // 	details: '555 8888 888',
-        // },
       ],
       ObjectivesHeading: "Objective",
       ObjectivesDetails: "Netsol Website",
@@ -1185,7 +1137,7 @@ export const projectsData = [
         {
           id: uuidv4(),
           details:
-            "This is a website called Netsol Technologies. It is a software company that provides software solutions to its clients.",
+            "This is a website called Netsol Technologies. It is a software company that provides software solutions to its clients. Here is the link: https://netsoltech.com",
         },
       ],
     },
