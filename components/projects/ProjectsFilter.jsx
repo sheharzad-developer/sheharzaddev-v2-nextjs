@@ -2,7 +2,8 @@ const selectOptions = [
 	'Web Application',
 	'Mobile Application',
 	'UI/UX Design',
-	'Dental'
+	'Dental',
+	'Company'
 ];
 
 const ProjectsFilter = ({ setSelectProject }) => {
