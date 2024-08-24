@@ -348,17 +348,12 @@ export const projectsData = [
         {
           id: uuidv4(),
           title: "Name",
-          details: "Company Ltd",
+          details: "Netsol Technologies",
         },
         {
           id: uuidv4(),
           title: "Services",
           details: "UI Design & Frontend Development",
-        },
-        {
-          id: uuidv4(),
-          title: "Website",
-          details: "https://netsoltech.com",
         },
       ],
       ObjectivesHeading: "Objective",
