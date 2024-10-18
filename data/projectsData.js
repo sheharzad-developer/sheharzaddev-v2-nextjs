@@ -278,6 +278,7 @@ export const projectsData = [
           id: uuidv4(),
           title: "Services",
           details: "UI Design & Frontend Development",
+		  website: 'https://netsoltech.com',
         },
       ],
       ObjectivesHeading: "Objective",
