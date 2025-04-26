@@ -1,11 +1,23 @@
 import { motion } from 'framer-motion'
 import { FiArrowDownCircle } from 'react-icons/fi'
 import useThemeSwitcher from '../../hooks/useThemeSwitcher'
-import Lottie from 'lottie-react'
-import sherryAnimation from '../../public/images/lottie/sherry.json'
+import { useRef, Suspense, useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
+
+// Dynamically import Lottie with no SSR
+const Lottie = dynamic(() => import('lottie-react'), { 
+  ssr: false,
+  loading: () => <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-lg" />
+})
 
 function AppBanner() {
   const [activeTheme] = useThemeSwitcher()
+  const [isClient, setIsClient] = useState(false)
+  const lottieRef = useRef()
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   return (
     <motion.section
@@ -68,14 +80,18 @@ function AppBanner() {
       >
         <div className='w-full flex justify-center sm:justify-end'>
           <div className='w-full h-full sm:w-96 sm:h-96 md:w-[700px] md:h-[700px]'>
-            <Lottie
-              animationData={sherryAnimation}
-              loop={true}
-              autoplay={true}
-              rendererSettings={{
-                preserveAspectRatio: 'xMidYMid slice'
-              }}
-            />
+            {isClient && (
+              <Suspense fallback={<div className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-lg" />}>
+                <Lottie
+                  animationData={require('../../public/images/lottie/sherry.json')}
+                  loop={true}
+                  autoplay={true}
+                  rendererSettings={{
+                    preserveAspectRatio: 'xMidYMid slice'
+                  }}
+                />
+              </Suspense>
+            )}
           </div>
         </div>
       </motion.div>
