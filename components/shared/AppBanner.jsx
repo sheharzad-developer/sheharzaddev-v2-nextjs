@@ -13,10 +13,20 @@ const Lottie = dynamic(() => import('lottie-react'), {
 function AppBanner() {
   const [activeTheme] = useThemeSwitcher()
   const [isClient, setIsClient] = useState(false)
-  const lottieRef = useRef()
+  const [lottieVisible, setLottieVisible] = useState(false)
+  const lottieContainerRef = useRef(null)
 
   useEffect(() => {
     setIsClient(true)
+    if (!lottieContainerRef.current) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setLottieVisible(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+    observer.observe(lottieContainerRef.current)
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -79,8 +89,8 @@ function AppBanner() {
         className='w-full md:w-2/3 flex justify-center sm:justify-end'
       >
         <div className='w-full flex justify-center sm:justify-end'>
-          <div className='w-full h-full sm:w-96 sm:h-96 md:w-[700px] md:h-[700px]'>
-            {isClient && (
+          <div ref={lottieContainerRef} className='w-full h-full sm:w-96 sm:h-96 md:w-[700px] md:h-[700px]'>
+            {isClient && lottieVisible && (
               <Suspense fallback={<div className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-lg" />}>
                 <Lottie
                   animationData={require('../../public/images/lottie/sherry.json')}
@@ -89,6 +99,7 @@ function AppBanner() {
                   rendererSettings={{
                     preserveAspectRatio: 'xMidYMid slice'
                   }}
+                  style={{ width: '100%', height: '100%' }}
                 />
               </Suspense>
             )}
