@@ -3,6 +3,22 @@ import { FiClock, FiTag } from 'react-icons/fi'
 import PagesMetaHead from '../../components/PagesMetaHead'
 
 function ProjectSingle (props) {
+  if (!props.project) {
+    return (
+      <div className='container mx-auto'>
+        <PagesMetaHead title="Project Not Found" />
+        <div className='text-center mt-20'>
+          <h1 className='text-2xl font-bold text-primary-dark dark:text-primary-light'>
+            Project Not Found
+          </h1>
+          <p className='mt-4 text-ternary-dark dark:text-ternary-light'>
+            The project you are looking for does not exist.
+          </p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className='container mx-auto'>
       <PagesMetaHead title={props.project.title} />

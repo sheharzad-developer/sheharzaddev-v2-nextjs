@@ -2,7 +2,7 @@ import { useState, createContext } from 'react';
 import { aboutMeData } from '../data/aboutMeData';
 import { clientsHeading as clientsPageHeading } from '../data/clientsData';
 import { clientsData as clientsDataJson } from '../data/clientsData';
-import skillsDataJson, { SkillsHeading as skillsHeading } from '../data/skillsData';
+import { skillsData as skillsDataJson, SkillsHeading as skillsHeading } from '../data/skillsData';
 
 const AboutMeContext = createContext();
 
