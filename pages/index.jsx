@@ -2,6 +2,7 @@ import Link from "next/link";
 import PagesMetaHead from "../components/PagesMetaHead";
 import Button from "../components/reusable/Button";
 import AppBanner from "../components/shared/AppBanner";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -10,7 +11,12 @@ export default function Home() {
 
       <AppBanner />
 
-      <div className="flex flex-col items-center mt-6 sm:mt-8">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="flex flex-col items-center mt-6 sm:mt-8"
+      >
         <a
           href="https://sheharzad-developer.github.io/Card-Click-and-Play/"
           target="_blank"
@@ -27,7 +33,7 @@ export default function Home() {
             <p className="text-sm sm:text-base text-gray-600 text-center">Interactive card game project. Click to play!</p>
           </div>
         </a>
-      </div>
+      </motion.div>
 
       {/* <div className="mt-10 sm:mt-15 flex justify-center">
         <div className="font-general-medium flex items-center px-6 py-3 rounded-lg shadow-lg hover:shadow-xl bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 text-white text-lg sm:text-xl duration-300">
