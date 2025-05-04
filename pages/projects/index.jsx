@@ -14,6 +14,12 @@ const projects = [
     link: "https://sheharzad-developer.github.io/sheharzad-explode-text-on-scroll-matterjs/",
     // description: "Interactive card game project. Click to play!",
   },
+  {
+    title: "Netsol Website",
+    img: "/images/Netsoltech.png",
+    link: "https://netsoltech.com/",
+    // description: "Interactive card game project. Click to play!",
+  },
 ];
 
 function index() {
