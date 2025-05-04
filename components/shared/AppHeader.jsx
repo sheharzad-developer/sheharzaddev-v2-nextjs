@@ -106,27 +106,27 @@ function AppHeader() {
           }
         >
           <div className="flex flex-col items-center w-full">
-            <div className="block text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 mb-3 sm:py-2 text-center">
+            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
               <Link href="/" aria-label="Home">
                 Home
               </Link>
             </div>
-            <div className="block text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 mb-3 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark text-center">
+            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
               <Link href="/about" aria-label="About Me">
                 About Me
               </Link>
             </div>
-            <div className="block text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 mb-3 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark text-center">
+            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
               <Link href="/contact" aria-label="Contact">
                 Contact
               </Link>
             </div>
-            <div className="block text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 mb-3 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark text-center">
+            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
               <Link href="/projects" aria-label="Projects">
                 Projects
               </Link>
             </div>
-            <div className="block text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 mb-3 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark text-center">
+            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center">
               <Link href="/certifications" aria-label="Certifications">
                 Certifications
               </Link>
@@ -147,31 +147,31 @@ function AppHeader() {
         <div className="font-general-medium hidden m-0 sm:ml-4 mt-4 sm:mt-0 sm:flex p-4 sm:p-0 justify-center items-center shadow-lg sm:shadow-none flex-grow">
           <div className="flex justify-center items-center space-x-6 sm:space-x-8">
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light"
+              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
               aria-label="Home"
             >
               <Link href="/">Home</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light"
+              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
               aria-label="About Me"
             >
               <Link href="/about">About Me</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light"
+              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
               aria-label="Contact"
             >
               <Link href="/contact">Contact</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light"
+              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
               aria-label="Projects"
             >
               <Link href="/projects">Projects</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light"
+              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
               aria-label="Certifications"
             >
               <Link href="/certifications">Certifications</Link>
