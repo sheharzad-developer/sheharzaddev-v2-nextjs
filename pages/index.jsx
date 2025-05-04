@@ -10,7 +10,7 @@ export default function Home() {
 
       <AppBanner />
 
-      <div className="flex flex-col items-center mt-10">
+      <div className="flex flex-col items-center mt-6 sm:mt-8">
         <a
           href="https://sheharzad-developer.github.io/Card-Click-and-Play/"
           target="_blank"
@@ -20,11 +20,11 @@ export default function Home() {
           <img
             src="/images/Card-and-Click:Play.png"
             alt="Card Click and Play Demo"
-            className="rounded-t-lg w-full h-48 object-cover"
+            className="rounded-t-lg w-full h-40 object-cover"
           />
-          <div className="p-4">
-            <h3 className="text-lg font-semibold mb-2 text-center">Card Click and Play</h3>
-            <p className="text-gray-600 text-center">Interactive card game project. Click to play!</p>
+          <div className="p-3">
+            <h3 className="text-base sm:text-lg font-semibold mb-1 text-center">Card Click and Play</h3>
+            <p className="text-sm sm:text-base text-gray-600 text-center">Interactive card game project. Click to play!</p>
           </div>
         </a>
       </div>
