@@ -249,3 +249,9 @@ a {
 		opacity: 0.5;
 	}
 }
+
+@media (min-width: 1280px) {
+    .xl\:max-w-screen-xl {
+        max-width: 100% !important;
+    }
+}
