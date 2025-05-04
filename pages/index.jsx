@@ -15,7 +15,12 @@ const projects = [
     img: "/images/WebPage.png",
     link: "https://sheharzad-developer.github.io/sheharzad-explode-text-on-scroll-matterjs/",
   },
-  // Add more projects as needed
+  {
+    title: "Netsol Website",
+    img: "/images/Netsoltech.png",
+    link: "https://netsoltech.com/",
+  },
+  // Add more projects here as needed
 ];
 
 export default function Home() {
@@ -27,7 +32,7 @@ export default function Home() {
 
       <h2 className="font-general-medium text-2xl sm:text-3xl text-center text-primary-dark dark:text-primary-light mt-10 mb-4">Project Related</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6 sm:mt-8">
-        {projects.slice(0, 2).map((project, idx) => (
+        {projects.map((project, idx) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
