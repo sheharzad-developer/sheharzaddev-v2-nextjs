@@ -16,6 +16,13 @@ function AppBanner() {
   const [lottieVisible, setLottieVisible] = useState(false)
   const lottieContainerRef = useRef(null)
 
+  const handleScrollDown = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    })
+  }
+
   useEffect(() => {
     setIsClient(true)
     if (!lottieContainerRef.current) return;
@@ -34,9 +41,9 @@ function AppBanner() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-      className='flex flex-col sm:justify-between items-center sm:flex-row mt-5 md:mt-2'
+      className='flex flex-col sm:justify-between items-center sm:flex-row mt-5 md:mt-2 min-h-screen'
     >
-      <div className='w-full text-left'>
+      <div className='w-full text-left mb-8 sm:mb-0'>
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -86,10 +93,10 @@ function AppBanner() {
         initial={{ opacity: 0, y: -180 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-        className='w-full md:w-2/3 flex justify-center sm:justify-end'
+        className='w-full md:w-2/3 flex flex-col items-center sm:justify-end mb-8 sm:mb-0'
       >
         <div className='w-full flex justify-center sm:justify-end'>
-          <div ref={lottieContainerRef} className='w-full h-full sm:w-96 sm:h-96 md:w-[700px] md:h-[700px]'>
+          <div ref={lottieContainerRef} className='w-full h-full sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px]'>
             {isClient && lottieVisible && (
               <Suspense fallback={<div className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-lg" />}>
                 <Lottie
@@ -105,6 +112,16 @@ function AppBanner() {
             )}
           </div>
         </div>
+        <motion.button
+          onClick={handleScrollDown}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          className="mt-8 text-white hover:text-gray-200 transition-all duration-300 focus:outline-none block sm:hidden"
+          aria-label="Scroll down"
+        >
+          <FiArrowDownCircle className="w-12 h-12 animate-bounce" />
+        </motion.button>
       </motion.div>
     </motion.section>
   )
