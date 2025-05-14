@@ -32,7 +32,12 @@ const socialLinks = [
 
 const AppFooter = () => {
 	return (
-		<div className="container mx-auto">
+		<div
+			data-aos="fade-down-left"
+			data-aos-duration="700"
+			data-aos-delay="100"
+			className="container mx-auto"
+		>
 			<div className="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
 				{/* Footer social links */}
 				<div className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-28">
