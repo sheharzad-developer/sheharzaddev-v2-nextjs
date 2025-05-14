@@ -5,6 +5,10 @@ import AppBanner from "../components/shared/AppBanner";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import SkillsProgressBar from '../components/about/SkillsProgressBar';
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+import skillsAnimation from "../public/lottie/SkillsAnimation.json";
 
 const projects = [
   {
@@ -33,6 +37,33 @@ export default function Home() {
       <PagesMetaHead title="Sheharzad" />
 
       <AppBanner />
+
+      {/* Skills Progress Bar Section as Flex */}
+      <div className="flex flex-col lg:flex-row gap-8 items-center my-8">
+        {/* Left: Skills Progress Bar */}
+        <div
+          className="w-full lg:w-1/2"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="100"
+        >
+          <SkillsProgressBar />
+        </div>
+        {/* Right: Lottie Animation */}
+        <div
+          className="w-full lg:w-1/2 h-[400px] rounded-xl flex items-center justify-center"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100"
+        >
+          <Lottie
+            animationData={skillsAnimation}
+            loop
+            autoplay
+            style={{ width: '100%', height: '100%' }}
+          />
+        </div>
+      </div>
 
       <h2 className="font-general-medium text-2xl sm:text-3xl text-center text-primary-dark dark:text-primary-light mt-10 mb-4">Project Related</h2>
       <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6 sm:mt-8">

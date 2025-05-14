@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import AboutMeContext from "../../context/AboutMeContext";
 import AboutSkillsClient from "./AboutSkillsClient";
+import SkillsProgressBar from './SkillsProgressBar';
 
 const AboutSkills = () => {
   const { skillsData, skillsHeading } = useContext(AboutMeContext);
@@ -19,6 +20,7 @@ const AboutSkills = () => {
           />
         ))}
       </div>
+      <SkillsProgressBar />
     </div>
   );
 };

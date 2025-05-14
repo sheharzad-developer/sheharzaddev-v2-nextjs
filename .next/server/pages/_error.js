@@ -295,17 +295,6 @@ module.exports = require("react/jsx-runtime");
 
 /***/ }),
 
-/***/ "framer-motion":
-/*!********************************!*\
-  !*** external "framer-motion" ***!
-  \********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = import("framer-motion");;
-
-/***/ }),
-
 /***/ "path":
 /*!***********************!*\
   !*** external "path" ***!
@@ -314,6 +303,17 @@ module.exports = import("framer-motion");;
 
 "use strict";
 module.exports = require("path");
+
+/***/ }),
+
+/***/ "framer-motion":
+/*!********************************!*\
+  !*** external "framer-motion" ***!
+  \********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = import("framer-motion");;
 
 /***/ })
 

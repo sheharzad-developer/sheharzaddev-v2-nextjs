@@ -5,12 +5,15 @@ import { skillsData } from '../../data/skillsData';
 import { SkillsHeading } from '../../data/skillsData';
 import AboutClientSingle from './AboutClientSingle';
 import AboutMeContext from '../../context/AboutMeContext';
+import SkillsProgressBar from './SkillsProgressBar';
 
 function AboutClients() {
 	const [clients, setClients] = useState(clientsData);
 	const [skills, setSkills] = useState(skillsData);
 	return (
 		<div className="mt-6 sm:mt-12">
+			{/* Progress Bar Skills Section */}
+			
 			<p className="font-general-medium text-xl sm:text-2xl text-center text-primary-dark dark:text-primary-light">
 				{clientsHeading}
 			</p>
@@ -27,7 +30,7 @@ function AboutClients() {
 			<p className="font-general-medium text-xl sm:text-2xl text-center text-primary-dark dark:text-primary-light">
 				{SkillsHeading}
 			</p>
-			<div className="grid grid-cols-2 sm:grid-cols-4 mt-6 sm:mt-10 gap-2">
+			{/* <div className="grid grid-cols-2 sm:grid-cols-4 mt-6 sm:mt-10 gap-2">
 				{skillsData.map((skill) => (
 					<AboutClientSingle
 						title={skill.title}
@@ -35,11 +38,10 @@ function AboutClients() {
 						key={skill.id}
 					/>
 				))}
-			</div>
-			
+			</div> */}
+			<SkillsProgressBar />
 		</div>
 		</div>
-		
 	);
 }
 
