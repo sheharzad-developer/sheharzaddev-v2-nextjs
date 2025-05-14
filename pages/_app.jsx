@@ -3,9 +3,15 @@ import { AnimatePresence } from 'framer-motion';
 import DefaultLayout from '../components/layout/DefaultLayout';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { useEffect, useState } from 'react';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 function MyApp({ Component, pageProps, router }) {
   useScrollToTop(); // Call the hook here
+
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
 
   return (
     <AnimatePresence exitBeforeEnter>

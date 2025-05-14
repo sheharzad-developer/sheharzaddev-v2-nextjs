@@ -9,17 +9,28 @@ import five from "../public/images/certifications/five.jpg";
 const Certifications = () => {
   return (
     <div className="container mx-auto">
-      <section class="py-5 sm:py-10 mt-5 sm:mt-10">
+      <section className="py-5 sm:py-10 mt-5 sm:mt-10">
         <div className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-          <div class="text-center">
+          <div className="text-center">
             <h1 className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
               Certifications
             </h1>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-6 mt-10 sm:mt-20">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="800"
+          className="grid grid-cols-2 gap-6 mt-10 sm:mt-20"
+        >
           {[one, two, three, four, five].map((img, index) => (
-            <div className="col-span-1 p-5" key={index}>
+            <div
+              className="col-span-1 p-5"
+              key={index}
+              data-aos="fade-in"
+              data-aos-delay={300 + index * 150}
+              data-aos-duration="700"
+            >
               <a href={img.src} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={img}
