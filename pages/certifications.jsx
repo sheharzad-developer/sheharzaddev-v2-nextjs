@@ -27,7 +27,7 @@ const Certifications = () => {
             <div
               className="col-span-1 p-5"
               key={index}
-              data-aos="fade-in"
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               data-aos-delay={300 + index * 150}
               data-aos-duration="700"
             >
