@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import ContactDetails from '../components/contact/ContactDetails';
 import PagesMetaHead from '../components/PagesMetaHead';
 
@@ -7,18 +6,14 @@ function Contact() {
     <div>
       <PagesMetaHead title="Contact" />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          ease: 'easeInOut',
-          duration: 0.5,
-          delay: 0.1,
-        }}
+      <div
+        data-aos="fade-up-right"
+        data-aos-duration="700"
+        data-aos-delay="100"
         className="container mx-auto flex flex-col-reverse lg:flex-row py-5 lg:py-10 lg:mt-5"
       >
         <ContactDetails />
-      </motion.div>
+      </div>
     </div>
   );
 }

@@ -259,6 +259,10 @@ a {
     display: none;
 }
 
+.block.text-left.text-base.sm\:text-lg.font-medium.text-primary-dark.dark\:text-ternary-light.hover\:text-secondary-dark.dark\:hover\:text-secondary-light.hover\:underline {
+    text-decoration: none;
+}
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
