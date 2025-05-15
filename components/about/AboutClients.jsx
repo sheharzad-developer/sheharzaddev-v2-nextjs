@@ -5,7 +5,7 @@ import { skillsData } from '../../data/skillsData';
 import { SkillsHeading } from '../../data/skillsData';
 import AboutClientSingle from './AboutClientSingle';
 import AboutMeContext from '../../context/AboutMeContext';
-import SkillsProgressBar from './SkillsProgressBar';
+import SkillsProgressBarGrid from './SkillsProgressBarGrid';
 
 function AboutClients() {
 	const [clients, setClients] = useState(clientsData);
@@ -39,7 +39,7 @@ function AboutClients() {
 					/>
 				))}
 			</div> */}
-			<SkillsProgressBar />
+			<SkillsProgressBarGrid />
 		</div>
 		</div>
 	);

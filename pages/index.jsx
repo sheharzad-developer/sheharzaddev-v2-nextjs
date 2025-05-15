@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import SkillsProgressBar from '../components/about/SkillsProgressBar';
+import SkillsProgressBarGrid from '../components/about/SkillsProgressBarGrid';
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import skillsAnimation from "../public/lottie/SkillsAnimation.json";
@@ -26,7 +27,6 @@ const projects = [
     img: "/images/Netsoltech.png",
     link: "https://netsoltech.com/",
   },
-  // Add more projects here as needed
 ];
 
 export default function Home() {
@@ -38,31 +38,19 @@ export default function Home() {
 
       <AppBanner />
 
-      {/* Skills Progress Bar Section as Flex */}
+      {/* <div className="my-8">
+        <SkillsProgressBarGrid />
+      </div> */}
+
       <div className="flex flex-col lg:flex-row gap-8 items-center my-8">
-        {/* Left: Skills Progress Bar */}
         <div
           className="w-full lg:w-1/2"
           data-aos="fade-right"
           data-aos-duration="700"
           data-aos-delay="100"
         >
-          <SkillsProgressBar />
         </div>
-        {/* Right: Lottie Animation */}
-        <div
-          className="w-full lg:w-1/2 h-[400px] rounded-xl flex items-center justify-center"
-          data-aos="fade-left"
-          data-aos-duration="700"
-          data-aos-delay="100"
-        >
-          <Lottie
-            animationData={skillsAnimation}
-            loop
-            autoplay
-            style={{ width: '100%', height: '100%' }}
-          />
-        </div>
+
       </div>
 
       <h2 className="font-general-medium text-2xl sm:text-3xl text-center text-primary-dark dark:text-primary-light mt-10 mb-4">Project Related</h2>
