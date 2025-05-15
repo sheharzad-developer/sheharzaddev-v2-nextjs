@@ -3,6 +3,8 @@ import { FiArrowDownCircle } from 'react-icons/fi'
 import useThemeSwitcher from '../../hooks/useThemeSwitcher'
 import { useRef, Suspense, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import BannerImg from '../../public/images/bannerImg.2a08b5b3.svg'
 
 // Dynamically import Lottie with no SSR
 const Lottie = dynamic(() => import('lottie-react'), { 
@@ -89,7 +91,7 @@ function AppBanner() {
           </a>
         </motion.div>
       </div>
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: -180 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
@@ -122,6 +124,24 @@ function AppBanner() {
         >
           <FiArrowDownCircle className="w-12 h-12 animate-bounce" />
         </motion.button>
+      </motion.div> */}
+      <motion.div
+        initial={{ opacity: 0, y: -180 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.2 }}
+        className='w-full md:w-2/3 flex flex-col items-center sm:justify-end mb-8 sm:mb-0'
+      >
+        <div className='w-full flex justify-center sm:justify-end'>
+          <div className='w-full h-full sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] relative'>
+            <Image 
+              src={BannerImg}
+              alt="Banner illustration"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
+        </div>
       </motion.div>
     </motion.section>
   )
