@@ -9,13 +9,13 @@ import five from "../public/images/certifications/five.jpg";
 const Certifications = () => {
   return (
     <div className="container mx-auto">
-      <section className="py-5 sm:py-10 mt-5 sm:mt-10">
+      <section >
         <div className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-          <div className="text-center">
+          {/* <div className="text-center">
             <h1 className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
               Certifications
             </h1>
-          </div>
+          </div> */}
         </div>
         <div
           data-aos="fade-up"
