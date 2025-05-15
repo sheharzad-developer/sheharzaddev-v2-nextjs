@@ -43,7 +43,7 @@ function AppBanner() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-      className='flex flex-col sm:justify-between items-center sm:flex-row mt-5 md:mt-2 min-h-screen'
+      className='flex flex-col sm:justify-between items-center sm:flex-row mt-5'
     >
       <div className='w-full text-left mb-8 sm:mb-0'>
         <motion.h1
@@ -91,40 +91,7 @@ function AppBanner() {
           </a>
         </motion.div>
       </div>
-      {/* <motion.div
-        initial={{ opacity: 0, y: -180 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-        className='w-full md:w-2/3 flex flex-col items-center sm:justify-end mb-8 sm:mb-0'
-      >
-        <div className='w-full flex justify-center sm:justify-end'>
-          <div ref={lottieContainerRef} className='w-full h-full sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px]'>
-            {isClient && lottieVisible && (
-              <Suspense fallback={<div className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-lg" />}>
-                <Lottie
-                  animationData={require('../../public/images/lottie/sherry.json')}
-                  loop={true}
-                  autoplay={true}
-                  rendererSettings={{
-                    preserveAspectRatio: 'xMidYMid slice'
-                  }}
-                  style={{ width: '100%', height: '100%' }}
-                />
-              </Suspense>
-            )}
-          </div>
-        </div>
-        <motion.button
-          onClick={handleScrollDown}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="mt-8 text-white hover:text-gray-200 transition-all duration-300 focus:outline-none block sm:hidden"
-          aria-label="Scroll down"
-        >
-          <FiArrowDownCircle className="w-12 h-12 animate-bounce" />
-        </motion.button>
-      </motion.div> */}
+    
       <motion.div
         initial={{ opacity: 0, y: -180 }}
         animate={{ opacity: 1, y: 0 }}
@@ -132,12 +99,13 @@ function AppBanner() {
         className='w-full md:w-2/3 flex flex-col items-center sm:justify-end mb-8 sm:mb-0'
       >
         <div className='w-full flex justify-center sm:justify-end'>
-          <div className='w-full h-full sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] relative'>
+          <div className='w-full h-[300px] sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] relative'>
             <Image 
               src={BannerImg}
               alt="Banner illustration"
               fill
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-contain"
             />
           </div>
