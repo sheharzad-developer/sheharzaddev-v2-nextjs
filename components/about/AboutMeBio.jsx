@@ -21,7 +21,7 @@ function AboutMeBio() {
 			<div className="font-general-regular w-full sm:w-2/3 text-center sm:text-left" role="region" aria-label="Biography">
 				{aboutMe.map((bio) => (
 					<p
-						className="mb-3 text-ternary-dark dark:text-ternary-light text-base sm:text-lg"
+						className="mb-3 text-ternary-dark dark:text-ternary-light text-[19px]"
 						key={bio.id}
 						lang="en"
 					>
