@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiSun, FiMoon, FiX, FiMenu } from "react-icons/fi";
+import { useRouter } from "next/router";
 import HireMeModal from "../HireMeModal";
 import logoLight from "../../public/images/S-Logo/S-Logo.jpg";
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
@@ -12,6 +13,7 @@ function AppHeader() {
   const [showModal, setShowModal] = useState(false);
   const [activeTheme, setTheme] = useThemeSwitcher();
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -46,10 +48,10 @@ function AppHeader() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       id="nav"
-      className="sm:container sm:mx-auto"
+      className="sm:container sm:mx-auto my-4 py-4 sm:py-6 rounded-xl bg-primary-light bg-opacity-80 dark:bg-secondary-dark dark:bg-opacity-80"
     >
       {/* Header */}
-      <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-4 sm:py-6">
+      <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center">
         {/* Header menu links and small screen hamburger menu */}
         <div className="flex justify-between items-center px-4 sm:px-0">
           <div className="w-12 h-12 sm:w-14 sm:h-14">
@@ -113,27 +115,57 @@ function AppHeader() {
           }
         >
           <div className="flex flex-col items-center w-full">
-            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
+            <div
+              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
+                router.pathname === "/"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
+            >
               <Link href="/" aria-label="Home">
                 Home
               </Link>
             </div>
-            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
+            <div
+              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
+                router.pathname === "/about"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
+            >
               <Link href="/about" aria-label="About Me">
                 About Me
               </Link>
             </div>
-            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
+            <div
+              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
+                router.pathname === "/contact"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
+            >
               <Link href="/contact" aria-label="Contact">
                 Contact
               </Link>
             </div>
-            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center border-b border-primary-light dark:border-secondary-dark">
+            <div
+              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
+                router.pathname === "/projects"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
+            >
               <Link href="/projects" aria-label="Projects">
                 Projects
               </Link>
             </div>
-            <div className="block w-full text-left text-base sm:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 py-3 text-center">
+            <div
+              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
+                router.pathname === "/certifications"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
+            >
               <Link href="/certifications" aria-label="Certifications">
                 Certifications
               </Link>
@@ -152,33 +184,53 @@ function AppHeader() {
 
         {/* Header links large screen */}
         <div className="font-general-medium hidden m-0 sm:ml-4 mt-4 sm:mt-0 sm:flex p-4 sm:p-0 justify-center items-center shadow-lg sm:shadow-none flex-grow">
-          <div className="flex justify-center items-center space-x-6 sm:space-x-8">
+          <div className="flex justify-center items-center space-x-2 p-2 rounded-2xl bg-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[5px] border border-white/30">
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
+              className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
+                router.pathname === "/"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
               aria-label="Home"
             >
               <Link href="/">Home</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
+              className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
+                router.pathname === "/about"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
               aria-label="About Me"
             >
               <Link href="/about">About Me</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
+              className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
+                router.pathname === "/contact"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
               aria-label="Contact"
             >
               <Link href="/contact">Contact</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
+              className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
+                router.pathname === "/projects"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
               aria-label="Projects"
             >
               <Link href="/projects">Projects</Link>
             </div>
             <div
-              className="block text-left text-base sm:text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light hover:underline"
+              className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
+                router.pathname === "/certifications"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
               aria-label="Certifications"
             >
               <Link href="/certifications">Certifications</Link>

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import AboutClients from '../components/about/AboutClients';
 import AboutCounter from '../components/about/AboutCounter';
 import AboutMeBio from '../components/about/AboutMeBio';
+import AboutSkills from '../components/about/AboutSkills';
 import PagesMetaHead from '../components/PagesMetaHead';
 import { useInView } from 'react-intersection-observer';
 
@@ -37,6 +38,14 @@ function About() {
           className="container mx-auto"
         >
           <AboutClients />
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="800"
+          className="container mx-auto"
+        >
+          <AboutSkills />
         </div>
       </div>
     </div>
