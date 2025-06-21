@@ -45,7 +45,7 @@ const skills = [
   { name: 'GitHub', level: 70, icon: <FaGithub className="text-primary-dark dark:text-primary-light" /> },
   { name: 'postgreSQL', level: 70, icon: <SiPostgresql className="text-blue-800" /> },
   { name: 'MongoDB', level: 70, icon: <SiMongodb className="text-green-700" /> },
-  { name: 'Python', level: 50, icon: <SiPython className="text-green-700" /> },
+  { name: 'Python', level: 70, icon: <SiPython className="text-green-700" /> },
 ];
 
 const SkillsProgressBarGrid = () => {
