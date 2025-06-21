@@ -31,6 +31,7 @@ const skills = [
   { name: 'HTML', level: 98, icon: <FaHtml5 className="text-orange-500" /> },
   { name: 'CSS', level: 98, icon: <FaCss3Alt className="text-blue-500" /> },
   { name: 'React', level: 95, icon: <FaReact className="text-cyan-400" /> },
+  { name: 'Python', level: 70, icon: <SiPython className="text-green-700" /> },
   { name: 'JavaScript', level: 90, icon: <FaJs className="text-yellow-400" /> },
   { name: 'Tailwind CSS', level: 85, icon: <SiTailwindcss className="text-cyan-500" /> },
   { name: 'Next.js', level: 80, icon: <SiNextdotjs className="text-primary-dark dark:text-primary-light" /> },
@@ -45,7 +46,7 @@ const skills = [
   { name: 'GitHub', level: 70, icon: <FaGithub className="text-primary-dark dark:text-primary-light" /> },
   { name: 'postgreSQL', level: 70, icon: <SiPostgresql className="text-blue-800" /> },
   { name: 'MongoDB', level: 70, icon: <SiMongodb className="text-green-700" /> },
-  { name: 'Python', level: 70, icon: <SiPython className="text-green-700" /> },
+ 
 ];
 
 const SkillsProgressBarGrid = () => {
