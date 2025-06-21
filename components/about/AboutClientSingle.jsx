@@ -2,14 +2,17 @@ import Image from 'next/image';
 
 function AboutClientSingle({ title, image }) {
 	return (
-		<div className="py-5 px-10 border bg-secondary-light border-ternary-light dark:border-ternary-dark  shadow-sm rounded-lg mb-5 cursor-pointer">
-			<Image
-				src={image}
-				alt={title}
-				layout="responsive"
-				width={50}
-				height={50}
-			/>
+		<div className="relative w-48 h-24 flex items-center justify-center">
+			<div className="absolute inset-0 bg-white rounded-lg" style={{ width: '100%', height: '100%', margin: 'auto' }}></div>
+			<div className="relative z-10 w-24 h-24 flex items-center justify-center">
+				<Image
+					src={image}
+					alt={title}
+					width={80}
+					height={80}
+					className="object-contain"
+				/>
+			</div>
 		</div>
 	);
 }

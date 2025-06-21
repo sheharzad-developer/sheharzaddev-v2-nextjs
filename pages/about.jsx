@@ -1,10 +1,12 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { AboutMeProvider } from '../context/AboutMeContext';
 import AboutClients from '../components/about/AboutClients';
 import AboutCounter from '../components/about/AboutCounter';
 import AboutMeBio from '../components/about/AboutMeBio';
 import AboutSkills from '../components/about/AboutSkills';
 import PagesMetaHead from '../components/PagesMetaHead';
 import { useInView } from 'react-intersection-observer';
+import Expertise from '../components/about/Expertise';
 
 function About() {
   const { ref, inView } = useInView({ triggerOnce: true, rootMargin: '-100px' });
@@ -38,6 +40,7 @@ function About() {
           className="container mx-auto"
         >
           <AboutClients />
+          <Expertise />
         </div>
         <div
           data-aos="fade-up"
