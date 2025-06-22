@@ -14,10 +14,11 @@ export const expertiseData = [
         items: ['WhatsApp Bots', 'Web Chat', 'Multi-modal', 'Context Management'],
     },
     {
-        icon: <FaCode className="text-4xl text-purple-500" />,
+        icon: <FaCode className="text-4xl text-violet-400" />,
         title: 'Full Stack Development',
         description: 'Crafting end-to-end web applications with modern frameworks and tools.',
         items: ['React/Next.js', 'Node.js', 'Python', 'Django'],
+        iconBgColor: "bg-primary-dark dark:bg-secondary-dark"
     },
     // {
     //     icon: <FaServer className="text-4xl text-blue-400" />,

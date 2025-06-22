@@ -12,6 +12,7 @@ const Expertise = () => {
                         title={service.title}
                         description={service.description}
                         items={service.items}
+                        iconBgColor={service.iconBgColor}
                     />
                 ))}
             </div>
