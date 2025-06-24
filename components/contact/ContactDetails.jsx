@@ -1,4 +1,6 @@
-import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiMail, FiBriefcase } from 'react-icons/fi';
+import { useState } from 'react';
+import HireMeModal from '../HireMeModal';
 
 const contacts = [
 	{
@@ -19,6 +21,12 @@ const contacts = [
 ];
 
 const ContactDetails = () => {
+	const [showModal, setShowModal] = useState(false);
+
+	function showHireMeModal() {
+		setShowModal(!showModal);
+	}
+
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="text-center lg:text-left max-w-xl px-4 mx-auto lg:mx-0">
@@ -39,7 +47,27 @@ const ContactDetails = () => {
 						</li>
 					))}
 				</ul>
+
+				{/* Hire Me Section */}
+				<div className="mt-8 pt-6 border-t border-ternary-light dark:border-ternary-dark">
+					<h3 className="font-general-medium text-lg sm:text-xl text-primary-dark dark:text-primary-light mb-4 text-center lg:text-left">
+						Ready to start a project?
+					</h3>
+					<button
+						onClick={showHireMeModal}
+						className="w-full lg:w-auto bg-indigo-500 hover:bg-indigo-600 text-white font-general-medium px-6 py-3 rounded-md shadow-sm transition-colors duration-300 flex items-center justify-center gap-2"
+						aria-label="Hire Me"
+					>
+						<FiBriefcase className="text-lg" />
+						Hire Me
+					</button>
+				</div>
 			</div>
+
+			{/* Hire Me Modal */}
+			{showModal && (
+				<HireMeModal onClose={showHireMeModal} onRequest={showHireMeModal} />
+			)}
 		</div>
 	);
 };
