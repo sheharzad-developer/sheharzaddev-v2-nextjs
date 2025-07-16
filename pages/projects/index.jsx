@@ -36,12 +36,6 @@ function index() {
   return (
     <>
       <style jsx>{`
-        .glassmorphism-bg {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          min-height: 100vh;
-          padding: 2rem 0;
-        }
-        
         .glass-card {
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(15px);
@@ -53,21 +47,24 @@ function index() {
         
         .glass-card:hover {
           background: rgba(255, 255, 255, 0.15);
-          transform: translateY(-5px);
-          box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+          transform: translateY(-8px);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .tech-badge {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.15);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.25);
           color: white;
           transition: all 0.2s ease;
+          font-weight: 500;
         }
         
         .tech-badge:hover {
-          background: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.25);
           transform: scale(1.05);
+          border: 1px solid rgba(255, 255, 255, 0.4);
         }
         
         .glass-button {
@@ -76,76 +73,90 @@ function index() {
           border: 1px solid rgba(255, 255, 255, 0.3);
           color: white;
           transition: all 0.3s ease;
+          font-weight: 600;
         }
         
         .glass-button:hover {
           background: linear-gradient(135deg, rgba(96, 165, 250, 0.5), rgba(59, 130, 246, 0.5));
           transform: scale(1.05);
           box-shadow: 0 10px 30px rgba(96, 165, 250, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.5);
         }
         
         .glass-text {
           color: white;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .glass-description {
           color: rgba(255, 255, 255, 0.9);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-container {
+          border-radius: 20px 20px 0 0;
+          overflow: hidden;
+        }
+        
+        .image-container img {
+          transition: transform 0.5s ease;
+        }
+        
+        .glass-card:hover .image-container img {
+          transform: scale(1.05);
         }
       `}</style>
       
-      <div className="glassmorphism-bg">
-        <div className="container mx-auto px-4">
-          <PagesMetaHead title="Projects" />
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-6 sm:mt-8">
-            {projects.map((project, idx) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.15 }}
-                className="glass-card overflow-hidden"
-              >
-                <div className="w-full h-56 overflow-hidden rounded-t-[20px]">
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
+      <div className="container mx-auto px-4">
+        <PagesMetaHead title="Projects" />
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-6 sm:mt-8">
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.15 }}
+              className="glass-card overflow-hidden"
+            >
+              <div className="image-container w-full h-56">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold glass-text mb-3">{project.title}</h3>
+                
+                <p className="text-sm glass-description mb-4 flex-1 leading-relaxed">
+                  {project.description}
+                </p>
+                
+                {/* Technology Badges */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, techIdx) => (
+                    <span
+                      key={techIdx}
+                      className="tech-badge px-3 py-1 text-xs rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
                 
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold glass-text mb-3">{project.title}</h3>
-                  
-                  <p className="text-sm glass-description mb-4 flex-1 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  {/* Technology Badges */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, techIdx) => (
-                      <span
-                        key={techIdx}
-                        className="tech-badge px-3 py-1 text-xs font-medium rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="glass-button inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg"
-                  >
-                    View Project →
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-button inline-flex items-center justify-center px-6 py-3 rounded-lg"
+                >
+                  View Project →
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </>
