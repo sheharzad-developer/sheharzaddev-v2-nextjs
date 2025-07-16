@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "ChatSmart AI",
+    img: "/images/ChatSmart-AI.png",
+    link: "https://github.com/sheharzad-developer/chatsmart-ai",
+    description: "Enterprise AI Document Intelligence Platform with Advanced RAG technology using Google Gemini 1.5",
+  },
+  {
     title: "Card Click and Play",
     img: "/images/Card-and-Click:Play.png",
     link: "https://sheharzad-developer.github.io/Card-Click-and-Play/",
