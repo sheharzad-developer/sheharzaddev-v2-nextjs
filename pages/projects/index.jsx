@@ -172,11 +172,8 @@ function index() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-6 sm:mt-8">
           {projects.map((project, idx) => (
-            <motion.div
+            <div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.15 }}
               className="glass-card overflow-hidden"
             >
               <div className="image-container w-full h-56">
@@ -215,7 +212,7 @@ function index() {
                   View Project →
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
