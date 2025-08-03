@@ -30,6 +30,36 @@ const projects = [
     description: "Professional corporate website with modern design and optimized user experience",
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Corporate Web", "UI/UX", "NuxtJS"]
   },
+  {
+    id: 4,
+    title: "Dental Syndicate",
+    subtitle: "Family Dental Care Website",
+    description: "A spectacular, family-focused dental clinic website featuring revolutionary glassmorphism design, advanced animations, and comprehensive appointment booking with SMS/WhatsApp notifications.",
+    image: "/projects/dental-syndicate.jpg", // You'll need to add this image
+    technologies: [
+      "Python Flask",
+      "HTML5",
+      "CSS3 (Glassmorphism)",
+      "JavaScript",
+      "SVG Design",
+      "Vercel",
+      "SMS API",
+      "WhatsApp API"
+    ],
+    features: [
+      "Revolutionary glassmorphism contact page with floating particles",
+      "Family-centered custom SVG logo design",
+      "Real-time appointment booking system",
+      "SMS/WhatsApp notification integration",
+      "Advanced CSS animations and backdrop blur effects",
+      "Responsive mobile-first design"
+    ],
+    liveUrl: "https://dental-syndicate.vercel.app",
+    githubUrl: "https://github.com/sheharzad-developer/dental-syndicate",
+    category: "Healthcare",
+    status: "completed",
+    year: "2025"
+  }
 ];
 
 function index() {
