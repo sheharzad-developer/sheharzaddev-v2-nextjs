@@ -3,35 +3,51 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    id: 1,
     title: "ChatSmart AI",
     img: "/images/ChatSmart-AI.png",
     link: "https://github.com/sheharzad-developer/chatsmart-ai",
     description: "Enterprise AI Document Intelligence Platform with Advanced RAG technology using Google Gemini 1.5",
-    technologies: ["Python", "Streamlit", "Google AI", "LangChain", "Machine Learning", "RAG", "FAISS", "HuggingFace"]
+    technologies: ["Python", "Streamlit", "Google AI", "LangChain", "Machine Learning", "RAG", "FAISS", "HuggingFace"],
+    category: "AI/ML",
+    status: "completed",
+    year: "2024"
   },
   {
+    id: 2,
     title: "Card Click and Play",
     img: "/images/Card-and-Click:Play.png",
     link: "https://sheharzad-developer.github.io/Card-Click-and-Play/",
     description: "Interactive superhero card game with dynamic gameplay and engaging user interface",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Game Development", "DOM Manipulation", "Responsive Design"]
+    technologies: ["HTML5", "CSS3", "JavaScript", "Game Development", "DOM Manipulation", "Responsive Design"],
+    category: "Game Development",
+    status: "completed",
+    year: "2024"
   },
   {
+    id: 3,
     title: "Exploding Text on Scroll",
     img: "/images/WebPage.png",
     link: "https://sheharzad-developer.github.io/sheharzad-explode-text-on-scroll-matterjs/",
     description: "Creative text animation effects using Matter.js physics engine with smooth scroll interactions",
-    technologies: ["JavaScript", "Matter.js", "CSS3", "Animation", "Physics Engine", "Scroll Effects"]
+    technologies: ["JavaScript", "Matter.js", "CSS3", "Animation", "Physics Engine", "Scroll Effects"],
+    category: "Animation",
+    status: "completed",
+    year: "2024"
   },
   {
+    id: 4,
     title: "Netsol Website",
     img: "/images/Netsoltech.png",
     link: "https://netsoltech.com/",
     description: "Professional corporate website with modern design and optimized user experience",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Corporate Web", "UI/UX", "NuxtJS"]
+    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Corporate Web", "UI/UX", "NuxtJS"],
+    category: "Corporate",
+    status: "completed",
+    year: "2024"
   },
   {
-    id: 4,
+    id: 5,
     title: "Dental Syndicate",
     subtitle: "Family Dental Care Website",
     description: "A spectacular, family-focused dental clinic website featuring revolutionary glassmorphism design, advanced animations, and comprehensive appointment booking with SMS/WhatsApp notifications.",
@@ -157,7 +173,7 @@ function index() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-6 sm:mt-8">
           {projects.map((project, idx) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.15 }}
