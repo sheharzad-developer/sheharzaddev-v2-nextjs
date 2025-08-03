@@ -35,7 +35,7 @@ const projects = [
     title: "Dental Syndicate",
     subtitle: "Family Dental Care Website",
     description: "A spectacular, family-focused dental clinic website featuring revolutionary glassmorphism design, advanced animations, and comprehensive appointment booking with SMS/WhatsApp notifications.",
-    img: "/projects/dental-syndicate.jpg",
+    img: "/projects/developer-dark.png",
     technologies: [
       "Python Flask",
       "HTML5",
@@ -54,7 +54,7 @@ const projects = [
       "Advanced CSS animations and backdrop blur effects",
       "Responsive mobile-first design"
     ],
-    liveUrl: "https://dental-syndicate.vercel.app/",
+    link: "https://dental-syndicate.vercel.app/",
     githubUrl: "https://github.com/sheharzad-developer/dental-syndicate",
     category: "Healthcare",
     status: "completed",
