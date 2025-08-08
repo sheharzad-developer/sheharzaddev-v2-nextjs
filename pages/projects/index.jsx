@@ -110,8 +110,8 @@ const projects = [
       "Responsive design for seamless experience on all devices",
       "Macro-counted meal delivery for healthier choices",
     ],
-    link: "https://dental-syndicate.vercel.app/",
-    githubUrl: "https://github.com/sheharzad-developer/dental-syndicate",
+    link: "https://daggys-cafe.vercel.app/",
+    githubUrl: "https://github.com/sheharzad-developer/daggys-cafe",
     category: "Healthcare",
     status: "completed",
     year: "2025"
