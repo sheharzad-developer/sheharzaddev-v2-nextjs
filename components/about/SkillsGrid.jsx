@@ -14,6 +14,7 @@ import {
   SiFirebase,
   SiTypescript,
 } from "react-icons/si";
+import { TbBrain, TbMessageChatbot } from "react-icons/tb";
 
 const techStack = [
   { name: "React", category: "Frontend", icon: <FaReact className="text-sky-400" /> },
@@ -23,6 +24,8 @@ const techStack = [
   { name: "Tailwind", category: "Frontend", icon: <SiTailwindcss className="text-sky-500" /> },
   { name: "TypeScript", category: "Frontend", icon: <SiTypescript className="text-blue-500" /> },
   { name: "OpenAI", category: "AI", icon: <SiOpenai className="text-green-400" /> },
+  { name: "LLM", category: "AI", icon: <TbBrain className="text-purple-500" /> },
+  { name: "Chatbot Development", category: "AI", icon: <TbMessageChatbot className="text-blue-400" /> },
   { name: "MongoDB", category: "Database", icon: <SiMongodb className="text-green-600" /> },
   { name: "PostgreSQL", category: "Database", icon: <SiPostgresql className="text-blue-500" /> },
   { name: "GitHub", category: "DevOps", icon: <FaGithub className="text-black dark:text-white" /> },
@@ -55,4 +58,4 @@ const SkillsGrid = () => {
   );
 };
 
-export default SkillsGrid; 
+export default SkillsGrid;
