@@ -68,7 +68,7 @@ function AppBanner() {
           }}
           className='font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200'
         >
-          Frontend Developer | React.js | Node.js | JavaScript Specialist | Python Enthusiast | LLM | Building Scalable Web Applications
+          Frontend Developer | React.js | Node.js | Python Enthusiast | LLM | Building Scalable Web Applications
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
