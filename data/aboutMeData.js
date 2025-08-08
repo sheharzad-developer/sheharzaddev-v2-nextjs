@@ -11,11 +11,11 @@ export const aboutMeData = [
 	},
 	{
 		id: 3,
-		bio: 'Now actively transitioning into Python development, with a growing focus on backend systems, data analytics, and automation expanding capabilities beyond frontend to build robust, end-to-end solutions.'
+		bio: 'Now actively transitioning into Python, AI, and LLM (Large Language Model) development, with a growing focus on backend systems, data analytics, automation, and intelligent solutions — expanding capabilities beyond frontend to build robust, end-to-end, and AI-powered applications.'
 	},
 	{
 		id: 4,
-		bio: 'Backed by a solid foundation in software engineering, agile methodologies, and recognized for strong problem-solving skills, collaborative mindset, and commitment to ethical development practices.'
+		bio: 'Backed by a solid foundation in software engineering, agile methodologies, and recognized for strong problem-solving skills, a collaborative mindset, and a commitment to ethical and responsible development practices.'
 	}
 ];
 
