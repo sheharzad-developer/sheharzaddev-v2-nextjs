@@ -2,6 +2,19 @@ import { useEffect } from 'react';
 
 const ParticlesBackground = () => {
   useEffect(() => {
+    // Function to get particle colors based on theme
+    const getParticleColors = () => {
+      // Check if dark mode is active
+      const isDarkMode = document.documentElement.classList.contains('dark') || 
+                        document.body.classList.contains('dark') ||
+                        window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      return {
+        particleColor: isDarkMode ? '#ffffff' : '#667eea',
+        lineColor: isDarkMode ? '#ffffff' : '#667eea'
+      };
+    };
+
     // Load particles.js script dynamically
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
@@ -10,6 +23,8 @@ const ParticlesBackground = () => {
     script.onload = () => {
       // Initialize particles.js after script loads
       if (window.particlesJS) {
+        const colors = getParticleColors();
+        
         window.particlesJS('particles-js', {
           particles: {
             number: {
@@ -20,7 +35,7 @@ const ParticlesBackground = () => {
               }
             },
             color: {
-              value: '#ffffff'
+              value: colors.particleColor
             },
             shape: {
               type: 'circle',
@@ -52,7 +67,7 @@ const ParticlesBackground = () => {
             line_linked: {
               enable: true,
               distance: 150,
-              color: '#ffffff',
+              color: colors.lineColor,
               opacity: 0.4,
               width: 1
             },
@@ -117,11 +132,38 @@ const ParticlesBackground = () => {
 
     document.head.appendChild(script);
 
+    // Function to update particles when theme changes
+    const updateParticlesForTheme = () => {
+      if (window.pJSDom && window.pJSDom[0]) {
+        const colors = getParticleColors();
+        const pJS = window.pJSDom[0].pJS;
+        
+        // Update particle colors
+        pJS.particles.array.forEach(particle => {
+          particle.color.value = colors.particleColor;
+        });
+        
+        // Update line colors
+        pJS.particles.line_linked.color = colors.lineColor;
+        
+        // Refresh the canvas
+        pJS.fn.canvasPaint();
+      }
+    };
+
+    // Listen for theme changes
+    const observer = new MutationObserver(updateParticlesForTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
     // Cleanup function
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
       }
+      observer.disconnect();
     };
   }, []);
 
