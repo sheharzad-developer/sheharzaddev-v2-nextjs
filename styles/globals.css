@@ -39,6 +39,27 @@ body {
 	}
 }
 
+/* Hide scroll indicators and arrows */
+::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide any custom scroll indicators */
+.scroll-indicator,
+.scroll-arrow,
+[class*="scroll"],
+[class*="arrow"] {
+	display: none !important;
+}
+
+/* Hide any gradient bars or visual indicators on the right */
+.gradient-bar,
+.visual-indicator,
+[class*="gradient"],
+[class*="indicator"] {
+	display: none !important;
+}
+
 body::before {
 	content: '';
 	position: fixed;
