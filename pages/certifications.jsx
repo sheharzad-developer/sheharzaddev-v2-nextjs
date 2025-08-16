@@ -6,6 +6,7 @@ import three from "../public/images/certifications/three.jpg";
 import four from "../public/images/certifications/four.jpg";
 import five from "../public/images/certifications/five.jpg";
 
+
 const Certifications = () => {
   return (
     <div className="container mx-auto">
@@ -58,6 +59,9 @@ const Certifications = () => {
           <div
             className="w-full"
             key="python-cert"
+            data-aos="fade-left"
+            data-aos-delay={300 + 5 * 150}
+            data-aos-duration="700"
           >
             <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800">
               <a 
