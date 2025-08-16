@@ -1,7 +1,7 @@
 const ExpertiseCard = ({ icon, title, description, items, iconBgColor = "bg-primary-dark dark:bg-secondary-dark" }) => {
     return (
         <div className="bg-white dark:bg-ternary-dark p-8 rounded-2xl shadow-lg h-full flex flex-col space-y-4">
-            <div className={`${iconBgColor} w-16 h-16 flex items-center justify-center rounded-2xl mb-4`}>
+            <div className={`dark:bg-ternary-dark w-16 h-16 flex items-center justify-center rounded-2xl mb-4`}>
                 {icon}
             </div>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
