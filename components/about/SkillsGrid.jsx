@@ -42,7 +42,7 @@ const SkillsGrid = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
         {techStack.map((tech) => (
           <div key={tech.name} className="flex flex-col items-center">
-            <div className="bg-secondary-light dark:bg-secondary-dark w-20 h-20 flex items-center justify-center rounded-2xl text-4xl mb-2">
+            <div className="bg-secondary-light dark:bg-secondary-dark w-20 h-20 flex items-center justify-center rounded-2xl text-4xl mb-2 shadow-lg hover:shadow-xl transition-shadow duration-300">
               {tech.icon}
             </div>
             <h4 className="font-bold text-primary-dark dark:text-ternary-light">
