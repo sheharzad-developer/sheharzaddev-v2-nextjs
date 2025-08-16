@@ -2,6 +2,7 @@ import Link from "next/link";
 import PagesMetaHead from "../components/PagesMetaHead";
 import Button from "../components/reusable/Button";
 import AppBanner from "../components/shared/AppBanner";
+import ParticlesBackground from "../components/shared/ParticlesBackground";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
@@ -73,10 +74,12 @@ export default function Home() {
   const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "-100px" });
 
   return (
-    <div className="container mx-auto">
-      <PagesMetaHead title="Sheharzad" />
+    <>
+      <ParticlesBackground />
+      <div className="container mx-auto relative z-10">
+        <PagesMetaHead title="Sheharzad" />
 
-      <AppBanner />
+        <AppBanner />
 
       {/* <div className="my-8">
         <SkillsProgressBarGrid />
@@ -254,6 +257,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
