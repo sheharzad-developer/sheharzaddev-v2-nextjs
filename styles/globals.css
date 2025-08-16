@@ -12,17 +12,31 @@ html {
 body {
 	padding: 0;
 	margin: 0;
+	padding-top: 70px; /* Add padding for fixed header */
 	font-family: 'GeneralSans-Variable';
 	min-height: 100%;
 	width: 100%;
 	position: relative;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-
+	
 	/* Impressive Body Theme */
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	background-attachment: fixed;
 	position: relative;
+}
+
+/* Responsive padding for fixed header */
+@media (min-width: 640px) {
+	body {
+		padding-top: 90px;
+	}
+}
+
+@media (min-width: 1024px) {
+	body {
+		padding-top: 100px;
+	}
 }
 
 body::before {

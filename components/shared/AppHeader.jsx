@@ -48,7 +48,7 @@ function AppHeader() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       id="nav"
-      className="sm:container sm:mx-auto my-4 py-4 sm:py-6 rounded-xl bg-primary-light bg-opacity-80 dark:bg-secondary-dark dark:bg-opacity-80"
+      className="fixed top-0 left-0 right-0 z-50 sm:container sm:mx-auto py-4 sm:py-6 rounded-xl bg-primary-light bg-opacity-90 dark:bg-secondary-dark dark:bg-opacity-90 backdrop-blur-sm shadow-lg"
     >
       {/* Header */}
       <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center">
