@@ -100,21 +100,21 @@ const ParticlesBackground = () => {
               }
             },
             opacity: {
-              value: 0.3, // Very low opacity for subtlety
+              value: 0.7, // Very low opacity for subtlety
               random: true,
               anim: {
                 enable: true,
                 speed: 1,
-                opacity_min: 0.1, // Very low minimum
+                opacity_min: 0.7, // Very low minimum
                 sync: false
               }
             },
             size: {
-              value: 1.5, // Small, delicate particles
+              value: 2, // Small, delicate particles
               random: true,
               anim: {
                 enable: true,
-                speed: 2,
+                speed: 6,
                 size_min: 0.5, // Very small minimum
                 sync: false
               }
