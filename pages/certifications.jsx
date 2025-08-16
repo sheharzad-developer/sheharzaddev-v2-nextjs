@@ -58,11 +58,8 @@ const Certifications = () => {
           <div
             className="w-full"
             key="python-cert"
-            data-aos="fade-left"
-            data-aos-delay={300 + 5 * 150}
-            data-aos-duration="700"
           >
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-green-500">
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-red-100 dark:bg-gray-800 border-2 border-green-500" style={{minHeight: '200px'}}>
               <a 
                 href="/images/certifications/Python-Certificate.pdf" 
                 target="_blank" 
@@ -83,13 +80,13 @@ const Certifications = () => {
                     <div className="text-4xl sm:text-5xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
                       🐍
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">Python Certificate</h3>
-                    <p className="text-sm opacity-90 mb-3">Programming Certification</p>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-black">Python Certificate</h3>
+                    <p className="text-sm opacity-90 mb-3 text-black">Programming Certification</p>
                     <div className="flex items-center justify-center space-x-2 text-xs opacity-75">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
                       </svg>
-                      <span>PDF Document</span>
+                      <span className="text-black">PDF Document</span>
                     </div>
                   </div>
                   
