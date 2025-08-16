@@ -22,7 +22,7 @@ const ContactDetails = () => {
 	};
 
 	const handleCalendlyClick = () => {
-		window.open('https://calendly.com/sheharzad/15min', '_blank');
+		window.open('https://calendly.com/sheharzad-salahuddin9000/30min', '_blank');
 	};
 
 	return (
@@ -95,7 +95,7 @@ const ContactDetails = () => {
 							</div>
 							<div className="flex-1 text-left">
 								<h3 className="font-semibold text-purple-800 dark:text-purple-200">Book a Coffee Chat ☕</h3>
-								<p className="text-sm text-purple-600 dark:text-purple-300">15-minute discovery call</p>
+								<p className="text-sm text-purple-600 dark:text-purple-300">30-minute discovery call</p>
 							</div>
 							<FiExternalLink className="text-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 						</div>

@@ -19,7 +19,7 @@ const FloatingContactButton = () => {
   };
 
   const handleCalendlyClick = () => {
-    window.open('https://calendly.com/sheharzad/15min', '_blank');
+    window.open('https://calendly.com/sheharzad-salahuddin9000/30min', '_blank');
     setIsOpen(false);
   };
 
