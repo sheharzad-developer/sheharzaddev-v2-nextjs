@@ -62,9 +62,14 @@ const Certifications = () => {
             data-aos-delay={300 + 5 * 150}
             data-aos-duration="700"
           >
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <a href="/images/certifications/Python-Certificate.pdf" target="_blank" rel="noopener noreferrer">
-                <div className="aspect-[4/3] bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 relative flex flex-col items-center justify-center text-white group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-indigo-800 transition-all duration-300">
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-green-500">
+              <a 
+                href="/images/certifications/Python-Certificate.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => console.log('Python Certificate PDF clicked')}
+              >
+                <div className="aspect-[4/3] bg-gradient-to-br from-green-500 via-blue-600 to-purple-700 relative flex flex-col items-center justify-center text-white group-hover:from-green-600 group-hover:via-blue-700 group-hover:to-purple-800 transition-all duration-300">
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-4 left-4 w-8 h-8 border-2 border-white rounded-full"></div>
