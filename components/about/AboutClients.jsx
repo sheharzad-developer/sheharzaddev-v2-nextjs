@@ -7,8 +7,8 @@ function AboutClients() {
 	const [clients, setClients] = useState(clientsData);
 
 	return (
-		<div className="mt-10 sm:mt-20 bg-primary-dark dark:bg-primary-dark py-12 rounded-lg">
-			<h2 className="font-general-medium text-2xl sm:text-3xl text-center text-white mb-12">
+		<div className="mt-10 sm:mt-20 bg-gray-100 dark:bg-primary-dark py-12 rounded-lg">
+			<h2 className="font-general-medium text-2xl sm:text-3xl text-center text-gray-900 dark:text-white mb-12">
 				{clientsHeading}
 			</h2>
 			<div className="grid grid-cols-2 sm:grid-cols-4 justify-items-center items-center mt-10 sm:mt-14 gap-8">
