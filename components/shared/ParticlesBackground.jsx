@@ -2,29 +2,40 @@ import { useEffect } from 'react';
 
 const ParticlesBackground = () => {
   useEffect(() => {
-    // Function to get particle colors based on theme
+        // Function to get particle colors based on theme
     const getParticleColors = () => {
-      // Check if dark mode is active - more comprehensive detection
-      const isDarkMode = document.documentElement.classList.contains('dark') ||
-        document.body.classList.contains('dark') ||
-        document.querySelector('html').classList.contains('dark') ||
-        window.matchMedia('(prefers-color-scheme: dark)').matches ||
-        document.body.style.backgroundColor === 'rgb(0, 0, 0)' ||
-        document.body.style.backgroundColor === 'black';
-
-      console.log('Theme detection:', {
+      // Check if dark/blue theme is active
+      const computedStyle = window.getComputedStyle(document.body);
+      const background = computedStyle.background || computedStyle.backgroundColor;
+      
+      const isDarkMode = document.documentElement.classList.contains('dark') || 
+                        document.body.classList.contains('dark') ||
+                        document.querySelector('html').classList.contains('dark') ||
+                        window.matchMedia('(prefers-color-scheme: dark)').matches ||
+                        document.body.style.backgroundColor === 'rgb(0, 0, 0)' ||
+                        document.body.style.backgroundColor === 'black' ||
+                        // Check for blue theme indicators
+                        background.includes('linear-gradient') ||
+                        background.includes('667eea') ||
+                        background.includes('764ba2') ||
+                        background.includes('rgb(102, 126, 234)') ||
+                        background.includes('rgb(118, 75, 162)');
+      
+      console.log('Theme detection:', { 
         isDarkMode,
         htmlClasses: document.documentElement.classList.toString(),
         bodyClasses: document.body.classList.toString(),
-        bodyBg: document.body.style.backgroundColor
+        bodyBg: document.body.style.backgroundColor,
+        bodyBackground: document.body.style.background,
+        computedBackground: background
       });
-
-      // Force black particles for light theme if detection fails
+      
+      // White particles for blue/dark theme, black particles for white theme
       const particleColor = isDarkMode ? '#ffffff' : '#000000';
       const lineColor = isDarkMode ? '#ffffff' : '#000000';
-
+      
       console.log('Using colors:', { particleColor, lineColor });
-
+      
       return { particleColor, lineColor };
     };
 
@@ -40,14 +51,8 @@ const ParticlesBackground = () => {
 
                 console.log('Initializing particles with colors:', colors);
         
-        // Force black particles for testing light theme visibility
-        const forceBlackForLightTheme = true; // Set to true to force black particles
-        
-        if (forceBlackForLightTheme) {
-          colors.particleColor = '#000000';
-          colors.lineColor = '#000000';
-          console.log('Forcing black particles for light theme visibility');
-        }
+        // Use theme-appropriate colors
+        console.log('Using theme-appropriate colors:', colors);
         
         // Fallback configuration for light theme
         const fallbackConfig = {
