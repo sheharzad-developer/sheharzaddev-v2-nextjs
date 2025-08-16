@@ -83,10 +83,10 @@ const ParticlesBackground = () => {
         window.particlesJS('particles-js', {
           particles: {
             number: {
-              value: 150, // Even more particles for better visibility
+              value: 40, // Minimal particles for airy feel
               density: {
                 enable: true,
-                value_area: 800
+                value_area: 1000
               }
             },
             color: {
@@ -100,44 +100,44 @@ const ParticlesBackground = () => {
               }
             },
             opacity: {
-              value: 1.0, // Full opacity for maximum visibility
-              random: false,
+              value: 0.3, // Very low opacity for subtlety
+              random: true,
               anim: {
-                enable: false,
+                enable: true,
                 speed: 1,
-                opacity_min: 0.7, // Higher minimum opacity
+                opacity_min: 0.1, // Very low minimum
                 sync: false
               }
             },
             size: {
-              value: 6, // Larger particles
+              value: 1.5, // Small, delicate particles
               random: true,
               anim: {
-                enable: false,
-                speed: 40,
-                size_min: 2, // Larger minimum size
+                enable: true,
+                speed: 2,
+                size_min: 0.5, // Very small minimum
                 sync: false
               }
             },
             line_linked: {
               enable: true,
-              distance: 150,
+              distance: 200, // Longer distance for airy feel
               color: colors.lineColor,
-              opacity: 0.8, // Much more visible lines
-              width: 2 // Thicker lines
+              opacity: 0.2, // Very subtle lines
+              width: 0.5 // Fine, thin lines
             },
             move: {
               enable: true,
-              speed: 6,
+              speed: 2, // Slow, gentle movement
               direction: 'none',
-              random: false,
+              random: true,
               straight: false,
-              out_mode: 'out',
-              bounce: false,
+              out_mode: 'bounce', // Gentle bounce for soft effect
+              bounce: true,
               attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200
+                enable: true,
+                rotateX: 300,
+                rotateY: 600
               }
             }
           },
@@ -146,37 +146,37 @@ const ParticlesBackground = () => {
             events: {
               onhover: {
                 enable: true,
-                mode: 'repulse'
+                mode: 'grab' // Gentle grab instead of repulse
               },
               onclick: {
                 enable: true,
-                mode: 'push'
+                mode: 'bubble' // Soft bubble effect
               },
               resize: true
             },
             modes: {
               grab: {
-                distance: 400,
+                distance: 140,
                 line_linked: {
-                  opacity: 1
+                  opacity: 0.5
                 }
               },
               bubble: {
-                distance: 400,
-                size: 40,
-                duration: 2,
-                opacity: 8,
-                speed: 3
+                distance: 200,
+                size: 20,
+                duration: 3,
+                opacity: 0.3,
+                speed: 2
               },
               repulse: {
-                distance: 200,
-                duration: 0.4
+                distance: 100,
+                duration: 0.8
               },
               push: {
-                particles_nb: 4
+                particles_nb: 2
               },
               remove: {
-                particles_nb: 2
+                particles_nb: 1
               }
             }
           },
