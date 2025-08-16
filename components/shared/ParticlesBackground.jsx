@@ -9,9 +9,11 @@ const ParticlesBackground = () => {
                         document.body.classList.contains('dark') ||
                         window.matchMedia('(prefers-color-scheme: dark)').matches;
       
+      console.log('Theme detection:', { isDarkMode });
+      
       return {
-        particleColor: isDarkMode ? '#ffffff' : '#667eea',
-        lineColor: isDarkMode ? '#ffffff' : '#667eea'
+        particleColor: isDarkMode ? '#ffffff' : '#000000',
+        lineColor: isDarkMode ? '#ffffff' : '#000000'
       };
     };
 
@@ -24,6 +26,8 @@ const ParticlesBackground = () => {
       // Initialize particles.js after script loads
       if (window.particlesJS) {
         const colors = getParticleColors();
+        
+        console.log('Initializing particles with colors:', colors);
         
         window.particlesJS('particles-js', {
           particles: {
@@ -45,22 +49,22 @@ const ParticlesBackground = () => {
               }
             },
             opacity: {
-              value: 0.5,
+              value: 0.8,
               random: false,
               anim: {
                 enable: false,
                 speed: 1,
-                opacity_min: 0.1,
+                opacity_min: 0.3,
                 sync: false
               }
             },
             size: {
-              value: 3,
+              value: 4,
               random: true,
               anim: {
                 enable: false,
                 speed: 40,
-                size_min: 0.1,
+                size_min: 0.5,
                 sync: false
               }
             },
@@ -178,6 +182,7 @@ const ParticlesBackground = () => {
           left: 0;
           z-index: 1;
           pointer-events: none;
+          background: transparent;
         }
       `}</style>
       <div id="particles-js"></div>
