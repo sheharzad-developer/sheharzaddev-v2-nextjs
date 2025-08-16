@@ -73,9 +73,8 @@ export default function Home() {
   const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "-100px" });
 
   return (
-    <div className="impressive-bg">
-      <div className="container mx-auto relative z-10">
-        <PagesMetaHead title="Sheharzad" />
+    <div className="container mx-auto">
+      <PagesMetaHead title="Sheharzad" />
 
       <AppBanner />
 
@@ -95,58 +94,6 @@ export default function Home() {
       </div>
 
       <style jsx>{`
-        /* Impressive Background Theme */
-        .impressive-bg {
-          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-          background-size: 400% 400%;
-          animation: gradientShift 15s ease infinite;
-          position: relative;
-          min-height: 100vh;
-        }
-        
-        .impressive-bg::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-          animation: float 20s ease-in-out infinite;
-        }
-        
-        .impressive-bg::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-image: 
-            url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-          animation: sparkle 10s linear infinite;
-        }
-        
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-20px) rotate(1deg); }
-          66% { transform: translateY(10px) rotate(-1deg); }
-        }
-        
-        @keyframes sparkle {
-          0% { transform: translateY(0px); }
-          100% { transform: translateY(-100px); }
-        }
-        
         .glass-card {
           background: rgba(255, 255, 255, 0.2);
           border-radius: 16px;
@@ -306,7 +253,6 @@ export default function Home() {
             <Button title="View All Projects" />
           </Link>
         </div>
-      </div>
       </div>
     </div>
   );
