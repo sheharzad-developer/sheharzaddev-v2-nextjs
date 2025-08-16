@@ -213,7 +213,7 @@ export default function Home() {
             <div className="p-6 flex-1 flex flex-col glassmorphism">
               <h3 className="text-xl font-bold glass-text mb-3 flex-shrink-0">{project.title}</h3>
               <p className="text-sm glass-description mb-4 flex-1 leading-relaxed line-clamp-3">{project.description}</p>
-              
+
               {/* Technology Tags */}
               <div className="flex flex-wrap gap-2 mb-6 flex-shrink-0">
                 {project.technologies.slice(0, 3).map((tech, techIdx) => (
@@ -230,7 +230,7 @@ export default function Home() {
                   </span>
                 )}
               </div>
-              
+
               <div className="flex justify-between items-center flex-shrink-0">
                 <span className="text-xs glass-description">{project.category} • {project.year}</span>
                 <a
