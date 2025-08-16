@@ -93,6 +93,93 @@ export default function Home() {
 
       </div>
 
+      <style jsx>{`
+        .glass-card {
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: translateY(-8px);
+          box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .tech-badge {
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-radius: 12px;
+          color: white;
+          transition: all 0.2s ease;
+          font-weight: 500;
+        }
+        
+        .tech-badge:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: scale(1.05);
+          border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .glass-button {
+          background: rgba(96, 165, 250, 0.2);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 12px;
+          color: white;
+          transition: all 0.3s ease;
+          font-weight: 600;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-button:hover {
+          background: rgba(96, 165, 250, 0.3);
+          transform: scale(1.05);
+          box-shadow: 0 6px 30px rgba(96, 165, 250, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .glass-text {
+          color: white;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .glass-description {
+          color: rgba(255, 255, 255, 0.9);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-container {
+          border-radius: 16px 16px 0 0;
+          overflow: hidden;
+        }
+        
+        .image-container img {
+          transition: transform 0.5s ease;
+        }
+        
+        .glass-card:hover .image-container img {
+          transform: scale(1.05);
+        }
+        
+        .glassmorphism {
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 0 0px 16px 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+      `}</style>
+
       <h2 className="font-general-medium text-2xl sm:text-3xl text-center text-primary-dark dark:text-primary-light mt-10 mb-4">Featured Projects</h2>
       <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 sm:mt-8">
         {projects.map((project, idx) => (
@@ -101,9 +188,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.15 }}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            className="glass-card overflow-hidden"
           >
-            <div className="w-full h-48 relative">
+            <div className="image-container w-full h-48 relative">
               <Image
                 src={project.img}
                 alt={project.title}
@@ -113,34 +200,34 @@ export default function Home() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">{project.description}</p>
+            <div className="p-6 flex-1 flex flex-col glassmorphism">
+              <h3 className="text-xl font-bold glass-text mb-3">{project.title}</h3>
+              <p className="text-sm glass-description mb-4 flex-1 leading-relaxed">{project.description}</p>
               
               {/* Technology Tags */}
-              <div className="flex flex-wrap gap-1 mb-4">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.technologies.slice(0, 3).map((tech, techIdx) => (
                   <span
                     key={techIdx}
-                    className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
+                    className="tech-badge px-3 py-1 text-xs rounded-full"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.technologies.length > 3 && (
-                  <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-full">
+                  <span className="tech-badge px-3 py-1 text-xs rounded-full">
                     +{project.technologies.length - 3} more
                   </span>
                 )}
               </div>
               
               <div className="flex justify-between items-center">
-                <span className="text-xs text-gray-500 dark:text-gray-400">{project.category} • {project.year}</span>
+                <span className="text-xs glass-description">{project.category} • {project.year}</span>
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors text-sm font-medium"
+                  className="glass-button inline-flex items-center justify-center px-6 py-3 rounded-lg"
                 >
                   View Project →
                 </a>
