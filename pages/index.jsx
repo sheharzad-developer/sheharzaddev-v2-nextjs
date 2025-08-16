@@ -102,6 +102,9 @@ export default function Home() {
           -webkit-backdrop-filter: blur(5px);
           border: 1px solid rgba(255, 255, 255, 0.3);
           transition: all 0.3s ease;
+          height: 500px;
+          display: flex;
+          flex-direction: column;
         }
         
         .glass-card:hover {
@@ -178,6 +181,13 @@ export default function Home() {
           -webkit-backdrop-filter: blur(5px);
           border: 1px solid rgba(255, 255, 255, 0.3);
         }
+        
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
       `}</style>
 
       <h2 className="font-general-medium text-2xl sm:text-3xl text-center text-primary-dark dark:text-primary-light mt-10 mb-4">Featured Projects</h2>
@@ -190,7 +200,7 @@ export default function Home() {
             transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.15 }}
             className="glass-card overflow-hidden"
           >
-            <div className="image-container w-full h-48 relative">
+            <div className="image-container w-full h-56 relative flex-shrink-0">
               <Image
                 src={project.img}
                 alt={project.title}
@@ -201,11 +211,11 @@ export default function Home() {
               />
             </div>
             <div className="p-6 flex-1 flex flex-col glassmorphism">
-              <h3 className="text-xl font-bold glass-text mb-3">{project.title}</h3>
-              <p className="text-sm glass-description mb-4 flex-1 leading-relaxed">{project.description}</p>
+              <h3 className="text-xl font-bold glass-text mb-3 flex-shrink-0">{project.title}</h3>
+              <p className="text-sm glass-description mb-4 flex-1 leading-relaxed line-clamp-3">{project.description}</p>
               
               {/* Technology Tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2 mb-6 flex-shrink-0">
                 {project.technologies.slice(0, 3).map((tech, techIdx) => (
                   <span
                     key={techIdx}
@@ -221,7 +231,7 @@ export default function Home() {
                 )}
               </div>
               
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center flex-shrink-0">
                 <span className="text-xs glass-description">{project.category} • {project.year}</span>
                 <a
                   href={project.link}
