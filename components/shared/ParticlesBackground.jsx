@@ -83,7 +83,7 @@ const ParticlesBackground = () => {
         window.particlesJS('particles-js', {
           particles: {
             number: {
-              value: 120, // More particles
+              value: 150, // Even more particles for better visibility
               density: {
                 enable: true,
                 value_area: 800
@@ -100,22 +100,22 @@ const ParticlesBackground = () => {
               }
             },
             opacity: {
-              value: 0.8,
+              value: 1.0, // Full opacity for maximum visibility
               random: false,
               anim: {
                 enable: false,
                 speed: 1,
-                opacity_min: 0.3,
+                opacity_min: 0.7, // Higher minimum opacity
                 sync: false
               }
             },
             size: {
-              value: 4,
+              value: 6, // Larger particles
               random: true,
               anim: {
                 enable: false,
                 speed: 40,
-                size_min: 0.5,
+                size_min: 2, // Larger minimum size
                 sync: false
               }
             },
@@ -123,8 +123,8 @@ const ParticlesBackground = () => {
               enable: true,
               distance: 150,
               color: colors.lineColor,
-              opacity: 0.4,
-              width: 1
+              opacity: 0.8, // Much more visible lines
+              width: 2 // Thicker lines
             },
             move: {
               enable: true,
