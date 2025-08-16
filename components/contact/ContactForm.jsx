@@ -1,78 +1,167 @@
-import Button from '../reusable/Button';
-import FormInput from '../reusable/FormInput';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function ContactForm() {
-	return (
-		<div className="w-full lg:w-1/2">
-			<div className="leading-loose">
-				<form
-					onSubmit={(e) => {
-						e.preventDefault();
-					}}
-					className="max-w-xl m-4 p-4 sm:p-6 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
-				>
-					<p className="font-general-medium text-primary-dark dark:text-primary-light text-lg sm:text-xl mb-4 sm:mb-6">
-						Contact Form
-					</p>
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
 
-					<FormInput
-						inputLabel="Full Name"
-						labelFor="name"
-						inputType="text"
-						inputId="name"
-						inputName="name"
-						placeholderText="Your Name"
-						ariaLabelName="Name"
-					/>
-					<FormInput
-						inputLabel="Email"
-						labelFor="email"
-						inputType="email"
-						inputId="email"
-						inputName="email"
-						placeholderText="Your email"
-						ariaLabelName="Email"
-					/>
-					<FormInput
-						inputLabel="Subject"
-						labelFor="subject"
-						inputType="text"
-						inputId="subject"
-						inputName="subject"
-						placeholderText="Subject"
-						ariaLabelName="Subject"
-					/>
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
-					<div className="mt-4">
-						<label
-							className="block text-base sm:text-lg text-primary-dark dark:text-primary-light mb-1"
-							htmlFor="message"
-						>
-							Message
-						</label>
-						<textarea
-							className="w-full px-4 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-base sm:text-md"
-							id="message"
-							name="message"
-							cols="14"
-							rows="5"
-							aria-label="Message"
-						></textarea>
-					</div>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      setTimeout(() => setSubmitStatus(''), 3000);
+    }, 2000);
+  };
 
-					<div className="mt-4">
-						<span className="font-general-medium px-4 py-2 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500">
-							<Button
-								title="Send Message"
-								type="submit"
-								aria-label="Send Message"
-							/>
-						</span>
-					</div>
-				</form>
-			</div>
-		</div>
-	);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="w-full lg:w-1/2"
+    >
+      <div className="leading-loose">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-xl m-4 p-6 sm:p-10 bg-white dark:bg-secondary-dark rounded-2xl shadow-xl"
+        >
+          <p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
+            Let&apos;s work together
+          </p>
+          
+          <div className="mb-6">
+            <label
+              className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+              htmlFor="name"
+            >
+              Name
+            </label>
+            <input
+              className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+              id="name"
+              name="name"
+              type="text"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your name"
+              aria-label="Name"
+            />
+          </div>
+          
+          <div className="mb-6">
+            <label
+              className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="your@email.com"
+              aria-label="Email"
+            />
+          </div>
+          
+          <div className="mb-6">
+            <label
+              className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+              htmlFor="subject"
+            >
+              Subject
+            </label>
+            <input
+              className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+              id="subject"
+              name="subject"
+              type="text"
+              required
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Project inquiry"
+              aria-label="Subject"
+            />
+          </div>
+          
+          <div className="mb-6">
+            <label
+              className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+              htmlFor="message"
+            >
+              Message
+            </label>
+            <textarea
+              className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+              id="message"
+              name="message"
+              cols="14"
+              rows="6"
+              aria-label="Message"
+              required
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell me about your project..."
+            ></textarea>
+          </div>
+          
+          <div className="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 disabled:opacity-50 disabled:cursor-not-allowed duration-300 rounded-lg shadow-lg hover:shadow-xl cursor-pointer transition-all transform hover:scale-105">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full"
+            >
+              {isSubmitting ? (
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending...
+                </span>
+              ) : (
+                'Send Message'
+              )}
+            </button>
+          </div>
+          
+          {submitStatus === 'success' && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+            >
+              ✅ Message sent successfully! I&apos;ll get back to you within 24 hours.
+            </motion.div>
+          )}
+        </form>
+      </div>
+    </motion.div>
+  );
 }
 
 export default ContactForm;

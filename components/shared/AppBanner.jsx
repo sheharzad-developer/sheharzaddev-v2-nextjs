@@ -4,6 +4,7 @@ import useThemeSwitcher from '../../hooks/useThemeSwitcher'
 import { useRef, Suspense, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import Link from 'next/link'
 import BannerImg from '../../public/images/bannerImg.2a08b5b3.svg'
 
 // Dynamically import Lottie with no SSR
@@ -54,10 +55,24 @@ function AppBanner() {
             duration: 0.9,
             delay: 0.1
           }}
-          className='font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase'
+          className='font-general-semibold text-3xl lg:text-4xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light'
         >
-          Hi, I am Sheharzad Salahuddin
+          Hi, I&apos;m <span className="text-indigo-600 dark:text-indigo-400">Sheharzad</span>
         </motion.h1>
+        
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            ease: 'easeInOut',
+            duration: 0.9,
+            delay: 0.15
+          }}
+          className='font-general-medium mt-2 text-lg md:text-xl lg:text-2xl text-center sm:text-left text-gray-600 dark:text-gray-300'
+        >
+          Full-Stack Developer & AI Enthusiast
+        </motion.h2>
+        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -80,15 +95,25 @@ function AppBanner() {
           }}
           className='flex justify-center sm:block'
         >
-          <a
-            download='Sheharzad_Salahuddin-SoftwareEngineer.pdf'
-            href='/files/SheharzadSalahuddin-SoftwareDeveloper.pdf'
-            className='font-general-medium flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500'
-            aria-label='Download Resume'
-          >
-            <FiArrowDownCircle className='ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100'></FiArrowDownCircle>
-            <span className='text-sm sm:text-lg duration-100'>Download CV</span>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 mt-12 mb-6 sm:mb-0">
+            <a
+              download='Sheharzad_Salahuddin-SoftwareEngineer.pdf'
+              href='/files/SheharzadSalahuddin-SoftwareDeveloper.pdf'
+              className='font-general-medium flex justify-center items-center w-36 sm:w-48 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500 transform hover:scale-105 transition-all'
+              aria-label='Download Resume'
+            >
+              <FiArrowDownCircle className='ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100'></FiArrowDownCircle>
+              <span className='text-sm sm:text-lg duration-100'>Download CV</span>
+            </a>
+            
+            <Link
+              href='/contact'
+              className='font-general-medium flex justify-center items-center w-36 sm:w-48 text-lg border-2 border-indigo-500 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white duration-500 transform hover:scale-105 transition-all'
+              aria-label='Get In Touch'
+            >
+              <span className='text-sm sm:text-lg duration-100'>Let&apos;s Talk</span>
+            </Link>
+          </div>
         </motion.div>
       </div>
     
