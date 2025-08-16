@@ -19,7 +19,6 @@ body {
 	position: relative;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-	
 	/* Impressive Body Theme */
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	background-attachment: fixed;
@@ -58,6 +57,11 @@ body {
 [class*="gradient"],
 [class*="indicator"] {
 	display: none !important;
+}
+
+/* Navigation full width */
+nav#nav {
+	max-width: 100%;
 }
 
 body::before {
