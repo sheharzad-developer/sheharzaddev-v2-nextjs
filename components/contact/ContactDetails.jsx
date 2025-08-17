@@ -140,7 +140,7 @@ const ContactDetails = () => {
 					</h3>
 					<div className="flex gap-4 justify-center lg:justify-start">
 						<motion.a
-							href="https://linkedin.com/in/sheharzad-developer"
+							href="https://www.linkedin.com/in/sheharzad-salahuddin-frontend-developer/"
 							target="_blank"
 							rel="noopener noreferrer"
 							whileHover={{ scale: 1.1 }}
