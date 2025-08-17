@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -21,15 +22,41 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // EmailJS configuration (same as HireMeModal)
+      const serviceId = 'service_f6m0myb';
+      const templateId = 'template_2iz1ofn';
+      const publicKey = 'cyhAdV4SulzwmwCXd';
+
+      // Template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        project_type: formData.subject,
+        message: formData.message,
+        to_email: 'sheharzad.salahuddin9000@outlook.com',
+      };
+
+      // Send email via EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       
-      setTimeout(() => setSubmitStatus(''), 3000);
-    }, 2000);
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitStatus(''), 5000);
+
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => setSubmitStatus(''), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,6 +74,26 @@ function ContactForm() {
           <p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
             Let&apos;s work together
           </p>
+          
+          {submitStatus === 'success' && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+            >
+              ✅ Message sent successfully! I&apos;ll get back to you within 24 hours.
+            </motion.div>
+          )}
+          
+          {submitStatus === 'error' && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+            >
+              ❌ Failed to send message. Please try again or contact me directly at sheharzad.salahuddin9000@outlook.com
+            </motion.div>
+          )}
           
           <div className="mb-6">
             <label
@@ -103,7 +150,7 @@ function ContactForm() {
               required
               value={formData.subject}
               onChange={handleChange}
-              placeholder="Project inquiry"
+              placeholder="Project inquiry, collaboration, or general message"
               aria-label="Subject"
             />
           </div>
@@ -125,7 +172,7 @@ function ContactForm() {
               required
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell me about your project..."
+              placeholder="Tell me about your project, collaboration idea, or any questions you have..."
             ></textarea>
           </div>
           
@@ -148,16 +195,6 @@ function ContactForm() {
               )}
             </button>
           </div>
-          
-          {submitStatus === 'success' && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
-            >
-              ✅ Message sent successfully! I&apos;ll get back to you within 24 hours.
-            </motion.div>
-          )}
         </form>
       </div>
     </motion.div>
