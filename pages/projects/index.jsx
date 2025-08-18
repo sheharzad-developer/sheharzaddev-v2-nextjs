@@ -4,6 +4,40 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
+    title: "Apartment Design Tool",
+    subtitle: "Interactive Floor Plan & 3D Visualization Platform",
+    img: "/images/Apartment-Planner.png",
+    link: "https://apartment-design-tool.vercel.app/",
+    githubUrl: "https://github.com/sheharzad-developer/apartment-design-tool",
+    description: "A comprehensive apartment design platform that allows users to create stunning floor plans, visualize designs in 3D, and bring apartment ideas to life. Features an intuitive planning tool with AI-powered auto-generation capabilities for efficient space planning and design visualization.",
+    technologies: [
+      "React.js",
+      "Three.js",
+      "WebGL",
+      "Canvas API",
+      "AI/ML",
+      "3D Rendering",
+      "Floor Plan Editor",
+      "Real-time Visualization",
+      "Auto Generation",
+      "Responsive Design"
+    ],
+    features: [
+      "Interactive floor plan editor with drag-and-drop functionality",
+      "Real-time 3D visualization with walk-through views",
+      "AI-powered auto-generation of floor plans based on requirements",
+      "Intuitive user interface for easy design creation",
+      "Professional-grade rendering engine for realistic visualizations",
+      "Export capabilities for floor plans and 3D models",
+      "Collaborative design features for team projects",
+      "Mobile-responsive design for on-the-go planning"
+    ],
+    category: "Design Tools",
+    status: "completed",
+    year: "2024"
+  },
+  {
+    id: 2,
     title: "ChatSmart AI",
     img: "/images/ChatSmart-AI.png",
     link: "https://github.com/sheharzad-developer/chatsmart-ai",
@@ -14,7 +48,7 @@ const projects = [
     year: "2024"
   },
   {
-    id: 2,
+    id: 3,
     title: "Card Click and Play",
     img: "/images/Card-and-Click:Play.png",
     link: "https://sheharzad-developer.github.io/Card-Click-and-Play/",
@@ -25,7 +59,7 @@ const projects = [
     year: "2024"
   },
   {
-    id: 3,
+    id: 4,
     title: "Exploding Text on Scroll",
     img: "/images/WebPage.png",
     link: "https://sheharzad-developer.github.io/sheharzad-explode-text-on-scroll-matterjs/",
@@ -36,7 +70,7 @@ const projects = [
     year: "2024"
   },
   {
-    id: 4,
+    id: 5,
     title: "Netsol Website",
     img: "/images/Netsoltech.png",
     link: "https://netsoltech.com/",
@@ -47,7 +81,7 @@ const projects = [
     year: "2024"
   },
   {
-    id: 5,
+    id: 6,
     title: "Dental Syndicate",
     subtitle: "Family Dental Care Website",
     description: "A spectacular, family-focused dental clinic website featuring revolutionary glassmorphism design, advanced animations, and comprehensive appointment booking with SMS/WhatsApp notifications. The website includes a contact page with floating particles, a family-centered custom SVG logo design, and a real-time appointment booking system with SMS/WhatsApp notification integration.",
@@ -79,7 +113,7 @@ const projects = [
     year: "2025"
   },
   {
-    id: 6,
+    id: 7,
     title: "Daggys Cafe",
     subtitle: "Macro-Counted Meal Delivery",
     description: "A modern food delivery platform specializing in delicious, macro-counted meals delivered right to your doorstep. Features detailed nutritional information for every item including calories, protein, carbs, and fats to help customers fuel their body the right way. Includes a macro-counted meal delivery feature for healthier choices.",
