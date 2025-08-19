@@ -85,6 +85,7 @@ function AppBanner() {
         >
           Frontend Developer | React.js | Node.js | Python Enthusiast | LLM | Building Scalable Web Applications
         </motion.p>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -97,8 +98,8 @@ function AppBanner() {
         >
           <div className="flex flex-col sm:flex-row gap-4 mt-12 mb-6 sm:mb-0">
             <a
-              download='Sheharzad_Salahuddin-SoftwareEngineer.pdf'
-              href='/files/SheharzadSalahuddin-SoftwareDeveloper.pdf'
+              download='Sheharzad-Resume.pdf'
+              href='/files/Sheharzad-Resume.pdf'
               className='font-general-medium flex justify-center items-center w-36 sm:w-48 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500 transform hover:scale-105 transition-all'
               aria-label='Download Resume'
             >
