@@ -187,6 +187,7 @@ const projects = [
       "Serverless deployment optimized for Vercel",
       "Security features with API key encryption and tenant separation"
     ],
+    "link": "https://github.com/sheharzad-developer/Chatbot_Internship",
     "githubUrl": "https://github.com/sheharzad-developer/Chatbot_Internship",
     "category": "AI/Machine Learning",
     "status": "completed",
