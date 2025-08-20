@@ -8,7 +8,7 @@ export default {
 		hireMe: 'Hire Me'
 	},
 	banner: {
-		greeting: 'Hi, I am Sheharzad Salahuddin',
+		greeting: 'Hi, I am Sheharzad',
 		description: 'Frontend Developer | React.js | Node.js | Python Enthusiast | LLM | Building Scalable Web Applications',
 		downloadCV: 'Download CV',
 		bookCall: 'Book a Call'

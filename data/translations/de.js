@@ -8,7 +8,7 @@ export default {
 		hireMe: 'Mich Einstellen'
 	},
 	banner: {
-		greeting: 'Hallo, ich bin Sheharzad Salahuddin',
+		greeting: 'Hallo, ich bin Sheharzad',
 		description: 'Frontend-Entwickler | React.js | Node.js | Python-Enthusiast | LLM | Aufbau Skalierbarer Webanwendungen',
 		downloadCV: 'Lebenslauf Herunterladen',
 		bookCall: 'Anruf Buchen'

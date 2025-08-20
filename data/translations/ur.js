@@ -8,7 +8,7 @@ export default {
 		hireMe: 'مجھے ہائر کریں'
 	},
 	banner: {
-		greeting: 'السلام علیکم، میں ہوں شہرزاد صلاح الدین',
+		greeting: 'السلام علیکم، میں ہوں شہرزاد',
 		description: 'فرنٹ اینڈ ڈویلپر | React.js | Node.js | پائتھن کے شوقین | LLM | اسکیل ایبل ویب ایپلیکیشنز بنانے والا',
 		downloadCV: 'سی وی ڈاؤن لوڈ کریں',
 		bookCall: 'کال بک کریں'
