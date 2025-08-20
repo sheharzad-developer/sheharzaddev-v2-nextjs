@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { AnimatePresence } from 'framer-motion';
 import DefaultLayout from '../components/layout/DefaultLayout';
+import { LanguageProvider } from '../context/LanguageContext';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
@@ -14,13 +15,15 @@ function MyApp({ Component, pageProps, router }) {
   }, []);
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      <div key={router.route} className="bg-secondary-light dark:bg-primary-dark transition duration-300">
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
-      </div>
-    </AnimatePresence>
+    <LanguageProvider>
+      <AnimatePresence exitBeforeEnter>
+        <div key={router.route} className="bg-secondary-light dark:bg-primary-dark transition duration-300">
+          <DefaultLayout>
+            <Component {...pageProps} />
+          </DefaultLayout>
+        </div>
+      </AnimatePresence>
+    </LanguageProvider>
   );
 }
 

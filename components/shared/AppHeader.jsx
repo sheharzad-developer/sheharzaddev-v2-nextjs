@@ -5,15 +5,17 @@ import { motion } from "framer-motion";
 import { FiSun, FiMoon, FiX, FiMenu } from "react-icons/fi";
 import { useRouter } from "next/router";
 import HireMeModal from "../HireMeModal";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "../../context/LanguageContext";
 import logoLight from "../../public/images/S-Logo/S-Logo.jpg";
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
-
 function AppHeader() {
   const [showMenu, setShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [activeTheme, setTheme] = useThemeSwitcher();
   const [mounted, setMounted] = useState(false);
   const router = useRouter();
+  const [activeTheme, setTheme] = useThemeSwitcher();
+  const { t, currentLanguage } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -48,18 +50,18 @@ function AppHeader() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       id="nav"
-      className="fixed top-0 left-0 right-0 z-50 sm:container sm:mx-auto py-4 sm:py-6 rounded-xl bg-primary-light bg-opacity-90 dark:bg-secondary-dark dark:bg-opacity-90 backdrop-blur-sm shadow-lg"
+      className="fixed top-0 left-0 right-0 z-50 py-4 sm:py-6 bg-primary-light bg-opacity-90 dark:bg-secondary-dark dark:bg-opacity-90 backdrop-blur-sm shadow-lg"
     >
       {/* Header */}
-      <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center">
-        {/* Header menu links and small screen hamburger menu */}
-        <div className="flex justify-between items-center px-4 sm:px-0">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center">
           <div className="w-12 h-12 sm:w-14 sm:h-14">
-            <Link href="/">
+            <Link href={`/${currentLanguage}`}>
               <Image
                 src={logoLight}
                 className={
-                  activeTheme === "dark" ? "border-2 border-purple-600" : ""
+                  activeTheme === "dark" ? "border-2 border-purple-600 rounded-lg" : "rounded-lg"
                 }
                 alt="Logo"
                 width={56}
@@ -68,13 +70,15 @@ function AppHeader() {
               />
             </Link>
           </div>
+        </div>
 
-          {/* Theme switcher small screen */}
+        {/* Mobile menu button and theme switcher */}
+        <div className="flex items-center gap-3 sm:hidden">
           <button
             onClick={() => setTheme(activeTheme)}
             type="button"
             aria-label="Toggle theme"
-            className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
+            className="bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
           >
             {activeTheme === "dark" ? (
               <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-lg" />
@@ -83,179 +87,173 @@ function AppHeader() {
             )}
           </button>
 
-          {/* Small screen hamburger menu */}
-          <div className="sm:hidden">
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="focus:outline-none"
-              aria-label="Hamburger Menu"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light"
-              >
-                {showMenu ? (
-                  <FiX className="text-3xl" />
-                ) : (
-                  <FiMenu className="text-3xl" />
-                )}
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={toggleMenu}
+            type="button"
+            className="focus:outline-none p-2"
+            aria-label="Hamburger Menu"
+          >
+            {showMenu ? (
+              <FiX className="text-2xl text-secondary-dark dark:text-ternary-light" />
+            ) : (
+              <FiMenu className="text-2xl text-secondary-dark dark:text-ternary-light" />
+            )}
+          </button>
         </div>
 
-        {/* Header links small screen */}
-        <div
-          className={
-            showMenu
-              ? "block m-0 sm:ml-4 sm:mt-3 md:flex px-4 py-3 sm:p-0 justify-between items-center shadow-lg sm:shadow-none"
-              : "hidden"
-          }
-        >
-          <div className="flex flex-col items-center w-full">
-            <div
-              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
-                router.pathname === "/"
-                  ? "bg-ternary-dark text-white"
-                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
-              }`}
-            >
-              <Link href="/" aria-label="Home">
-                Home
-              </Link>
-            </div>
-            <div
-              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
-                router.pathname === "/about"
-                  ? "bg-ternary-dark text-white"
-                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
-              }`}
-            >
-              <Link href="/about" aria-label="About Me">
-                About Me
-              </Link>
-            </div>
-            <div
-              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
-                router.pathname === "/contact"
-                  ? "bg-ternary-dark text-white"
-                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
-              }`}
-            >
-              <Link href="/contact" aria-label="Contact">
-                Contact
-              </Link>
-            </div>
-            <div
-              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
-                router.pathname === "/projects"
-                  ? "bg-ternary-dark text-white"
-                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
-              }`}
-            >
-              <Link href="/projects" aria-label="Projects">
-                Projects
-              </Link>
-            </div>
-            <div
-              className={`block w-full text-base sm:text-lg rounded-full text-center px-4 py-2 transition-colors duration-300 ${
-                router.pathname === "/certifications"
-                  ? "bg-ternary-dark text-white"
-                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
-              }`}
-            >
-              <Link href="/certifications" aria-label="Certifications">
-                Certifications
-              </Link>
+        {/* Mobile menu */}
+        {showMenu && (
+          <div className="absolute top-full left-0 right-0 bg-primary-light dark:bg-secondary-dark bg-opacity-95 backdrop-blur-sm shadow-lg border-t border-gray-200 dark:border-gray-700 sm:hidden">
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex flex-col space-y-2">
+                <Link
+                  href={`/${currentLanguage}`}
+                  className={`block text-center py-3 px-4 rounded-lg transition-colors duration-300 ${
+                    router.pathname === "/[lang]" || router.pathname === "/"
+                      ? "bg-indigo-500 text-white"
+                      : "text-primary-dark dark:text-ternary-light hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
+                  onClick={() => setShowMenu(false)}
+                >
+                  {t('header.home')}
+                </Link>
+                <Link
+                  href={`/${currentLanguage}/about`}
+                  className={`block text-center py-3 px-4 rounded-lg transition-colors duration-300 ${
+                    router.pathname === "/[lang]/about" || router.pathname === "/about"
+                      ? "bg-indigo-500 text-white"
+                      : "text-primary-dark dark:text-ternary-light hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
+                  onClick={() => setShowMenu(false)}
+                >
+                  {t('header.about')}
+                </Link>
+                <Link
+                  href={`/${currentLanguage}/contact`}
+                  className={`block text-center py-3 px-4 rounded-lg transition-colors duration-300 ${
+                    router.pathname === "/[lang]/contact" || router.pathname === "/contact"
+                      ? "bg-indigo-500 text-white"
+                      : "text-primary-dark dark:text-ternary-light hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
+                  onClick={() => setShowMenu(false)}
+                >
+                  {t('header.contact')}
+                </Link>
+                <Link
+                  href={`/${currentLanguage}/projects`}
+                  className={`block text-center py-3 px-4 rounded-lg transition-colors duration-300 ${
+                    router.pathname === "/[lang]/projects" || router.pathname === "/projects"
+                      ? "bg-indigo-500 text-white"
+                      : "text-primary-dark dark:text-ternary-light hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
+                  onClick={() => setShowMenu(false)}
+                >
+                  {t('header.projects')}
+                </Link>
+                <Link
+                  href={`/${currentLanguage}/certifications`}
+                  className={`block text-center py-3 px-4 rounded-lg transition-colors duration-300 ${
+                    router.pathname === "/[lang]/certifications" || router.pathname === "/certifications"
+                      ? "bg-indigo-500 text-white"
+                      : "text-primary-dark dark:text-ternary-light hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
+                  onClick={() => setShowMenu(false)}
+                >
+                  {t('header.certifications')}
+                </Link>
+                
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
+                  <div className="flex items-center justify-center gap-3">
+                    <LanguageSwitcher />
+                    <button
+                      onClick={showHireMeModal}
+                      className="font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-lg px-6 py-2 duration-300 transition-all"
+                      aria-label="Hire Me Button"
+                    >
+                      {t('header.hireMe')}
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark flex justify-center w-full">
-            <button
-              onClick={showHireMeModal}
-              className="font-general-medium sm:hidden block text-base bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 mt-2 duration-300 w-24"
-              aria-label="Hire Me Button"
-            >
-              Hire Me
-            </button>
-          </div>
-        </div>
+        )}
 
         {/* Header links large screen */}
-        <div className="font-general-medium hidden m-0 sm:ml-4 mt-4 sm:mt-0 sm:flex p-4 sm:p-0 justify-center items-center shadow-lg sm:shadow-none flex-grow">
-          <div className="flex justify-center items-center space-x-2 p-2 rounded-2xl bg-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[5px] border border-white/30">
+        <div className="font-general-medium hidden sm:flex items-center justify-center flex-1">
+          <div className="flex items-center space-x-1 p-2 rounded-2xl bg-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[5px] border border-white/30">
             <div
               className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
-                router.pathname === "/"
+                router.pathname === "/[lang]" || router.pathname === "/"
                   ? "bg-ternary-dark text-white"
                   : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
               }`}
               aria-label="Home"
             >
-              <Link href="/">Home</Link>
+              <Link href={`/${currentLanguage}`}>{t('header.home')}</Link>
             </div>
             <div
               className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
-                router.pathname === "/about"
+                router.pathname === "/[lang]/about" || router.pathname === "/about"
                   ? "bg-ternary-dark text-white"
                   : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
               }`}
               aria-label="About Me"
             >
-              <Link href="/about">About Me</Link>
+              <Link href={`/${currentLanguage}/about`}>{t('header.about')}</Link>
             </div>
             <div
               className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
-                router.pathname === "/contact"
+                router.pathname === "/[lang]/contact" || router.pathname === "/contact"
                   ? "bg-ternary-dark text-white"
                   : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
               }`}
               aria-label="Contact"
             >
-              <Link href="/contact">Contact</Link>
+              <Link href={`/${currentLanguage}/contact`}>{t('header.contact')}</Link>
             </div>
             <div
               className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
-                router.pathname === "/projects"
+                router.pathname === "/[lang]/projects" || router.pathname === "/projects"
                   ? "bg-ternary-dark text-white"
                   : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
               }`}
               aria-label="Projects"
             >
-              <Link href="/projects">Projects</Link>
+              <Link href={`/${currentLanguage}/projects`}>{t('header.projects')}</Link>
             </div>
             <div
               className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
-                router.pathname === "/certifications"
+                router.pathname === "/[lang]/certifications" || router.pathname === "/certifications"
                   ? "bg-ternary-dark text-white"
                   : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
               }`}
               aria-label="Certifications"
             >
-              <Link href="/certifications">Certifications</Link>
+              <Link href={`/${currentLanguage}/certifications`}>{t('header.certifications')}</Link>
             </div>
           </div>
         </div>
 
         {/* Header right section buttons */}
-        <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
-          <div className="hidden md:flex">
-            <button
-              onClick={showHireMeModal}
-              className="text-base sm:text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 duration-300"
-              aria-label="Hire Me Button"
-            >
-              Hire Me
-            </button>
-          </div>
+        <div className="hidden sm:flex items-center gap-3">
+          <button
+            onClick={showHireMeModal}
+            className="text-sm font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-lg px-4 py-2 duration-300 transition-all hover:scale-105"
+            aria-label="Hire Me Button"
+          >
+            {t('header.hireMe')}
+          </button>
 
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+          
           {/* Theme switcher large screen */}
           <button
             onClick={() => setTheme(activeTheme)}
             type="button"
             aria-label="Toggle theme"
-            className="ml-6 bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
+            className="bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer transition-all hover:scale-105"
           >
             {activeTheme === "dark" ? (
               <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-lg" />

@@ -1,7 +1,10 @@
 import { useCountUp } from 'react-countup';
 import CounterItem from './CounterItem';
+import { useLanguage } from '../../context/LanguageContext';
 
 const AboutCounter = () => {
+	const { t } = useLanguage();
+	
 	useCountUp({ ref: 'experienceCounter', end: 3, duration: 3 });
 	useCountUp({ ref: 'githubStarsCounter', end: 20, duration: 2 });
 	useCountUp({ ref: 'feedbackCounter', end: 92, duration: 2 });
@@ -11,25 +14,25 @@ const AboutCounter = () => {
 		<div className="mt-6 sm:mt-12 bg-primary-light dark:bg-ternary-dark shadow-sm">
 			<div className="font-general-medium container mx-auto py-8 sm:py-12 block sm:flex sm:justify-between items-center">
 				<CounterItem
-					title="Years of experience"
+					title={t('about.counter.yearsExperience')}
 					counter={<span id="experienceCounter" />}
 					measurement=""
 				/>
 
 				<CounterItem
-					title="Stars on GitHub"
+					title={t('about.counter.starsGithub')}
 					counter={<span id="githubStarsCounter" />}
 					measurement="k+"
 				/>
 
 				<CounterItem
-					title="Positive feedback"
+					title={t('about.counter.positiveFeedback')}
 					counter={<span id="feedbackCounter" />}
 					measurement="%"
 				/>
 
 				<CounterItem
-					title="Projects completed"
+					title={t('about.counter.projectsCompleted')}
 					counter={<span id="projectsCounter" />}
 					measurement="%"
 				/>

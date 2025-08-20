@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FiSend } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../../context/LanguageContext';
 
 function ContactForm() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -64,7 +67,7 @@ function ContactForm() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="w-full lg:w-1/2"
+      className="w-full"
     >
       <div className="leading-loose">
         <form
@@ -72,16 +75,18 @@ function ContactForm() {
           className="max-w-xl m-4 p-6 sm:p-10 bg-white dark:bg-secondary-dark rounded-2xl shadow-xl"
         >
           <p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
-            Let&apos;s work together
+            {t('contact.form.title')}
           </p>
           
           {submitStatus === 'success' && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+              className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
             >
-              ✅ Message sent successfully! I&apos;ll get back to you within 24 hours.
+              <p className="text-green-800 dark:text-green-200 text-center">
+                {t('contact.form.success')}
+              </p>
             </motion.div>
           )}
           
@@ -89,9 +94,11 @@ function ContactForm() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+              className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg"
             >
-              ❌ Failed to send message. Please try again or contact me directly at sheharzad.salahuddin9000@outlook.com
+              <p className="text-red-800 dark:text-red-200 text-center">
+                {t('contact.form.error')}
+              </p>
             </motion.div>
           )}
           
@@ -100,7 +107,7 @@ function ContactForm() {
               className="block text-lg text-primary-dark dark:text-primary-light mb-2"
               htmlFor="name"
             >
-              Name
+              {t('contact.form.name')}
             </label>
             <input
               className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
@@ -110,7 +117,7 @@ function ContactForm() {
               required
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your name"
+              placeholder={t('contact.form.namePlaceholder')}
               aria-label="Name"
             />
           </div>
@@ -120,7 +127,7 @@ function ContactForm() {
               className="block text-lg text-primary-dark dark:text-primary-light mb-2"
               htmlFor="email"
             >
-              Email
+              {t('contact.form.email')}
             </label>
             <input
               className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
@@ -130,7 +137,7 @@ function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              placeholder="your@email.com"
+              placeholder={t('contact.form.emailPlaceholder')}
               aria-label="Email"
             />
           </div>
@@ -140,7 +147,7 @@ function ContactForm() {
               className="block text-lg text-primary-dark dark:text-primary-light mb-2"
               htmlFor="subject"
             >
-              Subject
+              {t('contact.form.subject')}
             </label>
             <input
               className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
@@ -150,7 +157,7 @@ function ContactForm() {
               required
               value={formData.subject}
               onChange={handleChange}
-              placeholder="Project inquiry, collaboration, or general message"
+              placeholder={t('contact.form.subjectPlaceholder')}
               aria-label="Subject"
             />
           </div>
@@ -160,7 +167,7 @@ function ContactForm() {
               className="block text-lg text-primary-dark dark:text-primary-light mb-2"
               htmlFor="message"
             >
-              Message
+              {t('contact.form.message')}
             </label>
             <textarea
               className="w-full px-5 py-3 border border-gray-300 dark:border-ternary-dark rounded-lg shadow-sm text-lg bg-primary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
@@ -172,7 +179,7 @@ function ContactForm() {
               required
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell me about your project, collaboration idea, or any questions you have..."
+              placeholder={t('contact.form.messagePlaceholder')}
             ></textarea>
           </div>
           
@@ -180,18 +187,18 @@ function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 disabled:hover:scale-100"
             >
               {isSubmitting ? (
-                <span className="flex items-center justify-center">
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Sending...
-                </span>
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                  {t('contact.form.sending')}
+                </div>
               ) : (
-                'Send Message'
+                <div className="flex items-center justify-center">
+                  <FiSend className="mr-2" />
+                  {t('contact.form.send')}
+                </div>
               )}
             </button>
           </div>

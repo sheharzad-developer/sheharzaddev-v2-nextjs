@@ -22,6 +22,13 @@ module.exports = {
 				// Extended v3 color
 				gray: colors.neutral,
 			},
+			fontFamily: {
+				'general-regular': ['GeneralSans-Variable', 'sans-serif'],
+				'general-medium': ['GeneralSans-Variable', 'sans-serif'],
+				'general-semibold': ['GeneralSans-Variable', 'sans-serif'],
+				'general-bold': ['GeneralSans-Variable', 'sans-serif'],
+				'urdu': ['Noto Nastaliq Urdu', 'serif'],
+			},
 			container: {
 				padding: {
 					DEFAULT: '1rem',

@@ -5,10 +5,10 @@
       "static/chunks/node_modules_lottie-react_build_index_umd_js.js"
     ]
   },
-  "pages/index.jsx -> lottie-react": {
-    "id": "pages/index.jsx -> lottie-react",
+  "context/LanguageContext.jsx -> ../data/translations/en.js": {
+    "id": "context/LanguageContext.jsx -> ../data/translations/en.js",
     "files": [
-      "static/chunks/node_modules_lottie-react_build_index_umd_js.js"
+      "static/chunks/data_translations_en_js.js"
     ]
   }
 }

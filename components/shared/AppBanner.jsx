@@ -5,7 +5,8 @@ import { useRef, Suspense, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
-import BannerImg from '../../public/images/bannerImg.2a08b5b3.svg'
+// SVG will be referenced directly in Image component
+import { useLanguage } from '../../context/LanguageContext'
 
 // Dynamically import Lottie with no SSR
 const Lottie = dynamic(() => import('lottie-react'), { 
@@ -18,6 +19,7 @@ function AppBanner() {
   const [isClient, setIsClient] = useState(false)
   const [lottieVisible, setLottieVisible] = useState(false)
   const lottieContainerRef = useRef(null)
+  const { t } = useLanguage()
 
   const handleScrollDown = () => {
     window.scrollTo({
@@ -44,9 +46,9 @@ function AppBanner() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-      className='flex flex-col sm:justify-between items-center sm:flex-row mt-5'
+      className='flex flex-col sm:justify-between items-center sm:flex-row mt-8 sm:mt-12 lg:mt-16'
     >
-      <div className='w-full text-left mb-8 sm:mb-0'>
+      <div className='w-full sm:w-1/2 text-left mb-8 sm:mb-0 sm:pr-8'>
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -57,7 +59,7 @@ function AppBanner() {
           }}
           className='font-general-semibold text-3xl lg:text-4xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light'
         >
-          Hi, I&apos;m <span className="text-indigo-600 dark:text-indigo-400">Sheharzad</span>
+          {t('banner.greeting')}
         </motion.h1>
         
         <motion.h2
@@ -83,7 +85,7 @@ function AppBanner() {
           }}
           className='font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200'
         >
-          Frontend Developer | React.js | Node.js | Python Enthusiast | LLM | Building Scalable Web Applications
+          {t('banner.description')}
         </motion.p>
 
         <motion.div
@@ -104,7 +106,7 @@ function AppBanner() {
               aria-label='Download Resume'
             >
               <FiArrowDownCircle className='ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100'></FiArrowDownCircle>
-              <span className='text-sm sm:text-lg duration-100'>Download CV</span>
+              <span className='text-sm sm:text-lg duration-100'>{t('banner.downloadCV')}</span>
             </a>
             
             <a
@@ -114,7 +116,7 @@ function AppBanner() {
               className='font-general-medium flex justify-center items-center w-36 sm:w-48 text-lg border-2 border-indigo-500 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white duration-500 transform hover:scale-105 transition-all'
               aria-label='Book a Call'
             >
-              <span className='text-sm sm:text-lg duration-100'>Book a Call ☕</span>
+              <span className='text-sm sm:text-lg duration-100'>{t('banner.bookCall')} ☕</span>
             </a>
           </div>
         </motion.div>
@@ -124,12 +126,12 @@ function AppBanner() {
         initial={{ opacity: 0, y: -180 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.2 }}
-        className='w-full md:w-2/3 flex flex-col items-center sm:justify-end mb-8 sm:mb-0'
+        className='w-full sm:w-1/2 flex flex-col items-center sm:justify-end mb-8 sm:mb-0'
       >
         <div className='w-full flex justify-center sm:justify-end'>
           <div className='w-full h-[300px] sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] relative'>
             <Image 
-              src={BannerImg}
+              src="/images/bannerImg.2a08b5b3.svg"
               alt="Banner illustration"
               fill
               priority

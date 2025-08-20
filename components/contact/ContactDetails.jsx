@@ -3,9 +3,11 @@ import { FaWhatsapp, FaTelegram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import HireMeModal from '../HireMeModal';
+import { useLanguage } from '../../context/LanguageContext';
 
 const ContactDetails = () => {
 	const [showModal, setShowModal] = useState(false);
+	const { t } = useLanguage();
 
 	function showHireMeModal() {
 		setShowModal(!showModal);
@@ -30,16 +32,15 @@ const ContactDetails = () => {
 			initial={{ opacity: 0, x: -20 }}
 			animate={{ opacity: 1, x: 0 }}
 			transition={{ duration: 0.6 }}
-			className="w-full lg:w-1/2"
+			className="w-full"
 		>
 			<div className="text-center lg:text-left max-w-xl px-4 mx-auto lg:mx-0">
 				<h2 className="font-general-medium text-2xl sm:text-3xl text-primary-dark dark:text-primary-light mt-8 mb-8 text-center lg:text-left">
-					Let&apos;s build something amazing together
+					{t('contact.details.title')}
 				</h2>
 				
 				<p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-					Ready to turn your ideas into reality? I&apos;m here to help you create exceptional digital experiences. 
-					Let&apos;s chat about your project!
+					{t('contact.details.description')}
 				</p>
 
 				{/* Quick Contact Options */}
@@ -56,8 +57,8 @@ const ContactDetails = () => {
 								<FaWhatsapp className="text-white text-xl" />
 							</div>
 							<div className="flex-1 text-left">
-								<h3 className="font-semibold text-green-800 dark:text-green-200">WhatsApp Chat</h3>
-								<p className="text-sm text-green-600 dark:text-green-300">Get instant responses</p>
+								<h3 className="font-semibold text-green-800 dark:text-green-200">{t('contact.details.whatsapp.title')}</h3>
+								<p className="text-sm text-green-600 dark:text-green-300">{t('contact.details.whatsapp.description')}</p>
 							</div>
 							<FiExternalLink className="text-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 						</div>
@@ -75,8 +76,8 @@ const ContactDetails = () => {
 								<FaTelegram className="text-white text-xl" />
 							</div>
 							<div className="flex-1 text-left">
-								<h3 className="font-semibold text-blue-800 dark:text-blue-200">Telegram Chat</h3>
-								<p className="text-sm text-blue-600 dark:text-blue-300">Quick project discussions</p>
+								<h3 className="font-semibold text-blue-800 dark:text-blue-200">{t('contact.details.telegram.title')}</h3>
+								<p className="text-sm text-blue-600 dark:text-blue-300">{t('contact.details.telegram.description')}</p>
 							</div>
 							<FiExternalLink className="text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 						</div>
@@ -94,8 +95,8 @@ const ContactDetails = () => {
 								<FiCalendar className="text-white text-xl" />
 							</div>
 							<div className="flex-1 text-left">
-								<h3 className="font-semibold text-purple-800 dark:text-purple-200">Book a Coffee Chat ☕</h3>
-								<p className="text-sm text-purple-600 dark:text-purple-300">30-minute discovery call</p>
+								<h3 className="font-semibold text-purple-800 dark:text-purple-200">{t('contact.details.calendly.title')}</h3>
+								<p className="text-sm text-purple-600 dark:text-purple-300">{t('contact.details.calendly.description')}</p>
 							</div>
 							<FiExternalLink className="text-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 						</div>
@@ -105,7 +106,7 @@ const ContactDetails = () => {
 				{/* Traditional Contact Info */}
 				<div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 mb-8">
 					<h3 className="font-general-medium text-lg text-primary-dark dark:text-primary-light mb-4">
-						Other ways to reach me
+						{t('contact.details.otherWays')}
 					</h3>
 					<ul className="space-y-3">
 						<li className="flex items-center gap-3">
@@ -136,8 +137,8 @@ const ContactDetails = () => {
 				{/* Social Links */}
 				<div className="mb-8">
 					<h3 className="font-general-medium text-lg text-primary-dark dark:text-primary-light mb-4">
-						Connect with me
-					</h3>
+					{t('contact.info.connectWithMe')}
+				</h3>
 					<div className="flex gap-4 justify-center lg:justify-start">
 						<motion.a
 							href="https://www.linkedin.com/in/sheharzad-salahuddin-frontend-developer/"
@@ -165,7 +166,7 @@ const ContactDetails = () => {
 				{/* Hire Me Section */}
 				<div className="pt-6 border-t border-ternary-light dark:border-ternary-dark">
 					<h3 className="font-general-medium text-lg sm:text-xl text-primary-dark dark:text-primary-light mb-4 text-center lg:text-left">
-						Ready to start a project?
+						{t('contact.details.hireMe.title')}
 					</h3>
 					<motion.button
 						onClick={showHireMeModal}
@@ -175,7 +176,7 @@ const ContactDetails = () => {
 						aria-label="Hire Me"
 					>
 						<FiBriefcase className="text-lg" />
-						Let&apos;s Discuss Your Project
+						{t('contact.details.hireMe.button')}
 					</motion.button>
 				</div>
 			</div>

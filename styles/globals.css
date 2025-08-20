@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,6 +59,50 @@ body {
 [class*="gradient"],
 [class*="indicator"] {
 	display: none !important;
+}
+
+/* Glassmorphism Effects */
+.glassmorphism {
+	background: rgba(255, 255, 255, 0.25) !important;
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+	border-radius: 10px !important;
+	border: 2px solid rgba(255, 255, 255, 0.3) !important;
+	backdrop-filter: blur(10px) !important;
+	-webkit-backdrop-filter: blur(10px) !important;
+}
+
+.glass-card {
+	background: rgba(255, 255, 255, 0.2) !important;
+	border: 2px solid rgba(255, 255, 255, 0.3) !important;
+	border-radius: 16px !important;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+	transition: all 0.3s ease !important;
+	position: relative !important;
+	backdrop-filter: blur(15px) !important;
+	-webkit-backdrop-filter: blur(15px) !important;
+}
+
+.glass-card:hover {
+	transform: translateY(-5px) !important;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+	background: rgba(255, 255, 255, 0.3) !important;
+	border: 2px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.tech-badge {
+	background: rgba(59, 130, 246, 0.2) !important;
+	border: 1px solid rgba(59, 130, 246, 0.4) !important;
+	color: #3b82f6 !important;
+	padding: 0.25rem 0.75rem !important;
+	border-radius: 9999px !important;
+	font-size: 0.75rem !important;
+	font-weight: 500 !important;
+	transition: all 0.2s ease !important;
+}
+
+.tech-badge:hover {
+	background: rgba(59, 130, 246, 0.3) !important;
+	transform: scale(1.05) !important;
 }
 
 /* Navigation full width */
@@ -124,9 +170,9 @@ a {
 /* Fonts */
 @font-face {
 	font-family: 'GeneralSans-Variable';
-	src: url('../public/fonts/GeneralSans-Variable.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Variable.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Variable.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Variable.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Variable.woff') format('woff'),
+		url('/fonts/GeneralSans-Variable.ttf') format('truetype');
 	font-weight: 200 700;
 	font-display: swap;
 	font-style: normal;
@@ -138,9 +184,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-VariableItalic';
-	src: url('../public/fonts/GeneralSans-VariableItalic.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-VariableItalic.woff') format('woff'),
-		url('../public/fonts/GeneralSans-VariableItalic.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-VariableItalic.woff2') format('woff2'),
+		url('/fonts/GeneralSans-VariableItalic.woff') format('woff'),
+		url('/fonts/GeneralSans-VariableItalic.ttf') format('truetype');
 	font-weight: 200 700;
 	font-display: swap;
 	font-style: italic;
@@ -152,9 +198,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-Extralight';
-	src: url('../public/fonts/GeneralSans-Extralight.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Extralight.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Extralight.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Extralight.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Extralight.woff') format('woff'),
+		url('/fonts/GeneralSans-Extralight.ttf') format('truetype');
 	font-weight: 200;
 	font-display: swap;
 	font-style: normal;
@@ -166,9 +212,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-ExtralightItalic';
-	src: url('../public/fonts/GeneralSans-ExtralightItalic.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-ExtralightItalic.woff') format('woff'),
-		url('../public/fonts/GeneralSans-ExtralightItalic.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-ExtralightItalic.woff2') format('woff2'),
+		url('/fonts/GeneralSans-ExtralightItalic.woff') format('woff'),
+		url('/fonts/GeneralSans-ExtralightItalic.ttf') format('truetype');
 	font-weight: 200;
 	font-display: swap;
 	font-style: italic;
@@ -180,9 +226,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-Light';
-	src: url('../public/fonts/GeneralSans-Light.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Light.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Light.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Light.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Light.woff') format('woff'),
+		url('/fonts/GeneralSans-Light.ttf') format('truetype');
 	font-weight: 300;
 	font-display: swap;
 	font-style: normal;
@@ -194,9 +240,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-LightItalic';
-	src: url('../public/fonts/GeneralSans-LightItalic.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-LightItalic.woff') format('woff'),
-		url('../public/fonts/GeneralSans-LightItalic.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-LightItalic.woff2') format('woff2'),
+		url('/fonts/GeneralSans-LightItalic.woff') format('woff'),
+		url('/fonts/GeneralSans-LightItalic.ttf') format('truetype');
 	font-weight: 300;
 	font-display: swap;
 	font-style: italic;
@@ -208,9 +254,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-Regular';
-	src: url('../public/fonts/GeneralSans-Regular.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Regular.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Regular.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Regular.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Regular.woff') format('woff'),
+		url('/fonts/GeneralSans-Regular.ttf') format('truetype');
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
@@ -222,9 +268,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-Italic';
-	src: url('../public/fonts/GeneralSans-Italic.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Italic.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Italic.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Italic.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Italic.woff') format('woff'),
+		url('/fonts/GeneralSans-Italic.ttf') format('truetype');
 	font-weight: 400;
 	font-display: swap;
 	font-style: italic;
@@ -236,9 +282,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-Medium';
-	src: url('../public/fonts/GeneralSans-Medium.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Medium.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Medium.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Medium.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Medium.woff') format('woff'),
+		url('/fonts/GeneralSans-Medium.ttf') format('truetype');
 	font-weight: 500;
 	font-display: swap;
 	font-style: normal;
@@ -250,9 +296,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-MediumItalic';
-	src: url('../public/fonts/GeneralSans-MediumItalic.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-MediumItalic.woff') format('woff'),
-		url('../public/fonts/GeneralSans-MediumItalic.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-MediumItalic.woff2') format('woff2'),
+		url('/fonts/GeneralSans-MediumItalic.woff') format('woff'),
+		url('/fonts/GeneralSans-MediumItalic.ttf') format('truetype');
 	font-weight: 500;
 	font-display: swap;
 	font-style: italic;
@@ -264,9 +310,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-Semibold';
-	src: url('../public/fonts/GeneralSans-Semibold.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Semibold.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Semibold.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Semibold.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Semibold.woff') format('woff'),
+		url('/fonts/GeneralSans-Semibold.ttf') format('truetype');
 	font-weight: 600;
 	font-display: swap;
 	font-style: normal;
@@ -278,9 +324,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-SemiboldItalic';
-	src: url('../public/fonts/GeneralSans-SemiboldItalic.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-SemiboldItalic.woff') format('woff'),
-		url('../public/fonts/GeneralSans-SemiboldItalic.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-SemiboldItalic.woff2') format('woff2'),
+		url('/fonts/GeneralSans-SemiboldItalic.woff') format('woff'),
+		url('/fonts/GeneralSans-SemiboldItalic.ttf') format('truetype');
 	font-weight: 600;
 	font-display: swap;
 	font-style: italic;
@@ -292,9 +338,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-Bold';
-	src: url('../public/fonts/GeneralSans-Bold.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-Bold.woff') format('woff'),
-		url('../public/fonts/GeneralSans-Bold.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-Bold.woff2') format('woff2'),
+		url('/fonts/GeneralSans-Bold.woff') format('woff'),
+		url('/fonts/GeneralSans-Bold.ttf') format('truetype');
 	font-weight: 700;
 	font-display: swap;
 	font-style: normal;
@@ -306,9 +352,9 @@ a {
 
 @font-face {
 	font-family: 'GeneralSans-BoldItalic';
-	src: url('../public/fonts/GeneralSans-BoldItalic.woff2') format('woff2'),
-		url('../public/fonts/GeneralSans-BoldItalic.woff') format('woff'),
-		url('../public/fonts/GeneralSans-BoldItalic.ttf') format('truetype');
+	src: url('/fonts/GeneralSans-BoldItalic.woff2') format('woff2'),
+		url('/fonts/GeneralSans-BoldItalic.woff') format('woff'),
+		url('/fonts/GeneralSans-BoldItalic.ttf') format('truetype');
 	font-weight: 700;
 	font-display: swap;
 	font-style: italic;
@@ -316,6 +362,28 @@ a {
 
 .font-general-bold-italic {
 	font-family: 'GeneralSans-BoldItalic';
+}
+
+/* Urdu Font */
+.font-urdu {
+	font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+/* Language-specific body styling */
+body.lang-urdu {
+	font-family: 'Noto Nastaliq Urdu', serif;
+	direction: rtl;
+	text-align: right;
+}
+
+body.lang-urdu * {
+	font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+/* Override for specific elements that should stay LTR */
+body.lang-urdu .lang-neutral {
+	direction: ltr;
+	text-align: left;
 }
 
 /* Scroll to top style */
@@ -356,13 +424,114 @@ a {
 	}
 }
 
+/* Container and layout improvements */
+.container {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+	.container {
+		max-width: 640px;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 768px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container {
+		max-width: 1024px;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
 @media (min-width: 1280px) {
+	.container {
+		max-width: 1280px;
+	}
 	.xl\:max-w-screen-xl {
 		max-width: 100% !important;
+	}
+}
+
+@media (min-width: 1536px) {
+	.container {
+		max-width: 1536px;
 	}
 }
 
 /* Custom purple color for Full Stack Development icon */
 svg.text-4xl.text-violet-400 {
 	color: #9b51e0;
+}
+
+/* Urdu language font size adjustments */
+[data-lang="ur"] {
+	font-size: 0.9em;
+}
+
+[data-lang="ur"] h1 {
+	font-size: 0.85em;
+}
+
+[data-lang="ur"] h2 {
+	font-size: 0.85em;
+}
+
+[data-lang="ur"] h3 {
+	font-size: 0.85em;
+}
+
+[data-lang="ur"] h4 {
+	font-size: 0.85em;
+}
+
+[data-lang="ur"] h5 {
+	font-size: 0.85em;
+}
+
+[data-lang="ur"] h6 {
+	font-size: 0.85em;
+}
+
+[data-lang="ur"] p {
+	font-size: 0.9em;
+}
+
+[data-lang="ur"] .text-lg {
+	font-size: 1rem !important;
+}
+
+[data-lang="ur"] .text-xl {
+	font-size: 1.125rem !important;
+}
+
+[data-lang="ur"] .text-2xl {
+	font-size: 1.25rem !important;
+}
+
+[data-lang="ur"] .text-3xl {
+	font-size: 1.5rem !important;
+}
+
+[data-lang="ur"] .text-4xl {
+	font-size: 1.75rem !important;
+}
+
+[data-lang="ur"] .text-5xl {
+	font-size: 2rem !important;
+}
+
+[data-lang="ur"] .text-6xl {
+	font-size: 2.25rem !important;
 }
