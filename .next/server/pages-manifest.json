@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/[lang]": "pages/[lang].js",
+  "/[lang]/contact": "pages/[lang]/contact.js",
   "/[lang]/about": "pages/[lang]/about.js",
-  "/[lang]/contact": "pages/[lang]/contact.js"
+  "/[lang]": "pages/[lang].js"
 }
