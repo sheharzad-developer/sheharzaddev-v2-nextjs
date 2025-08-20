@@ -149,6 +149,48 @@ const projects = [
     category: "Healthcare",
     status: "completed",
     year: "2025"
+  },
+  {
+    "id": 7,
+    "title": "AI Chatbot Platform",
+    "subtitle": "Multi-Tenant Tool-Aware Chatbot",
+    "description": "A sophisticated AI chatbot platform with multi-agent support, featuring Google Gemini, Groq, DeepSeek, and Google AI integration. Built with FastAPI backend and modern web interface, deployed on Vercel with comprehensive tool integration and tenant isolation capabilities.",
+    "img": "/projects/chatbot2025.png",
+    "technologies": [
+      "FastAPI",
+      "Python",
+      "JavaScript",
+      "HTML/CSS",
+      "Google Generative AI",
+      "Groq API",
+      "DeepSeek API",
+      "LangChain",
+      "MongoDB",
+      "Vercel",
+      "Docker",
+      "Pydantic",
+      "Uvicorn",
+      "HTTPX",
+      "Langfuse"
+    ],
+    "features": [
+      "Multi-agent AI support (Google Gemini, Groq, DeepSeek, Google AI)",
+      "Tool-aware agents with MCP (Model Context Protocol) integration",
+      "Multi-tenant architecture with secure tenant isolation",
+      "Real-time chat interface with markdown support",
+      "RAG (Retrieval-Augmented Generation) document system",
+      "Comprehensive chat history and session management",
+      "RESTful API with FastAPI and automatic documentation",
+      "Responsive web interface optimized for all devices",
+      "Environment-aware deployment (local and cloud)",
+      "Advanced error handling and monitoring with Langfuse",
+      "Serverless deployment optimized for Vercel",
+      "Security features with API key encryption and tenant separation"
+    ],
+    "githubUrl": "https://github.com/sheharzad-developer/Chatbot_Internship",
+    "category": "AI/Machine Learning",
+    "status": "completed",
+    "year": "2025"
   }
 ];
 
