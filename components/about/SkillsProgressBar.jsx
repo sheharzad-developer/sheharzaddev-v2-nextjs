@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const skills = [
   { name: 'HTML', level: 98 },
@@ -20,30 +23,46 @@ const skills = [
   { name: 'MongoDB', level: 70 },
 ];
 
-const SkillsProgressBar = () => (
-  <div className="mt-8  p-8 rounded-xl shadow-lg relative text-white">
-    {/* <h2 className="text-xl font-bold mb-4 text-white">My Skills</h2> */}
-    <div className="space-y-4">
-      {skills.map((skill, idx) => (
-        <div key={skill.name}>
-          <div className="flex justify-between mb-1 text-white">
-            <span>{skill.name}</span>
-            <span>{skill.level}%</span>
-          </div>
-          <div
-            className="w-full bg-gray-700 rounded-full h-3"
+const SkillsProgressBar = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, rootMargin: '0px' });
+
+  useEffect(() => {
+    AOS.init({ 
+      duration: 800,
+      once: true,
+      easing: 'ease-out'
+    });
+  }, []);
+
+  return (
+    <div ref={ref} className="mt-8 p-8 rounded-xl shadow-lg relative text-white">
+      {/* <h2 className="text-xl font-bold mb-4 text-white">My Skills</h2> */}
+      <div className="space-y-4">
+        {skills.map((skill, idx) => (
+          <div 
+            key={skill.name}
             data-aos="fade-right"
             data-aos-delay={idx * 100}
+            data-aos-duration="600"
           >
-            <div
-              className="bg-gradient-to-r from-pink-500 to-blue-500 h-3 rounded-full"
-              style={{ width: `${skill.level}%` }}
-            ></div>
+            <div className="flex justify-between mb-1 text-white">
+              <span>{skill.name}</span>
+              <span>{skill.level}%</span>
+            </div>
+            <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+              <div
+                className="bg-gradient-to-r from-pink-500 to-blue-500 h-3 rounded-full transition-all duration-1000 ease-out"
+                style={{ 
+                  width: inView ? `${skill.level}%` : '0%',
+                  transitionDelay: `${idx * 100}ms`
+                }}
+              ></div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default SkillsProgressBar; 

@@ -11,8 +11,8 @@ const AboutCounter = () => {
 	useCountUp({ ref: 'projectsCounter', end: 77, duration: 2 });
 
 	return (
-		<div className="mt-6 sm:mt-12 bg-primary-light dark:bg-ternary-dark shadow-sm">
-			<div className="font-general-medium container mx-auto py-8 sm:py-12 block sm:flex sm:justify-between items-center">
+		<div className="mt-6 sm:mt-12 bg-primary-light dark:bg-ternary-dark shadow-sm w-full">
+			<div className="font-general-medium w-full py-8 sm:py-12 px-4 sm:px-8 lg:px-16 xl:px-24 block sm:flex sm:justify-between items-center">
 				<CounterItem
 					title={t('about.counter.yearsExperience')}
 					counter={<span id="experienceCounter" />}

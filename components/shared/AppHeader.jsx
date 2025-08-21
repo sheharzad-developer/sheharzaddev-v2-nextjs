@@ -165,13 +165,13 @@ function AppHeader() {
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
                   <div className="flex items-center justify-center gap-3">
                     <LanguageSwitcher />
-                    <button
+                    {/* <button
                       onClick={showHireMeModal}
                       className="font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-lg px-6 py-2 duration-300 transition-all"
                       aria-label="Hire Me Button"
                     >
                       {t('header.hireMe')}
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
@@ -237,13 +237,13 @@ function AppHeader() {
 
         {/* Header right section buttons */}
         <div className="hidden sm:flex items-center gap-3">
-          <button
+          {/* <button
             onClick={showHireMeModal}
             className="text-sm font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-lg px-4 py-2 duration-300 transition-all hover:scale-105"
             aria-label="Hire Me Button"
           >
             {t('header.hireMe')}
-          </button>
+          </button> */}
 
           {/* Language Switcher */}
           <LanguageSwitcher />
@@ -263,12 +263,12 @@ function AppHeader() {
           </button>
         </div>
       </div>
-      <div>
+      {/* <div>
         {showModal ? (
           <HireMeModal onClose={showHireMeModal} onRequest={showHireMeModal} />
         ) : null}
         {showModal ? showHireMeModal : null}
-      </div>
+      </div> */}
     </motion.nav>
   );
 }

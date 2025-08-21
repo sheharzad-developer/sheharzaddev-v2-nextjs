@@ -40,7 +40,7 @@ function About() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-				className="container mx-auto px-4 sm:px-6 lg:px-8"
+				className="w-full"
 			>
 				<AboutCounter />
 			</motion.div>

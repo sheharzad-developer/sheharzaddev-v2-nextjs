@@ -4,6 +4,147 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Beautiful Glassmorphism Effects */
+@layer components {
+	.glass-card {
+		background: rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		border-radius: 20px;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		box-shadow: 
+			0 8px 32px rgba(0, 0, 0, 0.1),
+			inset 0 1px 0 rgba(255, 255, 255, 0.5),
+			inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+			inset 0 0 8px 4px rgba(255, 255, 255, 0.4);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.glass-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.8),
+			transparent
+		);
+	}
+
+	.glass-card::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.8),
+			transparent,
+			rgba(255, 255, 255, 0.3)
+		);
+	}
+	
+	.glass-card-dark {
+		background: rgba(0, 0, 0, 0.2);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		box-shadow: 
+			0 8px 32px 0 rgba(0, 0, 0, 0.3),
+			inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+	}
+	
+	.glass-button {
+		background: rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(15px);
+		-webkit-backdrop-filter: blur(15px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	
+	.glass-button:hover {
+		background: rgba(255, 255, 255, 0.35);
+		border-color: rgba(255, 255, 255, 0.5);
+		transform: translateY(-2px);
+		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+	}
+	
+	.glass-bg {
+		background: linear-gradient(135deg, 
+			rgba(255, 255, 255, 0.1),
+			rgba(255, 255, 255, 0.05)
+		);
+		backdrop-filter: blur(25px);
+		-webkit-backdrop-filter: blur(25px);
+	}
+	
+	/* Enhanced glass card variations */
+	.glass-card-project {
+		background: rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border-radius: 20px;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		box-shadow: 
+			0 8px 32px rgba(0, 0, 0, 0.1),
+			inset 0 1px 0 rgba(255, 255, 255, 0.5),
+			inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+			inset 0 0 8px 4px rgba(255, 255, 255, 0.4);
+		position: relative;
+		overflow: hidden;
+		transition: all 0.3s ease;
+	}
+
+	.glass-card-project:hover {
+		background: rgba(255, 255, 255, 0.35);
+		border-color: rgba(255, 255, 255, 0.5);
+		box-shadow: 
+			0 12px 40px rgba(0, 0, 0, 0.15),
+			inset 0 1px 0 rgba(255, 255, 255, 0.6),
+			inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+			inset 0 0 12px 6px rgba(255, 255, 255, 0.5);
+	}
+
+	.glass-card-project::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.8),
+			transparent
+		);
+		z-index: 1;
+	}
+
+	.glass-card-project::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.8),
+			transparent,
+			rgba(255, 255, 255, 0.3)
+		);
+		z-index: 1;
+	}
+}
+
 html {
 	height: 100%;
 	width: 100%;
@@ -534,4 +675,186 @@ svg.text-4xl.text-violet-400 {
 
 [data-lang="ur"] .text-6xl {
 	font-size: 2.25rem !important;
+}
+
+/* Skills Slider Animation - Ultra Smooth */
+.skills-slider-container {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding: 20px 0;
+	mask: linear-gradient(
+		90deg,
+		transparent 0%,
+		black 10%,
+		black 90%,
+		transparent 100%
+	);
+	-webkit-mask: linear-gradient(
+		90deg,
+		transparent 0%,
+		black 10%,
+		black 90%,
+		transparent 100%
+	);
+}
+
+.skills-slider {
+	display: flex;
+	gap: 3rem;
+	animation: skillsScrollSmooth 50s linear infinite;
+	width: fit-content;
+	will-change: transform;
+	backface-visibility: hidden;
+	perspective: 1000px;
+	transform: translateZ(0);
+}
+
+.skills-slider:hover {
+	animation-play-state: paused;
+	transition: animation-play-state 0.3s ease;
+}
+
+.skill-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 140px;
+	flex-shrink: 0;
+	transform: translateZ(0);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 0.8;
+}
+
+.skill-item:hover {
+	transform: translateY(-8px) scale(1.05) translateZ(0);
+	opacity: 1;
+	z-index: 10;
+	position: relative;
+}
+
+.skill-item .bg-secondary-light,
+.skill-item .dark\\:bg-secondary-dark {
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	border: 2px solid transparent;
+}
+
+.skill-item:hover .bg-secondary-light,
+.skill-item:hover .dark\\:bg-secondary-dark {
+	border-color: rgba(59, 130, 246, 0.3);
+	box-shadow: 
+		0 20px 40px rgba(0, 0, 0, 0.1),
+		0 0 0 1px rgba(59, 130, 246, 0.1),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+@keyframes skillsScrollSmooth {
+	0% {
+		transform: translateX(0) translateZ(0);
+	}
+	100% {
+		transform: translateX(-50%) translateZ(0);
+	}
+}
+
+/* Enhanced skill item animations */
+.skill-item h4,
+.skill-item p {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-item:hover h4 {
+	transform: translateY(-2px);
+	color: rgb(59 130 246);
+}
+
+.skill-item:hover p {
+	transform: translateY(-1px);
+	opacity: 0.9;
+}
+
+/* Smooth fade edges */
+.skills-slider-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		var(--tw-bg-opacity, 1) 0%,
+		transparent 100%
+	);
+	z-index: 10;
+	pointer-events: none;
+}
+
+.skills-slider-container::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100px;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		var(--tw-bg-opacity, 1) 100%
+	);
+	z-index: 10;
+	pointer-events: none;
+}
+
+/* Enhanced smooth scrolling performance */
+@media (prefers-reduced-motion: no-preference) {
+	.skills-slider {
+		animation-duration: 50s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-fill-mode: both;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.skills-slider {
+		animation: none;
+	}
+	
+	.skill-item {
+		opacity: 1;
+	}
+}
+
+/* GPU acceleration for ultra-smooth performance */
+.skills-slider,
+.skill-item,
+.skill-item > div {
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	perspective: 1000;
+}
+
+/* Smooth transitions for all interactive elements */
+.skill-item * {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fallback for older animation classes */
+.auto-scroll {
+	animation: skillsScrollSmooth 50s linear infinite;
+}
+
+.pause-animation {
+	animation-play-state: paused;
 }
