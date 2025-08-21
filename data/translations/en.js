@@ -17,8 +17,10 @@ export default {
 		title: 'About Me',
 		subtitle: 'Get to know me better',
 		skills: 'Skills',
+		skillsTitle: 'I Work With',
 		expertise: 'Expertise',
 		clients: 'Clients',
+		clientsTitle: 'Some of the companies I worked with',
 		bio: [
 			'I\'m a developer who believes great code should feel invisible. When I\'m not crafting pixel-perfect interfaces, you\'ll find me diving deep into AI and LLMs, because the future of web development isn\'t just about making things look good—it\'s about making them think smart.',
 			'My journey started with Vue.js at a tech firm in Lahore, where I learned that the best code is the code that makes users forget they\'re using an app. I\'ve helped boost engagement rates and conversion metrics, but my proudest moments come from those "wow" reactions when users interact with something I built.',

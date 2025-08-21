@@ -17,8 +17,10 @@ export default {
 		title: 'Acerca de Mí',
 		subtitle: 'Conoce más sobre mí',
 		skills: 'Habilidades',
+		skillsTitle: 'Trabajo Con',
 		expertise: 'Experiencia',
 		clients: 'Clientes',
+		clientsTitle: 'Algunas de las empresas con las que he trabajado',
 		bio: [
 			'Soy un desarrollador que cree que el gran código debería sentirse invisible. Cuando no estoy creando interfaces perfectas, me encontrarás sumergiéndome en IA y LLMs, porque el futuro del desarrollo web no se trata solo de hacer que las cosas se vean bien, sino de hacerlas pensar de manera inteligente.',
 			'Mi viaje comenzó con Vue.js en una empresa tecnológica en Lahore, donde aprendí que el mejor código es el código que hace que los usuarios olviden que están usando una aplicación. He ayudado a aumentar las tasas de participación y las métricas de conversión, pero mis momentos más orgullosos provienen de esas reacciones de "wow" cuando los usuarios interactúan con algo que construí.',

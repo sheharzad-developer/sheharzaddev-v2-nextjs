@@ -17,6 +17,7 @@ import {
 import { TbBrain, TbMessageChatbot } from "react-icons/tb";
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from '../../context/LanguageContext';
 
 const techStack = [
   { name: "React", category: "Frontend", icon: <FaReact className="text-sky-400" /> },
@@ -36,6 +37,7 @@ const techStack = [
 ];
 
 const SkillsGrid = () => {
+  const { t } = useLanguage();
   const { ref, inView } = useInView({ 
     triggerOnce: true, 
     rootMargin: '-50px 0px' 
@@ -58,7 +60,7 @@ const SkillsGrid = () => {
       <h3 className={`text-2xl font-bold text-center text-primary-dark dark:text-ternary-light mb-8 transition-all duration-500 delay-300 ${
         isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
       }`}>
-        I Work With
+        {t('about.skillsTitle') || 'I Work With'}
       </h3>
       
       {/* Skills Slider Container */}
