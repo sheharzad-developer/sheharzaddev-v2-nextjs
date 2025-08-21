@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiSun, FiMoon, FiX, FiMenu } from "react-icons/fi";
 import { useRouter } from "next/router";
-import HireMeModal from "../HireMeModal";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "../../context/LanguageContext";
 import logoLight from "../../public/images/S-Logo/S-Logo.jpg";
@@ -237,13 +236,6 @@ function AppHeader() {
 
         {/* Header right section buttons */}
         <div className="hidden sm:flex items-center gap-3">
-          {/* <button
-            onClick={showHireMeModal}
-            className="text-sm font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-lg px-4 py-2 duration-300 transition-all hover:scale-105"
-            aria-label="Hire Me Button"
-          >
-            {t('header.hireMe')}
-          </button> */}
 
           {/* Language Switcher */}
           <LanguageSwitcher />
@@ -263,12 +255,7 @@ function AppHeader() {
           </button>
         </div>
       </div>
-      {/* <div>
-        {showModal ? (
-          <HireMeModal onClose={showHireMeModal} onRequest={showHireMeModal} />
-        ) : null}
-        {showModal ? showHireMeModal : null}
-      </div> */}
+
     </motion.nav>
   );
 }

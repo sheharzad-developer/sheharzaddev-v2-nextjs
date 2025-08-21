@@ -11,13 +11,13 @@ export const useLanguage = () => {
 	return context;
 };
 
+// Available languages
+const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin'];
+
 export const LanguageProvider = ({ children }) => {
 	const router = useRouter();
 	const [currentLanguage, setCurrentLanguage] = useState('en');
 	const [translations, setTranslations] = useState({});
-
-	// Available languages
-	const availableLanguages = ['en', 'es', 'fr', 'de', 'ur'];
 
 	// Load translations when language changes
 	useEffect(() => {
@@ -80,7 +80,7 @@ export const LanguageProvider = ({ children }) => {
 	// Apply language-specific body classes
 	useEffect(() => {
 		// Remove all language classes
-		document.body.classList.remove('lang-urdu', 'lang-en', 'lang-es', 'lang-fr', 'lang-de');
+		document.body.classList.remove('lang-urdu', 'lang-en', 'lang-es', 'lang-fr', 'lang-de', 'lang-jp', 'lang-hin');
 		
 		// Add current language class
 		document.body.classList.add(`lang-${currentLanguage}`);

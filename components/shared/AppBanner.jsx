@@ -59,9 +59,11 @@ function AppBanner() {
           }}
           className='font-general-semibold text-3xl lg:text-4xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light'
         >
-          {t('banner.greeting').replace('Sheharzad', '').replace('شہرزاد صلاح الدین', '')}
+          {t('banner.greeting').replace('Sheharzad', '').replace('شہرزاد صلاح الدین', '').replace('シェハルザード', '').replace('शहेरज़ाद', '')}
           <span style={{ color: 'rgb(129, 140, 248)' }}>
-            {t('banner.greeting').includes('Sheharzad') ? 'Sheharzad' : 'شہرزاد'}
+            {t('banner.greeting').includes('Sheharzad') ? 'Sheharzad' : 
+             t('banner.greeting').includes('シェハルザード') ? 'シェハルザード' :
+             t('banner.greeting').includes('शहेरज़ाद') ? 'शहेरज़ाद' : 'شہرزاد'}
           </span>
         </motion.h1>
         

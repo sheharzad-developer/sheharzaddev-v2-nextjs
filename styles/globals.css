@@ -677,6 +677,106 @@ svg.text-4xl.text-violet-400 {
 	font-size: 2.25rem !important;
 }
 
+/* Japanese language font support */
+body.lang-jp {
+	font-family: 'GeneralSans-Variable', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+}
+
+body.lang-jp * {
+	font-family: 'GeneralSans-Variable', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+}
+
+/* Japanese font size adjustments */
+[data-lang="jp"] {
+	font-size: 1em;
+}
+
+[data-lang="jp"] h1 {
+	font-size: 1em;
+}
+
+[data-lang="jp"] h2 {
+	font-size: 1em;
+}
+
+[data-lang="jp"] h3 {
+	font-size: 1em;
+}
+
+[data-lang="jp"] .text-lg {
+	font-size: 1.125rem !important;
+}
+
+[data-lang="jp"] .text-xl {
+	font-size: 1.25rem !important;
+}
+
+[data-lang="jp"] .text-2xl {
+	font-size: 1.5rem !important;
+}
+
+[data-lang="jp"] .text-3xl {
+	font-size: 1.875rem !important;
+}
+
+[data-lang="jp"] .text-4xl {
+	font-size: 2.25rem !important;
+}
+
+[data-lang="jp"] .text-5xl {
+	font-size: 3rem !important;
+}
+
+/* Hindi language font support */
+body.lang-hin {
+	font-family: 'GeneralSans-Variable', 'Noto Sans Devanagari', 'Mangal', 'Devanagari Sangam MN', sans-serif;
+}
+
+body.lang-hin * {
+	font-family: 'GeneralSans-Variable', 'Noto Sans Devanagari', 'Mangal', 'Devanagari Sangam MN', sans-serif;
+}
+
+/* Hindi font size adjustments */
+[data-lang="hin"] {
+	font-size: 1em;
+}
+
+[data-lang="hin"] h1 {
+	font-size: 1em;
+}
+
+[data-lang="hin"] h2 {
+	font-size: 1em;
+}
+
+[data-lang="hin"] h3 {
+	font-size: 1em;
+}
+
+[data-lang="hin"] .text-lg {
+	font-size: 1.125rem !important;
+}
+
+[data-lang="hin"] .text-xl {
+	font-size: 1.25rem !important;
+}
+
+[data-lang="hin"] .text-2xl {
+	font-size: 1.5rem !important;
+}
+
+[data-lang="hin"] .text-3xl {
+	font-size: 1.875rem !important;
+}
+
+[data-lang="hin"] .text-4xl {
+	font-size: 2.25rem !important;
+}
+
+[data-lang="hin"] .text-5xl {
+	font-size: 3rem !important;
+}
+
 /* Skills Slider Animation - Ultra Smooth */
 .skills-slider-container {
 	overflow: hidden;

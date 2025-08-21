@@ -27,6 +27,16 @@ const languages = [
 		code: 'ur',
 		name: 'اردو',
 		flag: '🇵🇰'
+	},
+	{
+		code: 'jp',
+		name: '日本語',
+		flag: '🇯🇵'
+	},
+	{
+		code: 'hin',
+		name: 'हिन्दी',
+		flag: '🇮🇳'
 	}
 ];
 
