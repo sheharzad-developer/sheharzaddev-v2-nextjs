@@ -71,8 +71,11 @@ function AppHeader() {
           </div>
         </div>
 
-        {/* Mobile menu button and theme switcher */}
+        {/* Mobile menu controls: language switcher, theme switcher, and menu button */}
         <div className="flex items-center gap-3 sm:hidden">
+          {/* Language Switcher - moved outside main navigation */}
+          <LanguageSwitcher />
+          
           <button
             onClick={() => setTheme(activeTheme)}
             type="button"
@@ -161,18 +164,8 @@ function AppHeader() {
                   {t('header.certifications')}
                 </Link>
                 
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
-                  <div className="flex items-center justify-center gap-3">
-                    <LanguageSwitcher />
-                    {/* <button
-                      onClick={showHireMeModal}
-                      className="font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-lg px-6 py-2 duration-300 transition-all"
-                      aria-label="Hire Me Button"
-                    >
-                      {t('header.hireMe')}
-                    </button> */}
-                  </div>
-                </div>
+                {/* Additional menu items can be added here if needed */}
+                {/* Language switcher is now in the header, outside of main navigation */}
               </div>
             </div>
           </div>
