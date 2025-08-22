@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { useLanguage } from '../../context/LanguageContext'
 
 // Dynamically import Lottie with no SSR
-const Lottie = dynamic(() => import('lottie-react'), { 
+const Lottie = dynamic(() => import('lottie-react'), {
   ssr: false,
   loading: () => <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-lg" />
 })
@@ -59,14 +59,16 @@ function AppBanner() {
           }}
           className='font-general-semibold text-3xl lg:text-4xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light'
         >
-          {t('banner.greeting').replace('Sheharzad', '').replace('شہرزاد صلاح الدین', '').replace('シェハルザード', '').replace('शहेरज़ाद', '')}
+          {t('banner.greeting').replace('Sheharzad', '').replace('شہرزاد صلاح الدین', '').replace('シェハルザード', '').replace('शहेरज़ाद', '').replace('谢哈尔扎德', '')}
           <span style={{ color: 'rgb(129, 140, 248)' }}>
-            {t('banner.greeting').includes('Sheharzad') ? 'Sheharzad' : 
-             t('banner.greeting').includes('シェハルザード') ? 'シェハルザード' :
-             t('banner.greeting').includes('शहेरज़ाद') ? 'शहेरज़ाद' : 'شہرزاد'}
+            {t('banner.greeting').includes('Sheharzad') ? 'Sheharzad' :
+              t('banner.greeting').includes('シェハルザード') ? 'シェハルザード' :
+                t('banner.greeting').includes('शहेरज़ाद') ? 'शहेरज़ाद' :
+                  t('banner.greeting').includes('谢哈尔扎德') ? '谢哈尔扎德' : // Chinese case
+                    'شہرزاد'}
           </span>
         </motion.h1>
-        
+
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -79,7 +81,7 @@ function AppBanner() {
         >
           Full-Stack Developer & AI Enthusiast
         </motion.h2>
-        
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -113,7 +115,7 @@ function AppBanner() {
               <FiArrowDownCircle className='ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100'></FiArrowDownCircle>
               <span className='text-sm sm:text-lg duration-100'>{t('banner.downloadCV')}</span>
             </a>
-            
+
             <a
               href='https://calendly.com/sheharzad-salahuddin9000/30min'
               target='_blank'
@@ -126,7 +128,7 @@ function AppBanner() {
           </div>
         </motion.div>
       </div>
-    
+
       <motion.div
         initial={{ opacity: 0, y: -180 }}
         animate={{ opacity: 1, y: 0 }}
@@ -135,7 +137,7 @@ function AppBanner() {
       >
         <div className='w-full flex justify-center sm:justify-end'>
           <div className='w-full h-[300px] sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] relative'>
-            <Image 
+            <Image
               src="/images/bannerImg.2a08b5b3.svg"
               alt="Banner illustration"
               fill

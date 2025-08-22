@@ -37,6 +37,11 @@ const languages = [
 		code: 'hin',
 		name: 'हिन्दी',
 		flag: '🇮🇳'
+	},
+	{
+		code: 'chin',
+		name: '中文',
+		flag: '🇨🇳'
 	}
 ];
 

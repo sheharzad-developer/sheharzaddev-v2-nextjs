@@ -114,6 +114,15 @@ export default {
 			connectWithMe: 'Verbinden Sie sich mit mir'
 		}
 	},
+	certifications: {
+		title: 'Zertifizierungen',
+		subtitle: 'Meine Professionellen Zertifikate',
+		computerProgramming: 'Programmier-Zertifikat',
+		computerProgrammingDesc: 'Professionelle Zertifizierung in Programmiergrundlagen',
+		python: 'Python-Zertifikat',
+		pythonDesc: 'Fortgeschrittene Programmier-Zertifizierung',
+		downloadPdf: 'PDF Herunterladen'
+	},
 	footer: {
 		copyright: '© 2024 Sheharzad Salahuddin. Alle Rechte vorbehalten.',
 		madeWith: 'Mit ❤️ erstellt mit Next.js'

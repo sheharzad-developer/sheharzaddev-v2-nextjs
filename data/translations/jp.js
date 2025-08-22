@@ -114,6 +114,15 @@ export default {
 			connectWithMe: 'つながる'
 		}
 	},
+	certifications: {
+		title: '認定資格',
+		subtitle: 'プロフェッショナル認定資格',
+		computerProgramming: 'プログラミング証明書',
+		computerProgrammingDesc: 'プログラミングの基礎におけるプロフェッショナル認定',
+		python: 'Python証明書',
+		pythonDesc: '高度なプログラミング認定',
+		downloadPdf: 'PDFダウンロード'
+	},
 	footer: {
 		copyright: '© 2024 Sheharzad Salahuddin. 無断複写・転載を禁じます。',
 		madeWith: '❤️とNext.jsで作成'

@@ -114,6 +114,15 @@ export default {
 			connectWithMe: 'میرے ساتھ جڑیں'
 		}
 	},
+	certifications: {
+		title: 'سرٹیفیکیشنز',
+		subtitle: 'میری پیشہ ورانہ سرٹیفیکیشنز',
+		computerProgramming: 'پروگرامنگ سرٹیفکیٹ',
+		computerProgrammingDesc: 'پروگرامنگ کی بنیادی باتوں میں پیشہ ورانہ سرٹیفیکیشن',
+		python: 'پائتھن سرٹیفکیٹ',
+		pythonDesc: 'اعلیٰ درجے کی پروگرامنگ سرٹیفیکیشن',
+		downloadPdf: 'پی ڈی ایف ڈاؤن لوڈ کریں'
+	},
 	footer: {
 		copyright: '© 2024 شہرزاد صلاح الدین۔ جملہ حقوق محفوظ ہیں۔',
 		madeWith: 'محبت ❤️ سے بنایا گیا Next.js استعمال کرتے ہوئے'

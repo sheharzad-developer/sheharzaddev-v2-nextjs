@@ -114,6 +114,15 @@ export default {
 			connectWithMe: 'मुझसे जुड़ें'
 		}
 	},
+	certifications: {
+		title: 'प्रमाणपत्र',
+		subtitle: 'मेरे व्यावसायिक प्रमाणपत्र',
+		computerProgramming: 'प्रोग्रामिंग प्रमाणपत्र',
+		computerProgrammingDesc: 'प्रोग्रामिंग के मूल सिद्धांतों में व्यावसायिक प्रमाणन',
+		python: 'पायथन प्रमाणपत्र',
+		pythonDesc: 'उन्नत प्रोग्रामिंग प्रमाणन',
+		downloadPdf: 'पीडीएफ डाउनलोड करें'
+	},
 	footer: {
 		copyright: '© 2024 शहेरज़ाद सलाहुद्दीन. सर्वाधिकार सुरक्षित।',
 		madeWith: '❤️ और Next.js के साथ बनाया गया'

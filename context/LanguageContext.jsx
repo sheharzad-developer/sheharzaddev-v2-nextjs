@@ -12,7 +12,7 @@ export const useLanguage = () => {
 };
 
 // Available languages
-const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin'];
+const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin'];
 
 export const LanguageProvider = ({ children }) => {
 	const router = useRouter();
@@ -80,7 +80,8 @@ export const LanguageProvider = ({ children }) => {
 	// Apply language-specific body classes
 	useEffect(() => {
 		// Remove all language classes
-		document.body.classList.remove('lang-urdu', 'lang-en', 'lang-es', 'lang-fr', 'lang-de', 'lang-jp', 'lang-hin');
+		const allLanguageClasses = availableLanguages.map(lang => `lang-${lang}`);
+		document.body.classList.remove(...allLanguageClasses);
 		
 		// Add current language class
 		document.body.classList.add(`lang-${currentLanguage}`);
@@ -96,7 +97,10 @@ export const LanguageProvider = ({ children }) => {
 		
 		// Update URL with new language
 		const currentPath = router.asPath;
-		const pathWithoutLang = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+		// Create a regex pattern that matches any of the available languages
+		const languagePattern = `^/(${availableLanguages.join('|')})(/|$)`;
+		const regex = new RegExp(languagePattern);
+		const pathWithoutLang = currentPath.replace(regex, '/');
 		const newPath = `/${languageCode}${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
 		
 		router.push(newPath, undefined, { shallow: true });

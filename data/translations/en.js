@@ -114,6 +114,15 @@ export default {
 			connectWithMe: 'Connect with me'
 		}
 	},
+	certifications: {
+		title: 'Certifications',
+		subtitle: 'My Professional Certifications',
+		computerProgramming: 'Programming Certificate',
+		computerProgrammingDesc: 'Professional certification in programming fundamentals',
+		python: 'Python Certificate',
+		pythonDesc: 'Advanced programming certification',
+		downloadPdf: 'Download PDF'
+	},
 	footer: {
 		copyright: '© 2024 Sheharzad Salahuddin. All rights reserved.',
 		madeWith: 'Made with ❤️ using Next.js'
