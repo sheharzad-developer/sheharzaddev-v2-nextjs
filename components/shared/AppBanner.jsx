@@ -65,6 +65,8 @@ function AppBanner() {
               t('banner.greeting').includes('シェハルザード') ? 'シェハルザード' :
                 t('banner.greeting').includes('शहेरज़ाद') ? 'शहेरज़ाद' :
                   t('banner.greeting').includes('谢哈尔扎德') ? '谢哈尔扎德' : // Chinese case
+                    t('banner.greeting').includes('AT-Sheharzad') ? 'Sheharzad' :
+                    t('banner.greeting').includes('Österreichisches Deutsch') ? 'Österreichisches Deutsch' :
                     'شہرزاد'}
           </span>
         </motion.h1>
@@ -82,7 +84,7 @@ function AppBanner() {
           Full-Stack Developer & AI Enthusiast
         </motion.h2>
 
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -93,7 +95,7 @@ function AppBanner() {
           className='font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200'
         >
           {t('banner.description')}
-        </motion.p>
+        </motion.p> */}
 
         <motion.div
           initial={{ opacity: 0 }}

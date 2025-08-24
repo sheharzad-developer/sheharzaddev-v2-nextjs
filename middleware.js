@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin'];
+const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin', 'aus'];
 const defaultLanguage = 'en';
 
 export function middleware(request) {

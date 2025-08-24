@@ -12,7 +12,7 @@ function Certifications() {
 
 	// Redirect if language is not supported
 	useEffect(() => {
-		const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin'];
+		const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin', 'aus'];
 		if (lang && !availableLanguages.includes(lang)) {
 			router.replace('/en/certifications');
 		}
@@ -173,7 +173,7 @@ export default Certifications;
 
 // Generate static paths for all supported languages
 export async function getStaticPaths() {
-	const languages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin'];
+	const languages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin', 'aus'];
 	const paths = languages.map((lang) => ({
 		params: { lang }
 	}));

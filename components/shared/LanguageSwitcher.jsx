@@ -42,6 +42,11 @@ const languages = [
 		code: 'chin',
 		name: '中文',
 		flag: '🇨🇳'
+	},
+	{
+		code: 'aus',
+		name: 'Österreichisches Deutsch',
+		flag: '🇦🇹'
 	}
 ];
 
