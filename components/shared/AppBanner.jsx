@@ -119,7 +119,7 @@ function AppBanner() {
             </a>
 
             <a
-              href='https://calendly.com/sheharzad-salahuddin9000/30min'
+              href='https://calendly.com/sheharzad-salahuddin9000'
               target='_blank'
               rel='noopener noreferrer'
               className='font-general-medium flex justify-center items-center w-36 sm:w-48 text-lg border-2 border-indigo-500 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white duration-500 transform hover:scale-105 transition-all'
