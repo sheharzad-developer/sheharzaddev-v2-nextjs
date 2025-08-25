@@ -24,7 +24,7 @@ const ContactDetails = () => {
 	};
 
 	const handleCalendlyClick = () => {
-		window.open('https://calendly.com/sheharzad-salahuddin9000/30min', '_blank');
+		window.open('https://calendly.com/sheharzad-salahuddin9000', '_blank');
 	};
 
 	return (

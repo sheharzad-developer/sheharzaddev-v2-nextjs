@@ -12,7 +12,7 @@ export const useLanguage = () => {
 };
 
 // Available languages
-const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin', 'aus'];	
+const availableLanguages = ['en', 'es', 'fr', 'de', 'ur', 'jp', 'hin', 'chin', 'aus', 'russ'];	
 
 export const LanguageProvider = ({ children }) => {
 	const router = useRouter();

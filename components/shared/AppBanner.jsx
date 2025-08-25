@@ -59,15 +59,16 @@ function AppBanner() {
           }}
           className='font-general-semibold text-3xl lg:text-4xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light'
         >
-          {t('banner.greeting').replace('Sheharzad', '').replace('شہرزاد صلاح الدین', '').replace('シェハルザード', '').replace('शहेरज़ाद', '').replace('谢哈尔扎德', '')}
+          {t('banner.greeting').replace('Sheharzad', '').replace('شہرزاد صلاح الدین', '').replace('シェハルザード', '').replace('शहेरज़ाद', '').replace('谢哈尔扎德', '').replace('Шехарзад', '')}
           <span style={{ color: 'rgb(129, 140, 248)' }}>
             {t('banner.greeting').includes('Sheharzad') ? 'Sheharzad' :
               t('banner.greeting').includes('シェハルザード') ? 'シェハルザード' :
                 t('banner.greeting').includes('शहेरज़ाद') ? 'शहेरज़ाद' :
                   t('banner.greeting').includes('谢哈尔扎德') ? '谢哈尔扎德' : // Chinese case
-                    t('banner.greeting').includes('AT-Sheharzad') ? 'Sheharzad' :
-                    t('banner.greeting').includes('Österreichisches Deutsch') ? 'Österreichisches Deutsch' :
-                    'شہرزاد'}
+                    t('banner.greeting').includes('Шехарзад') ? 'Шехарзад' :   // Russian case
+                      t('banner.greeting').includes('AT-Sheharzad') ? 'Sheharzad' :
+                        t('banner.greeting').includes('Österreichisches Deutsch') ? 'Österreichisches Deutsch' :
+                          'شہرزاد'}
           </span>
         </motion.h1>
 
@@ -122,7 +123,7 @@ function AppBanner() {
               href='https://calendly.com/sheharzad-salahuddin9000'
               target='_blank'
               rel='noopener noreferrer'
-              className='font-general-medium flex justify-center items-center w-36 sm:w-48 text-lg border-2 border-indigo-500 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white duration-500 transform hover:scale-105 transition-all'
+              className='font-general-medium flex justify-center items-center w-40 sm:w-52 text-lg border-2 border-indigo-500 py-2.5 sm:py-3 px-4 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white duration-500 transform hover:scale-105 transition-all'
               aria-label='Book a Call'
             >
               <span className='text-sm sm:text-lg duration-100'>{t('banner.bookCall')} ☕</span>

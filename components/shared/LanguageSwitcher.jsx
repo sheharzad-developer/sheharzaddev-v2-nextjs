@@ -47,6 +47,11 @@ const languages = [
 		code: 'aus',
 		name: 'Österreichisches Deutsch',
 		flag: '🇦🇹'
+	},
+	{
+		code: 'russ',
+		name: 'Русский',
+		flag: '🇷🇺'
 	}
 ];
 
