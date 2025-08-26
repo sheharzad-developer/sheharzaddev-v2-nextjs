@@ -3,7 +3,7 @@ import AppFooter from '../shared/AppFooter';
 import PagesMetaHead from '../PagesMetaHead';
 import ParticlesBackground from '../shared/ParticlesBackground';
 import CustomCursor from '../shared/CustomCursor';
-import FloatingContactButton from '../shared/FloatingContactButton';
+
 import { useLanguage } from '../../context/LanguageContext';
 
 const DefaultLayout = ({ children }) => {
@@ -13,7 +13,7 @@ const DefaultLayout = ({ children }) => {
 		<div data-lang={currentLanguage}>
 			<ParticlesBackground />
 			<CustomCursor />
-			<FloatingContactButton />
+
 			<PagesMetaHead />
 			<AppHeader />
 			<main className="relative z-10 flex-grow">{children}</main>
