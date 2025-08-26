@@ -77,10 +77,7 @@ export default {
 				title: 'واٹس ایپ چیٹ',
 				description: 'فوری جواب حاصل کریں'
 			},
-			telegram: {
-				title: 'ٹیلیگرام چیٹ',
-				description: 'تیز پروجیکٹ ڈسکشنز'
-			},
+
 			calendly: {
 				title: 'کافی چیٹ بک کریں ☕',
 				description: '30 منٹ کی ڈسکوری کال'

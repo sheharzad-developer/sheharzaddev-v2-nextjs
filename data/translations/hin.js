@@ -77,10 +77,7 @@ export default {
 				title: 'WhatsApp चैट',
 				description: 'तुरंत जवाब पाएं'
 			},
-			telegram: {
-				title: 'Telegram चैट',
-				description: 'तेज़ प्रोजेक्ट चर्चा'
-			},
+
 			calendly: {
 				title: 'कॉफी चैट बुक करें ☕',
 				description: '30 मिनट की डिस्कवरी कॉल'

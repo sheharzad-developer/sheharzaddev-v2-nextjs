@@ -77,10 +77,7 @@ export default {
 				title: 'Чат в WhatsApp',
 				description: 'Мгновенные ответы'
 			},
-			telegram: {
-				title: 'Чат в Telegram',
-				description: 'Быстрые обсуждения проектов'
-			},
+
 			calendly: {
 				title: 'Забронировать кофе-чат ☕',
 				description: '30-минутный ознакомительный звонок'

@@ -77,10 +77,7 @@
 				title: 'WhatsApp 聊天',
 				description: '即时回复'
 			},
-			telegram: {
-				title: 'Telegram 聊天',
-				description: '快速项目讨论'
-			},
+
 			calendly: {
 				title: '预约咖啡聊天 ☕',
 				description: '30 分钟探索通话'

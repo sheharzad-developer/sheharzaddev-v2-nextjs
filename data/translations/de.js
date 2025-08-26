@@ -77,10 +77,7 @@ export default {
 				title: 'WhatsApp Chat',
 				description: 'Sofortige Antworten erhalten'
 			},
-			telegram: {
-				title: 'Telegram Chat',
-				description: 'Schnelle Projektdiskussionen'
-			},
+
 			calendly: {
 				title: 'Kaffee-Chat Buchen ☕',
 				description: '30-minütiges Entdeckungsgespräch'

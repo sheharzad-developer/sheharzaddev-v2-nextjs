@@ -1,5 +1,5 @@
 import { FiPhone, FiMapPin, FiMail, FiBriefcase, FiMessageCircle, FiCalendar, FiExternalLink } from 'react-icons/fi';
-import { FaWhatsapp, FaTelegram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import HireMeModal from '../HireMeModal';
@@ -18,10 +18,7 @@ const ContactDetails = () => {
 		window.open(`https://wa.me/923160144176?text=${message}`, '_blank');
 	};
 
-	const handleTelegramClick = () => {
-		const message = encodeURIComponent("Hi Sheharzad! I'd like to discuss a project with you.");
-		window.open(`https://t.me/sheharzad_developer?text=${message}`, '_blank');
-	};
+
 
 	const handleCalendlyClick = () => {
 		window.open('https://calendly.com/sheharzad-salahuddin9000', '_blank');
@@ -64,24 +61,7 @@ const ContactDetails = () => {
 						</div>
 					</motion.div>
 
-					{/* Telegram Chat */}
-					<motion.div
-						whileHover={{ scale: 1.02 }}
-						whileTap={{ scale: 0.98 }}
-						className="group cursor-pointer"
-						onClick={handleTelegramClick}
-					>
-						<div className="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-all duration-300">
-							<div className="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-								<FaTelegram className="text-white text-xl" />
-							</div>
-							<div className="flex-1 text-left">
-								<h3 className="font-semibold text-blue-800 dark:text-blue-200">{t('contact.details.telegram.title')}</h3>
-								<p className="text-sm text-blue-600 dark:text-blue-300">{t('contact.details.telegram.description')}</p>
-							</div>
-							<FiExternalLink className="text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-						</div>
-					</motion.div>
+
 
 					{/* Calendly Booking */}
 					<motion.div
