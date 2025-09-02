@@ -3,6 +3,7 @@ export default {
 		home: 'Inicio',
 		about: 'Acerca de Mí',
 		projects: 'Proyectos',
+		experience: 'Experiencia',
 		certifications: 'Certificaciones',
 		contact: 'Contacto',
 		hireMe: 'Contrátame'
@@ -43,6 +44,48 @@ export default {
 				title: 'Desarrollo Full Stack',
 				description: 'Creando aplicaciones web de extremo a extremo con marcos y herramientas modernas.',
 				items: ['React/Next.js', 'Node.js', 'Python', 'Django', 'Typescript']
+			}
+		}
+	},
+	experience: {
+		title: 'Experiencia Laboral',
+		subtitle: 'Mi trayectoria profesional a lo largo de los años',
+		items: {
+			1: {
+				position: 'Desarrollador Frontend',
+				company: 'Tech Solutions Inc.',
+				period: '2023 - Presente',
+				description: 'Liderando el desarrollo frontend para aplicaciones web usando React.js y Next.js. Colaborando con equipos multifuncionales para entregar experiencias de usuario de alta calidad.'
+			},
+			2: {
+				position: 'Especialista en Soporte al Cliente',
+				company: 'Digital Services Co.',
+				period: '2022 - 2023',
+				description: 'Proporcioné soporte técnico y servicio al cliente para aplicaciones web. Resolví problemas de usuarios y mejoré las métricas de satisfacción del cliente.'
+			},
+			3: {
+				position: 'Analista de Datos',
+				company: 'Analytics Pro',
+				period: '2021 - 2022',
+				description: 'Analicé datos de usuarios y creé reportes para impulsar decisiones empresariales. Trabajé con varias herramientas de análisis y plataformas de visualización.'
+			},
+			4: {
+				position: 'Desarrollador de Software',
+				company: 'Innovation Labs',
+				period: '2020 - 2021',
+				description: 'Desarrollé aplicaciones full-stack usando tecnologías modernas. Contribuí a múltiples proyectos y mentoré a desarrolladores junior.'
+			},
+			5: {
+				position: 'Gerente de Proyecto',
+				company: 'Creative Agency',
+				period: '2019 - 2020',
+				description: 'Gestioné proyectos de desarrollo web desde la concepción hasta la entrega. Coordiné con clientes y equipos de desarrollo para asegurar el éxito del proyecto.'
+			},
+			6: {
+				position: 'Desarrollador Junior',
+				company: 'Startup Hub',
+				period: '2018 - 2019',
+				description: 'Comencé mi carrera como desarrollador junior, aprendiendo varias tecnologías y contribuyendo a proyectos de startups.'
 			}
 		}
 	},

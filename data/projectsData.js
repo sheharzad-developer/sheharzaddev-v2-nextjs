@@ -4,8 +4,8 @@ export const projectsData = [
     title: "Apartment Design Tool",
     subtitle: "Interactive Floor Plan & 3D Visualization Platform",
     img: "/images/Apartment-Planner.png",
-    link: "https://apartment-design-tool.vercel.app/",
-    githubUrl: "https://github.com/sheharzad-developer/apartment-design-tool",
+    link: "https://apartment-planner-eta.vercel.app/",
+    githubUrl: "https://github.com/sheharzad-developer/Apartment-Planner",
     description: "A comprehensive apartment design platform that allows users to create stunning floor plans, visualize designs in 3D, and bring apartment ideas to life. Features an intuitive planning tool with AI-powered auto-generation capabilities for efficient space planning and design visualization.",
     technologies: [
       "React.js",

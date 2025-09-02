@@ -3,6 +3,7 @@
 		home: '首页',
 		about: '关于我',
 		projects: '项目',
+		experience: '经验',
 		certifications: '认证',
 		contact: '联系我',
 		hireMe: '雇佣我'
@@ -43,6 +44,48 @@
 				title: '全栈开发',
 				description: '使用现代框架和工具构建端到端的 Web 应用。',
 				items: ['React/Next.js', 'Node.js', 'Python', 'Django', 'Typescript']
+			}
+		}
+	},
+	experience: {
+		title: '工作经验',
+		subtitle: '我的专业历程',
+		items: {
+			1: {
+				position: '前端开发员',
+				company: 'Tech Solutions Inc.',
+				period: '2023 - 现在',
+				description: '使用React.js和Next.js领导Web应用程序的前端开发。与跨职能团队合作，提供高质量的用户体验。'
+			},
+			2: {
+				position: '客户支持专员',
+				company: 'Digital Services Co.',
+				period: '2022 - 2023',
+				description: '为Web应用程序提供技术支持和客户服务。解决用户问题并改善客户满意度指标。'
+			},
+			3: {
+				position: '数据分析师',
+				company: 'Analytics Pro',
+				period: '2021 - 2022',
+				description: '分析用户数据并创建报告以推动业务决策。使用各种分析工具和可视化平台。'
+			},
+			4: {
+				position: '软件开发者',
+				company: 'Innovation Labs',
+				period: '2020 - 2021',
+				description: '使用现代技术开发全栈应用程序。为多个项目做出贡献并指导初级开发者。'
+			},
+			5: {
+				position: '项目经理',
+				company: 'Creative Agency',
+				period: '2019 - 2020',
+				description: '管理从构思到交付的Web开发项目。与客户和开发团队协调以确保项目成功。'
+			},
+			6: {
+				position: '初级开发者',
+				company: 'Startup Hub',
+				period: '2018 - 2019',
+				description: '作为初级开发者开始我的职业生涯，学习各种技术并为创业项目做出贡献。'
 			}
 		}
 	},

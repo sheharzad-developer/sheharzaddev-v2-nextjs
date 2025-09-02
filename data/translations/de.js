@@ -3,6 +3,7 @@ export default {
 		home: 'Startseite',
 		about: 'Über Mich',
 		projects: 'Projekte',
+		experience: 'Erfahrung',
 		certifications: 'Zertifizierungen',
 		contact: 'Kontakt',
 		hireMe: 'Mich Einstellen'
@@ -43,6 +44,47 @@ export default {
 				title: 'Full-Stack-Entwicklung',
 				description: 'Erstellung von End-to-End-Webanwendungen mit modernen Frameworks und Tools.',
 				items: ['React/Next.js', 'Node.js', 'Python', 'Django', 'Typescript']
+			}
+		}
+	},experience: {
+		title: 'Berufserfahrung',
+		subtitle: 'Mein beruflicher Werdegang im Laufe der Jahre',
+		items: {
+			1: {
+				position: 'Frontend-Entwickler',
+				company: 'Tech Solutions Inc.',
+				period: '2023 - Gegenwart',
+				description: 'Leitung der Frontend-Entwicklung für Webanwendungen mit React.js und Next.js. Zusammenarbeit mit funktionsübergreifenden Teams zur Bereitstellung hochwertiger Benutzererfahrungen.'
+			},
+			2: {
+				position: 'Kundenservice-Spezialist',
+				company: 'Digital Services Co.',
+				period: '2022 - 2023',
+				description: 'Technischer Support und Kundenservice für Webanwendungen bereitgestellt. Benutzerprobleme gelöst und Kundenzufriedenheitsmetriken verbessert.'
+			},
+			3: {
+				position: 'Datenanalyst',
+				company: 'Analytics Pro',
+				period: '2021 - 2022',
+				description: 'Benutzerdaten analysiert und Berichte erstellt, um Geschäftsentscheidungen zu treffen. Arbeit mit verschiedenen Analyse-Tools und Visualisierungsplattformen.'
+			},
+			4: {
+				position: 'Software-Entwickler',
+				company: 'Innovation Labs',
+				period: '2020 - 2021',
+				description: 'Full-Stack-Anwendungen mit modernen Technologien entwickelt. Zu mehreren Projekten beigetragen und Junior-Entwickler betreut.'
+			},
+			5: {
+				position: 'Projektmanager',
+				company: 'Creative Agency',
+				period: '2019 - 2020',
+				description: 'Webentwicklungsprojekte von der Konzeption bis zur Auslieferung verwaltet. Mit Kunden und Entwicklungsteams koordiniert, um Projekterfolg sicherzustellen.'
+			},
+			6: {
+				position: 'Junior-Entwickler',
+				company: 'Startup Hub',
+				period: '2018 - 2019',
+				description: 'Meine Karriere als Junior-Entwickler begonnen, verschiedene Technologien gelernt und zu Startup-Projekten beigetragen.'
 			}
 		}
 	},

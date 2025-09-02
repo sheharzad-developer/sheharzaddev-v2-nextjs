@@ -131,6 +131,17 @@ function AppHeader() {
                   {t('header.about')}
                 </Link>
                 <Link
+                  href={`/${currentLanguage}/experience`}
+                  className={`block text-center py-3 px-4 rounded-lg transition-colors duration-300 ${
+                    router.pathname === "/[lang]/experience" || router.pathname === "/experience"
+                      ? "bg-indigo-500 text-white"
+                      : "text-primary-dark dark:text-ternary-light hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
+                  onClick={() => setShowMenu(false)}
+                >
+                  {t('header.experience')}
+                </Link>
+                <Link
                   href={`/${currentLanguage}/contact`}
                   className={`block text-center py-3 px-4 rounded-lg transition-colors duration-300 ${
                     router.pathname === "/[lang]/contact" || router.pathname === "/contact"
@@ -193,6 +204,16 @@ function AppHeader() {
               aria-label="About Me"
             >
               <Link href={`/${currentLanguage}/about`}>{t('header.about')}</Link>
+            </div>
+            <div
+              className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${
+                router.pathname === "/[lang]/experience" || router.pathname === "/experience"
+                  ? "bg-ternary-dark text-white"
+                  : "text-primary-dark dark:text-ternary-light hover:bg-primary-light dark:hover:bg-ternary-dark"
+              }`}
+              aria-label="Experience"
+            >
+              <Link href={`/${currentLanguage}/experience`}>{t('header.experience')}</Link>
             </div>
             <div
               className={`block text-base sm:text-lg font-medium rounded-full px-4 py-1 transition-colors duration-300 ${

@@ -3,6 +3,7 @@ export default {
 		home: 'Accueil',
 		about: 'À Propos',
 		projects: 'Projets',
+		experience: 'Expérience',
 		certifications: 'Certifications',
 		contact: 'Contact',
 		hireMe: 'Embauchez-moi'
@@ -43,6 +44,48 @@ export default {
 				title: 'Développement Full Stack',
 				description: 'Création d\'applications web de bout en bout avec des frameworks et outils modernes.',
 				items: ['React/Next.js', 'Node.js', 'Python', 'Django', 'Typescript']
+			}
+		}
+	},
+	experience: {
+		title: 'Expérience Professionnelle',
+		subtitle: 'Mon parcours professionnel au fil des années',
+		items: {
+			1: {
+				position: 'Développeur Frontend',
+				company: 'Tech Solutions Inc.',
+				period: '2023 - Présent',
+				description: 'Diriger le développement frontend pour les applications web en utilisant React.js et Next.js. Collaborer avec des équipes multifonctionnelles pour livrer des expériences utilisateur de haute qualité.'
+			},
+			2: {
+				position: 'Spécialiste du Support Client',
+				company: 'Digital Services Co.',
+				period: '2022 - 2023',
+				description: 'Fourni un support technique et un service client pour les applications web. Résolu les problèmes des utilisateurs et amélioré les métriques de satisfaction client.'
+			},
+			3: {
+				position: 'Analyste de Données',
+				company: 'Analytics Pro',
+				period: '2021 - 2022',
+				description: 'Analysé les données utilisateur et créé des rapports pour stimuler les décisions commerciales. Travaillé avec divers outils d\'analyse et plateformes de visualisation.'
+			},
+			4: {
+				position: 'Développeur de Logiciels',
+				company: 'Innovation Labs',
+				period: '2020 - 2021',
+				description: 'Développé des applications full-stack en utilisant des technologies modernes. Contribué à plusieurs projets et mentoré des développeurs juniors.'
+			},
+			5: {
+				position: 'Chef de Projet',
+				company: 'Creative Agency',
+				period: '2019 - 2020',
+				description: 'Géré des projets de développement web de la conception à la livraison. Coordonné avec les clients et les équipes de développement pour assurer le succès du projet.'
+			},
+			6: {
+				position: 'Développeur Junior',
+				company: 'Startup Hub',
+				period: '2018 - 2019',
+				description: 'Commencé ma carrière comme développeur junior, apprenant diverses technologies et contribuant à des projets de startups.'
 			}
 		}
 	},

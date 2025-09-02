@@ -3,6 +3,7 @@ export default {
 		home: 'ホーム',
 		about: '私について',
 		projects: 'プロジェクト',
+		experience: '経験',
 		certifications: '認定資格',
 		contact: 'お問い合わせ',
 		hireMe: '採用する'
@@ -43,6 +44,48 @@ export default {
 				title: 'フルスタック開発',
 				description: '最新のフレームワークとツールでエンドツーエンドのWebアプリケーションを構築。',
 				items: ['React/Next.js', 'Node.js', 'Python', 'Django', 'Typescript']
+			}
+		}
+	},
+	experience: {
+		title: '職歴',
+		subtitle: '私の専門的な経歴',
+		items: {
+			1: {
+				position: 'フロントエンド開発者',
+				company: 'Tech Solutions Inc.',
+				period: '2023 - 現在',
+				description: 'React.jsとNext.jsを使用したWebアプリケーションのフロントエンド開発をリード。クロスファンクショナルチームと協力して高品質なユーザーエクスペリエンスを提供。'
+			},
+			2: {
+				position: 'カスタマーサポートスペシャリスト',
+				company: 'Digital Services Co.',
+				period: '2022 - 2023',
+				description: 'Webアプリケーションの技術サポートとカスタマーサービスを提供。ユーザーの問題を解決し、顧客満足度指標を改善。'
+			},
+			3: {
+				position: 'データアナリスト',
+				company: 'Analytics Pro',
+				period: '2021 - 2022',
+				description: 'ユーザーデータを分析し、ビジネス決定を促進するレポートを作成。様々な分析ツールとビジュアライゼーションプラットフォームで作業。'
+			},
+			4: {
+				position: 'ソフトウェア開発者',
+				company: 'Innovation Labs',
+				period: '2020 - 2021',
+				description: '最新技術を使用してフルスタックアプリケーションを開発。複数のプロジェクトに貢献し、ジュニア開発者をメンタリング。'
+			},
+			5: {
+				position: 'プロジェクトマネージャー',
+				company: 'Creative Agency',
+				period: '2019 - 2020',
+				description: 'Web開発プロジェクトを構想から配信まで管理。クライアントと開発チームと調整してプロジェクトの成功を確保。'
+			},
+			6: {
+				position: 'ジュニア開発者',
+				company: 'Startup Hub',
+				period: '2018 - 2019',
+				description: 'ジュニア開発者としてキャリアを開始し、様々な技術を学び、スタートアッププロジェクトに貢献。'
 			}
 		}
 	},
