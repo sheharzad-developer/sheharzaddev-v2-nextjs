@@ -21,7 +21,7 @@ function Home() {
 
 	return (
 			<>
-				<PagesMetaHead title={t('banner.greeting', 'Sheharzad Salahuddin')} />
+				<PagesMetaHead title="Sheharzad Salahuddin - Full Stack Developer & AI Enthusiast" />
 
 				<motion.div
 					initial={{ opacity: 0 }}

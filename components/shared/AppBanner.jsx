@@ -113,7 +113,8 @@ function AppBanner() {
             <a
               download='Sheharzad-Resume.pdf'
               href='/files/Sheharzad-Resume.pdf'
-              className='font-general-medium flex justify-center items-center w-36 sm:w-48 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500 transform hover:scale-105 transition-all'
+              className='font-general-medium flex justify-center items-center text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500 transform hover:scale-105 transition-all'
+              style={{ width: '17rem' }}
               aria-label='Download Resume'
             >
               <FiArrowDownCircle className='ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100'></FiArrowDownCircle>
@@ -124,7 +125,7 @@ function AppBanner() {
               href='https://calendly.com/sheharzad-salahuddin9000'
               target='_blank'
               rel='noopener noreferrer'
-              className='font-general-medium flex justify-center items-center w-40 sm:w-52 text-lg border-2 border-indigo-500 py-2.5 sm:py-3 px-4 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white duration-500 transform hover:scale-105 transition-all'
+              className='font-general-medium flex justify-center items-center w-64 text-lg border-2 border-indigo-500 py-2.5 sm:py-3 px-4 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white duration-500 transform hover:scale-105 transition-all'
               aria-label='Book a Call'
             >
               <span className='text-sm sm:text-lg duration-100'>{t('banner.bookCall')} ☕</span>

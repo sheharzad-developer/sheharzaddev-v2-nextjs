@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { FiChevronDown } from 'react-icons/fi';
+import { getFlagDisplayMethod, getFlagText, getFlagImagePath } from '../../utils/emojiSupport';
 
 const languages = [
 	{
@@ -58,9 +59,53 @@ const languages = [
 function LanguageSwitcher() {
 	const { currentLanguage, changeLanguage } = useLanguage();
 	const [isOpen, setIsOpen] = useState(false);
+	const [flagDisplayMethod, setFlagDisplayMethod] = useState('emoji');
 	const dropdownRef = useRef(null);
 
 	const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0];
+
+	// Detect flag display method on component mount
+	useEffect(() => {
+		const method = getFlagDisplayMethod();
+		setFlagDisplayMethod(method);
+	}, []);
+
+	// Helper function to render flag based on display method
+	const renderFlag = (flag, countryCode) => {
+		if (flagDisplayMethod === 'text') {
+			return (
+				<span className="flag-text-fallback">
+					{getFlagText(countryCode)}
+				</span>
+			);
+		} else if (flagDisplayMethod === 'image') {
+			return (
+				<div className="relative">
+					<img 
+						src={getFlagImagePath(countryCode)} 
+						alt={`${countryCode} flag`}
+						className="flag-image"
+						onError={(e) => {
+							// Fallback to text if image fails to load
+							e.target.style.display = 'none';
+							const fallback = e.target.nextElementSibling;
+							if (fallback) {
+								fallback.style.display = 'inline';
+							}
+						}}
+					/>
+					<span className="flag-text-fallback" style={{ display: 'none' }}>
+						{getFlagText(countryCode)}
+					</span>
+				</div>
+			);
+		}
+		return (
+			<span className="text-xl flag-emoji" role="img" aria-label={currentLang.name}>
+				{flag}
+			</span>
+		);
+	};
 
 	// Close dropdown when clicking outside
 	useEffect(() => {
@@ -91,9 +136,7 @@ function LanguageSwitcher() {
 				aria-expanded={isOpen}
 				aria-haspopup="listbox"
 			>
-				<span className="text-xl" role="img" aria-label={currentLang.name}>
-					{currentLang.flag}
-				</span>
+				{renderFlag(currentLang.flag, currentLang.code.toUpperCase())}
 				<span className="text-sm font-medium text-gray-700 dark:text-gray-300 hidden sm:block">
 					{currentLang.code.toUpperCase()}
 				</span>
@@ -120,9 +163,7 @@ function LanguageSwitcher() {
 								role="option"
 								aria-selected={currentLanguage === language.code}
 							>
-								<span className="text-xl" role="img" aria-label={language.name}>
-									{language.flag}
-								</span>
+								{renderFlag(language.flag, language.code.toUpperCase())}
 								<div className="flex flex-col">
 									<span className="text-sm font-medium">{language.name}</span>
 									<span className="text-xs text-gray-500 dark:text-gray-400">

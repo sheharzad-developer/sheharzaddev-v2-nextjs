@@ -319,6 +319,67 @@ a {
 	font-style: normal;
 }
 
+/* Emoji and Flag Support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Apple+Color+Emoji&display=swap');
+
+/* Enhanced emoji font stack for better cross-platform support */
+.emoji-font {
+	font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI Symbol', sans-serif;
+	font-variant-emoji: emoji;
+	-webkit-font-feature-settings: "liga" 1, "kern" 1;
+	font-feature-settings: "liga" 1, "kern" 1;
+}
+
+/* Flag-specific styling for better rendering */
+.flag-emoji {
+	font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI Symbol', sans-serif;
+	font-variant-emoji: emoji;
+	font-size: 1.2em;
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Flag image styling */
+.flag-image {
+	width: 20px;
+	height: 16px;
+	object-fit: cover;
+	border-radius: 2px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Dark mode flag image styling */
+.dark .flag-image {
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Fallback text styling for flags */
+.flag-text-fallback {
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 2px 6px;
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.1);
+	color: #374151;
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 24px;
+	text-align: center;
+}
+
+.dark .flag-text-fallback {
+	background: rgba(255, 255, 255, 0.1);
+	color: #D1D5DB;
+}
+
 .font-general-variable {
 	font-family: 'GeneralSans-Variable';
 }
