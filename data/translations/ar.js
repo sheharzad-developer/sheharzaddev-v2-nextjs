@@ -9,7 +9,7 @@ export default {
 		hireMe: 'وظفني'
 	},
 	banner: {
-		greeting: 'مرحباً، أنا شهارزاد',
+		greeting: 'السيد شهرزاد',
 		description: 'مطور واجهات أمامية | React.js | Node.js | متحمس لـ Python | LLM | بناء تطبيقات ويب قابلة للتوسع',
 		downloadCV: 'تحميل السيرة الذاتية',
 		bookCall: 'احجز مكالمة'
