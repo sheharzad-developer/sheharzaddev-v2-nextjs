@@ -23,10 +23,10 @@ export default {
 		clients: 'Clientes',
 		clientsTitle: 'Algunas de las empresas con las que he trabajado',
 		bio: [
-			'Soy un desarrollador que cree que el gran código debería sentirse invisible. Cuando no estoy creando interfaces perfectas, me encontrarás sumergiéndome en IA y LLMs, porque el futuro del desarrollo web no se trata solo de hacer que las cosas se vean bien, sino de hacerlas pensar de manera inteligente.',
-			'Mi viaje comenzó con Vue.js en una empresa tecnológica en Lahore, donde aprendí que el mejor código es el código que hace que los usuarios olviden que están usando una aplicación. He ayudado a aumentar las tasas de participación y las métricas de conversión, pero mis momentos más orgullosos provienen de esas reacciones de "wow" cuando los usuarios interactúan con algo que construí.',
-			'Ahora estoy en un emocionante giro hacia Python, IA y desarrollo de LLM. ¿Por qué? Porque quiero construir aplicaciones que no solo respondan a los usuarios, sino que anticipen necesidades, aprendan preferencias y creen experiencias genuinamente inteligentes. Piénsalo como pasar de "hacer que las cosas funcionen" a "hacer que las cosas piensen".',
-			'Cuando no estoy programando, probablemente esté depurando mis decisiones de vida o explorando nuevas tecnologías. Creo en la IA ética, el desarrollo responsable y el poder de la colaboración. Porque las mejores soluciones provienen de perspectivas diversas y la voluntad de aprender de cada interacción.'
+			'Soy un desarrollador full stack que cree que el gran software debería sentirse invisible. Me enfoco en construir experiencias de usuario rápidas, intuitivas y fluidas usando frameworks modernos de JavaScript como React, Vue, Next.js y Node.js.',
+			'Mi viaje comenzó en una empresa tecnológica en Lahore donde empecé con Vue.js y aprendí que las mejores interfaces son aquellas en las que los usuarios no tienen que pensar. Desde entonces he contribuido a aplicaciones que mejoraron el compromiso, aumentaron las conversiones y entregaron experiencias de usuario limpias y de alta calidad.',
+			'Con el tiempo me he especializado en crear interfaces perfectas, integrar REST APIs, optimizar el rendimiento y construir arquitecturas mantenibles usando TypeScript, Tailwind CSS, ShadCN y herramientas modernas. Disfruto diseñando componentes, refinando flujos de usuario y haciendo que los productos se sientan pulidos y responsivos.',
+			'Cuando no estoy programando, probablemente me encontrarás experimentando con nuevos frameworks, mejorando proyectos pasados o ayudando a otros en la comunidad de desarrolladores. Creo en el código limpio, el desarrollo ético y el aprendizaje continuo porque los grandes productos vienen de la colaboración, la curiosidad y la atención al detalle.'
 		],
 		counter: {
 			yearsExperience: 'Años de experiencia',

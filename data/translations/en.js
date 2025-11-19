@@ -23,10 +23,10 @@ export default {
 		clients: 'Clients',
 		clientsTitle: 'Some of the companies I worked with',
 		bio: [
-			'I\'m a developer who believes great code should feel invisible. When I\'m not crafting pixel-perfect interfaces, you\'ll find me diving deep into AI and LLMs, because the future of web development isn\'t just about making things look good—it\'s about making them think smart.',
-			'My journey started with Vue.js at a tech firm in Lahore, where I learned that the best code is the code that makes users forget they\'re using an app. I\'ve helped boost engagement rates and conversion metrics, but my proudest moments come from those "wow" reactions when users interact with something I built.',
-			'Now I\'m on an exciting pivot into Python, AI, and LLM development. Why? Because I want to build applications that don\'t just respond to users—they anticipate needs, learn preferences, and create genuinely intelligent experiences. Think of it as moving from "making things work" to "making things think."',
-			'When I\'m not coding, I\'m probably debugging my life choices or exploring new technologies. I believe in ethical AI, responsible development, and the power of collaboration. Because the best solutions come from diverse perspectives and a willingness to learn from every interaction.'
+			'I\'m a full stack developer who believes great software should feel invisible. I focus on building fast, intuitive, and seamless user experiences using modern JavaScript frameworks like React, Vue, Next.js, and Node.js.',
+			'My journey began at a tech firm in Lahore where I started with Vue.js and learned that the best interfaces are the ones users do not have to think about. Since then I have contributed to applications that improved engagement, increased conversions, and delivered clean and high quality user experiences.',
+			'Over time I have specialized in crafting pixel perfect UIs, integrating REST APIs, optimizing performance, and building maintainable architectures using TypeScript, Tailwind CSS, ShadCN, and modern tooling. I enjoy designing components, refining user flows, and making products feel polished and responsive.',
+			'When I am not coding you will probably find me experimenting with new frameworks, improving past projects, or helping others in the developer community. I believe in clean code, ethical development, and continuous learning because great products come from collaboration, curiosity, and attention to detail.'
 		],
 		counter: {
 			yearsExperience: 'Years of experience',

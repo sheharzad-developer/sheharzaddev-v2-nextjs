@@ -23,10 +23,10 @@ export default {
 		clients: 'Kunden',
 		clientsTitle: 'Einige Unternehmen, mit denen ich gearbeitet habe',
 		bio: [
-			'Ich bin ein Entwickler, der glaubt, dass großartiger Code unsichtbar wirken sollte. Wenn ich keine pixelgenauen Interfaces entwickle, tauche ich tief in KI und LLMs ein, denn die Zukunft der Webentwicklung besteht nicht nur darin, Dinge schön aussehen zu lassen – sondern sie intelligent denken zu lassen.',
-			'Meine Reise begann mit Vue.js bei einem Tech-Unternehmen in Lahore, wo ich gelernt habe, dass der beste Code jener ist, der Nutzer vergessen lässt, dass sie überhaupt eine App bedienen. Ich habe geholfen, Engagement-Raten und Conversion-Metriken zu steigern, aber meine stolzesten Momente sind die "Wow"-Reaktionen, wenn Nutzer mit etwas interagieren, das ich entwickelt habe.',
-			'Jetzt wage ich den spannenden Schritt in Richtung Python, KI und LLM-Entwicklung. Warum? Weil ich Anwendungen bauen möchte, die nicht nur reagieren – sondern Bedürfnisse vorhersehen, Vorlieben lernen und wirklich intelligente Erfahrungen schaffen. Es geht darum, von "Dinge zum Laufen bringen" zu "Dinge zum Denken bringen" zu wechseln.',
-			'Wenn ich nicht programmiere, debugge ich wahrscheinlich meine Lebensentscheidungen oder erkunde neue Technologien. Ich glaube an ethische KI, verantwortungsvolle Entwicklung und die Kraft der Zusammenarbeit. Denn die besten Lösungen entstehen aus vielfältigen Perspektiven und der Bereitschaft, aus jeder Interaktion zu lernen.'
+			'Ich bin ein Full-Stack-Entwickler, der glaubt, dass großartige Software unsichtbar sein sollte. Ich konzentriere mich darauf, schnelle, intuitive und nahtlose Benutzererfahrungen mit modernen JavaScript-Frameworks wie React, Vue, Next.js und Node.js zu erstellen.',
+			'Meine Reise begann in einem Technologieunternehmen in Lahore, wo ich mit Vue.js begann und lernte, dass die besten Benutzeroberflächen diejenigen sind, über die Benutzer nicht nachdenken müssen. Seitdem habe ich zu Anwendungen beigetragen, die das Engagement verbessert, die Conversion-Raten erhöht und saubere, hochwertige Benutzererfahrungen geliefert haben.',
+			'Im Laufe der Zeit habe ich mich auf die Erstellung pixelgenauer Benutzeroberflächen, die Integration von REST-APIs, die Leistungsoptimierung und den Aufbau wartbarer Architekturen mit TypeScript, Tailwind CSS, ShadCN und modernen Tools spezialisiert. Ich genieße es, Komponenten zu entwerfen, Benutzerabläufe zu verfeinern und Produkte poliert und reaktionsschnell zu gestalten.',
+			'Wenn ich nicht programmiere, finden Sie mich wahrscheinlich beim Experimentieren mit neuen Frameworks, beim Verbessern vergangener Projekte oder beim Helfen anderer in der Entwicklergemeinschaft. Ich glaube an sauberen Code, ethische Entwicklung und kontinuierliches Lernen, weil großartige Produkte aus Zusammenarbeit, Neugier und Aufmerksamkeit für Details entstehen.'
 		],
 		counter: {
 			yearsExperience: 'Jahre Erfahrung',
