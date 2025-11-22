@@ -3,6 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/[lang]": "pages/[lang].js",
-  "/[lang]/contact": "pages/[lang]/contact.js",
-  "/[lang]/experience": "pages/[lang]/experience.js"
+  "/[lang]/about": "pages/[lang]/about.js"
 }
