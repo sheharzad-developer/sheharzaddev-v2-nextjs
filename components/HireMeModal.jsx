@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiX } from 'react-icons/fi';
+import { FiX, FiCalendar } from 'react-icons/fi';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Button from './reusable/Button';
@@ -27,6 +27,10 @@ function HireMeModal({ onClose, onRequest }) {
 			...prev,
 			[name]: value
 		}));
+	};
+
+	const handleCalendlyClick = () => {
+		window.open('https://calendly.com/sheharzad-salahuddin9000/new-meeting', '_blank');
 	};
 
 	const handleSubmit = async (e) => {
@@ -165,11 +169,11 @@ function HireMeModal({ onClose, onRequest }) {
 									></textarea>
 								</div>
 
-								<div className="mt-6 pb-4 sm:pb-1">
+								<div className="mt-6 pb-4 sm:pb-1 flex flex-col sm:flex-row gap-3">
 									<button
 										type="submit"
 										disabled={isSubmitting}
-										className={`px-4 sm:px-6 py-2 sm:py-2.5 text-white rounded-md focus:ring-1 focus:ring-indigo-900 duration-500 ${
+										className={`flex-1 px-4 sm:px-6 py-2 sm:py-2.5 text-white rounded-md focus:ring-1 focus:ring-indigo-900 duration-500 ${
 											isSubmitting 
 												? 'bg-gray-400 cursor-not-allowed' 
 												: 'bg-indigo-500 hover:bg-indigo-600'
@@ -177,6 +181,15 @@ function HireMeModal({ onClose, onRequest }) {
 										aria-label="Submit Request"
 									>
 										<Button title={isSubmitting ? "Sending..." : "Send Request"} />
+									</button>
+									<button
+										type="button"
+										onClick={handleCalendlyClick}
+										className="flex-1 px-4 sm:px-6 py-2 sm:py-2.5 bg-purple-500 hover:bg-purple-600 text-white rounded-md focus:ring-1 focus:ring-purple-900 duration-500 flex items-center justify-center gap-2"
+										aria-label="Book a Meeting"
+									>
+										<FiCalendar className="text-lg" />
+										<span>Book a Meeting</span>
 									</button>
 								</div>
 							</form>
