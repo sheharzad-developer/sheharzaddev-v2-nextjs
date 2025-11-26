@@ -250,5 +250,42 @@ export const projectsData = [
         category: "Full-Stack Web Application",
         status: "completed", 
         year: "2025"
+    }, {
+        id: 10,
+        title: "LSLS School Management System",
+        subtitle: "Comprehensive Educational Platform",
+        description: "LSLS (School Management System) is a comprehensive platform designed to manage students, teachers, classes, attendance, and results efficiently. Our system combines modern technology with user-friendly interfaces to provide the best experience for educational institutions.",
+        img: "/images/LSLS-Management.png",
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Prisma",
+            "PostgreSQL",
+            "NextAuth.js",
+            "Node.js",
+            "RESTful API",
+            "Responsive Design"
+        ],
+        features: [
+            "Admin dashboard with real-time statistics and quick navigation",
+            "Comprehensive student management system with detailed profiles",
+            "Teacher management with assignment and tracking capabilities",
+            "Class management with scheduling and organization",
+            "Attendance tracking system with 30-day analytics",
+            "Results management and grade tracking",
+            "Credential management for secure user access",
+            "Parent portal for viewing student information",
+            "Role-based access control (Admin, Teacher, Student, Parent)",
+            "Modern responsive UI with intuitive navigation",
+            "Search functionality for quick access to records",
+            "Notification system for important updates"
+        ],
+        link: "", 
+        githubUrl: "", 
+        category: "Full-Stack Web Application",
+        status: "completed", 
+        year: "2025"
     }
 ];
