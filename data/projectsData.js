@@ -248,7 +248,7 @@ export const projectsData = [
         link: "https://edenavenue.vercel.app/auth/login", 
         githubUrl: "https://github.com/sheharzad-developer/edenavenue", 
         category: "Full-Stack Web Application",
-        status: "in progress", 
+        status: "completed", 
         year: "2025"
     }
 ];
