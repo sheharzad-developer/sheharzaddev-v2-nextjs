@@ -245,7 +245,7 @@ export const projectsData = [
             "Mobile-friendly responsive layout with sidebar navigation",
             "PWA features including push notifications and install prompts"
         ],
-        link: "https://edenavenue.vercel.app/auth/login", 
+        link: "https://edenavenue.vercel.app/auth/login",
         githubUrl: "https://github.com/sheharzad-developer/edenavenue", 
         category: "Full-Stack Web Application",
         status: "completed", 
@@ -286,6 +286,46 @@ export const projectsData = [
         githubUrl: "", 
         category: "Full-Stack Web Application",
         status: "completed", 
+        year: "2025"
+    }, {
+        id: 11,
+        title: "FinPay - Crypto Wallet Application",
+        subtitle: "Full-Stack React Crypto Wallet with Real-Time Market Data",
+        description: "A full-stack React crypto wallet with authentication, transaction management, and real-time market data. Built with React, Tailwind CSS, and Recharts. Features secure user registration with email verification, multi-cryptocurrency support (Bitcoin, Ethereum, Tether), complete CRUD operations for transactions, and interactive price charts with real-time updates via CoinGecko API.",
+        img: "/images/fintech-website.png",
+        technologies: [
+            "React 19.2.1",
+            "React Router DOM",
+            "Tailwind CSS",
+            "Recharts",
+            "CoinGecko API",
+            "React Context API",
+            "localStorage",
+            "JavaScript",
+            "Responsive Design"
+        ],
+        features: [
+            "User registration with email verification and 6-digit codes",
+            "Secure sign-in/sign-out with protected routes and session management",
+            "Multi-cryptocurrency support (Bitcoin, Ethereum, Tether)",
+            "Real-time balance tracking and portfolio overview with USD value conversion",
+            "Price change indicators with 7-day trend analysis",
+            "Complete CRUD operations for transactions (Create, Read, Update, Delete)",
+            "Transaction history with filtering capabilities",
+            "Transaction persistence via localStorage",
+            "Interactive price charts with 7-day historical data",
+            "Area charts with gradient fills and color-coded trends (green/red)",
+            "Real-time price updates via CoinGecko API",
+            "Responsive design optimized for mobile, tablet, and desktop",
+            "Glassmorphism effects and smooth animations",
+            "Gradient backgrounds and modern styling",
+            "Form validation and comprehensive error handling",
+            "Intuitive navigation and user experience"
+        ],
+        link: "",
+        githubUrl: "",
+        category: "FinTech",
+        status: "completed",
         year: "2025"
     }
 ];

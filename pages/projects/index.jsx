@@ -5,15 +5,14 @@ const Projects = () => {
 	const router = useRouter();
 
 	useEffect(() => {
-		// Redirect to default language route
 		router.replace('/en/projects');
 	}, [router]);
 
-	return null; // This page will redirect immediately
+	return null; 
 };
 
 function Index() {
-  return null; // This will be handled by the redirect above
+  return null; 
 }
 
 export default Projects;
