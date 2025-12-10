@@ -55,7 +55,7 @@ function Projects() {
 							{/* Project Image */}
 							<div className="relative h-48 overflow-hidden">
 								<Image
-									src="/images/profile.jpeg"
+									src="/thumbnail/ViewProfile.png"
 									alt={project.title}
 									fill
 									className="object-cover transition-transform duration-300 hover:scale-110"
