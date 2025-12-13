@@ -75,7 +75,7 @@ const FeaturedProjects = () => {
 							{/* Project Image */}
 							<div className="relative h-56 overflow-hidden">
 								<Image
-									src="/thumbnail/ViewProfile.png"
+									src={project.img}
 									alt={project.title}
 									fill
 									className="object-cover group-hover:scale-105 transition-transform duration-500"
