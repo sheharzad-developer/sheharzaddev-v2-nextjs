@@ -6,9 +6,10 @@ import useScrollToTop from '../hooks/useScrollToTop';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import ChristmasPopup from '../components/shared/ChristmasPopup';
 
 function MyApp({ Component, pageProps, router }) {
-  useScrollToTop(); // Call the hook here
+  useScrollToTop(); 
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <LanguageProvider>
+      <ChristmasPopup />
       <AnimatePresence exitBeforeEnter>
         <div key={router.route} className="bg-secondary-light dark:bg-primary-dark transition duration-300">
           <DefaultLayout>

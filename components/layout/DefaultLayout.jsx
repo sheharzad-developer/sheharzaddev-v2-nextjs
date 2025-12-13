@@ -3,7 +3,6 @@ import AppFooter from '../shared/AppFooter';
 import PagesMetaHead from '../PagesMetaHead';
 import ParticlesBackground from '../shared/ParticlesBackground';
 import CustomCursor from '../shared/CustomCursor';
-import ChristmasPopup from '../shared/ChristmasPopup';
 
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -14,7 +13,6 @@ const DefaultLayout = ({ children }) => {
 		<div data-lang={currentLanguage}>
 			<ParticlesBackground />
 			<CustomCursor />
-			<ChristmasPopup />
 
 			<PagesMetaHead />
 			<AppHeader />
